@@ -34,7 +34,7 @@ export class CategoryComponent implements OnInit {
   formModal: any;
   varmodelTable: modelTable = {
     apiTable: 'category',
-    Caption: 'หมวดสินค้า',
+    Caption: 'ข้อมูลหมวดสินค้า',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
@@ -43,10 +43,19 @@ export class CategoryComponent implements OnInit {
     id: 2,
   };
 
+  dataInit = [
+    {
+      ID: 1,
+      '0': 1,
+      categoryDesc: 'เลือก...',
+      '1': 'เลือก...',
+    },
+  ];
+
   id: number = 1;
   ModelName: string = 'category';
   FormMode: string = 'post';
-  formTitle: string = 'เพิ่มข้อมูล-หมวดสินค้า ';
+  formTitle: string = 'เพิ่มข้อมูล-ข้อมูลหมวดสินค้า ';
 
   stageCrud: boolean = true;
   stageForm: boolean = true;
@@ -75,10 +84,10 @@ export class CategoryComponent implements OnInit {
       let id = this._Activatedroute.snapshot.paramMap.get('id');
       this.myForm.get('id').setValue(id);
       if (id != 'new') {
-        this.formTitle = 'แก้ไขข้อมูล -' + this.varmodelTable.Caption;
+        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;
         this.getByID(id);
       } else {
-        this.formTitle = 'เพิ่มข้อมูล ::' + this.varmodelTable.Caption;
+        this.formTitle = 'เพิ่มข้อมูล' + this.varmodelTable.Caption;
       }
     }
   }
@@ -220,6 +229,10 @@ export class CategoryComponent implements OnInit {
 
   alertWithSuccess() {
     Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
+  }
+
+  department_Emit(e: any) {
+    this.dataInit = e;
   }
 
   // openFormModal() {
