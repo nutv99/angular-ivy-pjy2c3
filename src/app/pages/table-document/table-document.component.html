@@ -1,0 +1,271 @@
+<h2>tbl_document</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          id
+     </label>
+     <input type="text" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.id.touched && f.id.errors?.required"> กรุณาป้อนค่า id </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          lang
+     </label>
+     <input type="text" class="form-control" formControlName="lang" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lang.touched && f.lang.errors?.required"> กรุณาป้อนค่า lang </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_ID
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_ID" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_ID.touched && f.DOC_ID.errors?.required"> กรุณาป้อนค่า DOC_ID </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_NO
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_NO" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_NO.touched && f.DOC_NO.errors?.required"> กรุณาป้อนค่า DOC_NO </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_DATE
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_DATE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_DATE.touched && f.DOC_DATE.errors?.required"> กรุณาป้อนค่า DOC_DATE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_YEAR
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_YEAR" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_YEAR.touched && f.DOC_YEAR.errors?.required"> กรุณาป้อนค่า DOC_YEAR </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_DESCRIPTION
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_DESCRIPTION" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_DESCRIPTION.touched && f.DOC_DESCRIPTION.errors?.required"> กรุณาป้อนค่า DOC_DESCRIPTION </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_TYPE
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_TYPE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_TYPE.touched && f.DOC_TYPE.errors?.required"> กรุณาป้อนค่า DOC_TYPE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          SUPPLIER
+     </label>
+     <input type="text" class="form-control" formControlName="SUPPLIER" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.SUPPLIER.touched && f.SUPPLIER.errors?.required"> กรุณาป้อนค่า SUPPLIER </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_START_DATE
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_START_DATE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_START_DATE.touched && f.DOC_START_DATE.errors?.required"> กรุณาป้อนค่า DOC_START_DATE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_END_DATE
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_END_DATE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_END_DATE.touched && f.DOC_END_DATE.errors?.required"> กรุณาป้อนค่า DOC_END_DATE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          COST_ID
+     </label>
+     <input type="text" class="form-control" formControlName="COST_ID" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.COST_ID.touched && f.COST_ID.errors?.required"> กรุณาป้อนค่า COST_ID </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_LOCATION_REF
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_LOCATION_REF" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_LOCATION_REF.touched && f.DOC_LOCATION_REF.errors?.required"> กรุณาป้อนค่า DOC_LOCATION_REF </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_REFERENCE_COM
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_REFERENCE_COM" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_REFERENCE_COM.touched && f.DOC_REFERENCE_COM.errors?.required"> กรุณาป้อนค่า DOC_REFERENCE_COM </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_REFERENCE_DOC
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_REFERENCE_DOC" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_REFERENCE_DOC.touched && f.DOC_REFERENCE_DOC.errors?.required"> กรุณาป้อนค่า DOC_REFERENCE_DOC </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_ATTACH
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_ATTACH" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_ATTACH.touched && f.DOC_ATTACH.errors?.required"> กรุณาป้อนค่า DOC_ATTACH </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_REMARK
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_REMARK" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_REMARK.touched && f.DOC_REMARK.errors?.required"> กรุณาป้อนค่า DOC_REMARK </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_STATUS
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_STATUS" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_STATUS.touched && f.DOC_STATUS.errors?.required"> กรุณาป้อนค่า DOC_STATUS </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          USER_CREATE
+     </label>
+     <input type="text" class="form-control" formControlName="USER_CREATE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.USER_CREATE.touched && f.USER_CREATE.errors?.required"> กรุณาป้อนค่า USER_CREATE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          USER_UPDATE
+     </label>
+     <input type="text" class="form-control" formControlName="USER_UPDATE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.USER_UPDATE.touched && f.USER_UPDATE.errors?.required"> กรุณาป้อนค่า USER_UPDATE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          CREATE_DATE
+     </label>
+     <input type="text" class="form-control" formControlName="CREATE_DATE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.CREATE_DATE.touched && f.CREATE_DATE.errors?.required"> กรุณาป้อนค่า CREATE_DATE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          UPDATE_DATE
+     </label>
+     <input type="text" class="form-control" formControlName="UPDATE_DATE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.UPDATE_DATE.touched && f.UPDATE_DATE.errors?.required"> กรุณาป้อนค่า UPDATE_DATE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          HW_WARANTEE
+     </label>
+     <input type="text" class="form-control" formControlName="HW_WARANTEE" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.HW_WARANTEE.touched && f.HW_WARANTEE.errors?.required"> กรุณาป้อนค่า HW_WARANTEE </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          HW_WAR_YEAR
+     </label>
+     <input type="text" class="form-control" formControlName="HW_WAR_YEAR" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.HW_WAR_YEAR.touched && f.HW_WAR_YEAR.errors?.required"> กรุณาป้อนค่า HW_WAR_YEAR </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          DOC_GROUP
+     </label>
+     <input type="text" class="form-control" formControlName="DOC_GROUP" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.DOC_GROUP.touched && f.DOC_GROUP.errors?.required"> กรุณาป้อนค่า DOC_GROUP </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          COST_SECTION
+     </label>
+     <input type="text" class="form-control" formControlName="COST_SECTION" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.COST_SECTION.touched && f.COST_SECTION.errors?.required"> กรุณาป้อนค่า COST_SECTION </span>
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          upsize_ts
+     </label>
+     <input type="text" class="form-control" formControlName="upsize_ts" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.upsize_ts.touched && f.upsize_ts.errors?.required"> กรุณาป้อนค่า upsize_ts </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} -->
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+<!-- routerLinkActive="active" -->

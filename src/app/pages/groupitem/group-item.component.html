@@ -1,0 +1,80 @@
+<div style="border-bottom:1px solid #ab47bc;margin-bottom:30px">
+  <h2 style="color:#7b1fa2">Group Item</h2>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="mb-3 col-md-6">
+      <label for="exampleFormControlInput1" class="form-label"
+        >แผนกสินค้า</label
+      >
+      <div class="dropdown">
+        <app-searchselect
+          [apiPath]="'/th/department/All/1'"
+          (myListChange)="testNumBerChange($event)"
+        ></app-searchselect>
+      </div>
+    </div>
+
+    <div class="mb-3 col-md-6">
+      <label for="exampleFormControlInput1" class="form-label"
+        >รหัสหมวดสินค้า</label
+      >
+      <div class="dropdown">
+        <!-- <app-searchselect
+          [apiPath]="'/th/groupitem/getAll/1'"
+          (myListChange)="testNumBerChange($event)"
+        ></app-searchselect> -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">lang</label>
+    <div class="dropdown"></div>
+  </div>
+  <hr />
+  <h5 style="font-weight:bold">ข้อมูล กลุ่มสินค้า</h5>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label" style=""
+      >ชื่อหมวดสินค้า</label
+    >
+    <input
+      type="email"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="name@example.com"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label" style=""
+      >imageName</label
+    >
+    <input
+      type="email"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="name@example.com"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label" style=""
+      >grandParentCode</label
+    >
+    <input
+      type="email"
+      class="form-control"
+      id="exampleFormControlInput1"
+      placeholder="name@example.com"
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >departmentID</label
+    >
+    <div class="dropdown"></div>
+  </div>
+</div>
+{{ myOutput | json }}

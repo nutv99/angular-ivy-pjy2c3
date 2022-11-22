@@ -1,0 +1,125 @@
+html,
+body {
+  width: 100%;
+  padding: 0px;
+}
+
+body,
+* {
+  /* font-family: 'Kanit', sans-serif; */
+  font-family: 'Sarabun', sans-serif;
+  /* font-family: 'Noto Sans Thai', sans-serif; */
+}
+
+.myHeader {
+  display: flex;
+  flex-direction: row;
+  /* background-color: darkblue;  */
+  /* background-color: #1565c0; */
+  background-color: #01579b;
+  height: 100px;
+  width: 100%;
+  padding: 10px;
+}
+p {
+  font-family: Lato;
+}
+.myBorder {
+  /*border: 2px solid lightgrey;*/
+  /* width: 300px; */
+
+  min-height: 200px;
+  height: auto;
+  border-radius: 6px; 
+  border: none;
+    
+  box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+}
+.myBorder2 {
+  border: 1px solid blue;
+  width: 200px;
+  transition: transform 2.5s ease-out;
+}
+
+.collapsible {
+  transition: transform 0.5s ease-out;
+  transform-origin: top left;
+}
+.collapsed {
+  transform: scaleX(0);
+}
+.ulmenu {
+  font-size: 14px;
+}
+
+.headermenu {
+  font-size: 18px;
+  color: white;
+}
+
+.sidemenuCaption {
+  display:flex;
+  margin-top: 10px;
+  align-items:center;background:lightgray;padding:5px;border-radius:4px 4px 0px 0px;
+
+}
+.collapsedHeight {
+  transition: transform 0.5s ease-out;
+  transform: scaleY(0);
+}
+
+.scale-up-ver-top {
+  -webkit-animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-ver-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@-webkit-keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+}
+@keyframes scale-up-ver-top {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+  }
+}
+.nodisplay {
+  display: none;
+}
+.container,
+.row {
+  width: 100% !important;
+}
+.ml10 {
+  margin-left: 10px;
+}
+
+.ulmenu {
+  font-size: 16px;
+  border: 1px solid lightgray;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  border-radius: 0px 0px 6px 6px;
+}
+.text-danger {
+  font-size: 12px;
+}

@@ -1,0 +1,91 @@
+<div class="myHeader">
+  <img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTCCLZjoxWLVuP6QdBNytyf3gZRrfKpi57Kg&usqp=CAU"
+    alt=""
+    style="height:90px;width:90px"
+  />
+  <div style="color:white;font-size:32px;padding:10px">ระบบ ทรัพย์สิน</div>
+</div>
+
+<div
+  style="background-color:lightgray;height:35px;display:flex;align-items:center;padding-left:15px;cursor:pointer"
+>
+  <div
+    style="border:1px solid gray;padding:3px;border-radius:6px;width:30px;height:30px;text-align:center;"
+  >
+    <fa-icon [icon]="faHamburger" (click)="ToggleSideBar()"></fa-icon>
+  </div>
+</div>
+
+<div
+  class="scontainer overflow-hidden"
+  style="width:100%;border:1px solid whitesmoke"
+>
+  <div class="row gy-5" style="padding-top:20px">
+    <div id="sidemenu" class="col-sm-3" style="padding-left:30px;">
+      <div id="testdiv" class="myBorder collapsible" style="padding:20px">
+        <div style="display:flex;flex-direction:column;justify-content:center">
+          <div style="position:relative;margin:15px auto">
+            <img
+              src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=600"
+              style="width:100px;height:100px;border:1px solid lightgray;border-radius:50%"
+            />
+          </div>
+          <div style="text-align:center;margin-bottom:20px">John Doe</div>
+        </div>
+
+        <!-- Start menu 1-->
+        <div (click)="HideMenu('A1')" class="sidemenuCaption">
+          <h1 class="headermenu">{{ menu[0].HeadCaption }}</h1>
+          <fa-icon
+            [icon]="faChevronCircleRight"
+            style="font-size:22px;margin-left:auto;margin-right:5px;cursor:pointer"
+          ></fa-icon>
+        </div>
+        <ul id="A1" class="ulmenu">
+          <li *ngFor="let hero of menu[0].Child">
+            <a routerLink="/{{ hero.linkTo }}" routerLinkActive="active">
+              {{ hero.caption }}
+            </a>
+          </li>
+        </ul>
+        <!-- Start menu 2 -->
+        <div (click)="HideMenu('A2')" class="sidemenuCaption">
+          <h1 class="headermenu">{{ menu[1].HeadCaption }}</h1>
+          <fa-icon
+            [icon]="faChevronCircleRight"
+            style="font-size:22px;margin-left:auto;margin-right:5px;cursor:pointer"
+          ></fa-icon>
+        </div>
+        <ul id="A2" class="ulmenu">
+          <li *ngFor="let hero of menu[1].Child">
+            {{ hero.caption }}
+          </li>
+        </ul>
+
+        <!-- Startmenu 3 -->
+        <div (click)="HideMenu('A3')" class="sidemenuCaption">
+          <h1 class="headermenu">{{ menu[2].HeadCaption }}</h1>
+          <fa-icon
+            [icon]="faChevronCircleRight"
+            style="font-size:22px;margin-left:auto;margin-right:5px;cursor:pointer"
+          ></fa-icon>
+        </div>
+        <ul id="A3" class="ulmenu">
+          <li *ngFor="let hero of menu[2].Child">
+            {{ hero.caption }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="workarea" class="col-sm-9">
+      <div id="testdiv" class="myBorder collapsible" style="padding:5px">
+        <!-- <router-outlet name="popup"></router-outlet> -->
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- [routerLink]="['/account', 1]" -->

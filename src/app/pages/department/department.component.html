@@ -1,0 +1,150 @@
+<h2>department</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+      <!-- id -->
+      <div class="mt-3">
+        <input
+          type="hidden"
+          class="form-control"
+          formControlName="id"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <!-- รหัสแผนก -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสแผนก
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="departmentCode"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.departmentCode.touched && f.departmentCode.errors?.required"
+      >
+        กรุณาป้อนค่า รหัสแผนก
+      </span>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >รหัสแผนกสินค้า</label
+        >
+        <div class="dropdown">
+          <app-out-select
+            [apiPathInput]="'th/department/All/1'"
+            [ModelName]="'department'"
+            [dataInit]="''"
+            [HaveChild]="'y'"
+            (myListChange)="setChildData($event)"
+          ></app-out-select>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >รหัสหมวดสินค้า</label
+        >
+        <div class="dropdown">
+          <app-out-select
+            [apiPathInput]="'th/category/All/1'"
+            [dataInit]="dataInit"
+            [ModelName]="'category'"
+            [HaveChild]="'n'"
+          ></app-out-select>
+        </div>
+      </div>
+
+      <!-- ชื่อแผนก -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อแผนก
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="departmentDesc"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.departmentDesc.touched && f.departmentDesc.errors?.required"
+      >
+        กรุณาป้อนค่า ชื่อแผนก </span
+      ><!-- imageName -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          imageName
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="imageName"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.imageName.touched && f.imageName.errors?.required"
+      >
+        กรุณาป้อนค่า imageName
+      </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm(); newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} 
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+ routerLinkActive="active" -->

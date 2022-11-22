@@ -1,0 +1,41 @@
+<!-- {{ apiPath }} -->
+
+<hr />
+<!-- {{ results | json }} -->
+<select
+  id="myselect"
+  class="form-select form-select-lg mb-3 select"
+  aria-label=".form-select-lg example"
+  style="font-size:16px"
+  (change)="onChange999($event)"
+>
+  <option selected>เลือก แผนกสินค้า</option>
+  <option *ngFor="let result of results" value="{{ result[0] }}">
+    {{ result[1] }}
+  </option>
+</select>
+
+<select
+  id="myselect2"
+  class="form-select form-select-lg mb-3 select"
+  aria-label=".form-select-lg example"
+  style="font-size:16px"
+  (change)="onChange9999($event)"
+>
+  <option selected>เลือก แผนกสินค้า</option>
+  <option *ngFor="let result of results2" value="{{ result[0] }}">
+    {{ result[1] }}
+  </option>
+</select>
+
+<select
+  id="myselect3"
+  class="form-select form-select-lg mb-3 select"
+  aria-label=".form-select-lg example"
+  style="font-size:16px"
+>
+  <option selected>เลือก กลุ่มสินค้า</option>
+  <option *ngFor="let result of results3" value="{{ result[0] }}">
+    {{ result[1] }}
+  </option>
+</select>
