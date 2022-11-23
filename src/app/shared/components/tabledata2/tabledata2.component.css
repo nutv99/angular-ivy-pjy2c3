@@ -1,0 +1,22 @@
+.search-hero {
+  max-width: 300px;
+  padding-bottom: 3px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+.form-control {
+  /* box-shadow: 0 10px 40px 0 #b0c1d9; */
+}
+
+input {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-bottom-style: groove;
+  /* background-color: #eee; */
+}
+
+.no-outline:focus {
+  outline: none;
+}

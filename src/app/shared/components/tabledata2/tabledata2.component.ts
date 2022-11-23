@@ -10,13 +10,17 @@ import { EmpService } from '../../../_services/emp.service';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { RouterModule, Routes } from '@angular/router';
+
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { faFilm } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
+//import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
+
+//from '@fortawesome/free-regular-svg-icons'
+
+import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 import { environment } from '../../../environment';
 
@@ -39,6 +43,8 @@ export class Tabledata2Component implements OnInit {
   pageid: string = '';
   pageno: string = '';
   formCode = 'category'; 
+
+  faFilter = faFilter;
 
   searchText;
 

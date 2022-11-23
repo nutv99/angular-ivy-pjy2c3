@@ -1,6 +1,18 @@
 <!-- <p>tabledata2 works!</p> -->
-<div class="search-hero">
-  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+<div
+  class="search-hero"
+  style="display:flex;align-items:center;border-bottom:1px solid whitesmoke"
+>
+  <fa-icon [icon]="faFilter" style="color:#c4c4c4"></fa-icon>
+  <input
+    class="no-outline"
+    type="text"
+    name="search"
+    [(ngModel)]="searchText"
+    autocomplete="off"
+    placeholder="Filter"
+    style="border:none;width:100%;margin-left:10px;padding:5px"
+  />
 </div>
 
 <section style="margin-bottom:75px">
@@ -33,9 +45,11 @@
           </thead>
 
           <tbody style="font-size:14px">
-            <tr *ngFor="let result of results  | filter:searchText" style="vertical-align: middle;">
-                            
-              <td style='color:#63b1b1;font-weight:bold'>{{ result[1] }}</td>
+            <tr
+              *ngFor="let result of results | filter: searchText"
+              style="vertical-align: middle;"
+            >
+              <td style="color:#63b1b1;font-weight:bold">{{ result[1] }}</td>
               <td>{{ result[2] }}</td>
               <td>{{ result[3] }}</td>
               <td>{{ result[4] }}</td>
