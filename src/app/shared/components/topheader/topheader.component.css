@@ -1,0 +1,42 @@
+.flex {
+  display: flex;
+}
+.fontNoto {
+  font-family: 'Noto Sans Thai', sans-serif;
+}
+.fontSarabun {
+  font-family: 'Sarabun', sans-serif;
+}
+.mBtn {
+  border: none;
+  color: white;
+  height: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-weight: bold;
+}
+i {
+  color: gray;
+  margin-right: 10px;
+}
+li { display:inline; padding-left:15px; } 
+
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  padding: 8px;
+  background-color: #dddddd;
+}
+.circle {
+  border-radius:50%; 
+}

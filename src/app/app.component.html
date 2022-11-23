@@ -1,11 +1,13 @@
-<div class="myHeader">
+<app-topheader></app-topheader>
+
+<!-- <div class="myHeader">
   <img
     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTCCLZjoxWLVuP6QdBNytyf3gZRrfKpi57Kg&usqp=CAU"
     alt=""
     style="height:90px;width:90px"
   />
   <div style="color:white;font-size:32px;padding:10px">ระบบ ทรัพย์สิน</div>
-</div>
+</div> -->
 
 <div
   style="background-color:lightgray;height:35px;display:flex;align-items:center;padding-left:15px;cursor:pointer"
@@ -23,7 +25,11 @@
 >
   <div class="row gy-5" style="padding-top:20px">
     <div id="sidemenu" class="col-sm-3" style="padding-left:30px;">
-      <div id="testdiv" class="myBorder collapsible" style="padding:20px">
+      <div
+        id="testdiv"
+        class="myBorder collapsible boxshadow"
+        style="padding:20px"
+      >
         <div style="display:flex;flex-direction:column;justify-content:center">
           <div style="position:relative;margin:15px auto">
             <img
@@ -79,8 +85,13 @@
       </div>
     </div>
 
+    <!-- Desktop Area  -->
     <div id="workarea" class="col-sm-9">
-      <div id="testdiv" class="myBorder collapsible" style="padding:5px">
+      <div
+        id="testdiv999"
+        class="myBorder collapsible boxshadow"
+        style="padding:5px"
+      >
         <!-- <router-outlet name="popup"></router-outlet> -->
         <router-outlet></router-outlet>
       </div>

@@ -33,7 +33,7 @@ export class AppComponent {
           name: 'Deparment',
           linkTo: '/departmentList/1',
           caption: 'แผนกสินค้า',
-        },        
+        },
         {
           name: 'category',
           linkTo: 'category/1',
@@ -116,6 +116,8 @@ export class AppComponent {
     //$('#testdiv').toggleClass('collapsed');
     $('#sidemenu').toggleClass('nodisplay');
     $('#workarea').toggleClass('col-sm-12 ml10');
+    $('#testdiv999').toggleClass('boxshadow');
+
     //$('#workarea').addClass('ml10');
 
     //workarea

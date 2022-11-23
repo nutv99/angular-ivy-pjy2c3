@@ -22,6 +22,8 @@ import { Tabledata2Component } from './shared/components/tabledata2/tabledata2.c
 import { SearchselectComponent } from './shared/components/searchselect/searchselect.component';
 import { OutSelect } from './shared/components/outselect/outselect.component';
 import { CallAPIDirective } from './shared/directives/call-api.directive';
+import { TopheaderComponent } from './shared/components/topheader/topheader.component';
+import { HeaderformComponent } from './shared/components/headerform/headerform.component';
 
 import { CrudComponent } from './pages/crud/crud.component';
 import { tttComponent } from './ttt/ttt.component';
@@ -73,7 +75,9 @@ const appRoutes: Routes = [
     CrudComponent,
     tttComponent,
     CategoryComponent,
-    categoryListComponent
+    categoryListComponent,
+    TopheaderComponent,
+    HeaderformComponent,
   ],
   bootstrap: [AppComponent],
 })
