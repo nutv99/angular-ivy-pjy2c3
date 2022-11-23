@@ -1,4 +1,7 @@
 <!-- <p>tabledata2 works!</p> -->
+<div class="search-hero">
+  <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+</div>
 
 <section style="margin-bottom:75px">
   <div class="card shadow my-2">
@@ -30,7 +33,7 @@
           </thead>
 
           <tbody style="font-size:14px">
-            <tr *ngFor="let result of results" style="vertical-align: middle;">
+            <tr *ngFor="let result of results  | filter:searchText" style="vertical-align: middle;">
                             
               <td style='color:#63b1b1;font-weight:bold'>{{ result[1] }}</td>
               <td>{{ result[2] }}</td>

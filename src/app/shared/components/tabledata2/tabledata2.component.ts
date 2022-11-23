@@ -38,7 +38,9 @@ export class Tabledata2Component implements OnInit {
 
   pageid: string = '';
   pageno: string = '';
-  formCode = 'category';
+  formCode = 'category'; 
+
+  searchText;
 
   currentPageNo: number = 1;
   totalPage: number = 0;
