@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppComponent } from './app.component';
 import { Tabledata1Component } from './shared/components/tabledata1/tabledata1.component';
@@ -54,6 +55,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
 
     RouterModule.forRoot(
       appRoutes,
