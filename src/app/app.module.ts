@@ -25,6 +25,8 @@ import { OutSelect } from './shared/components/outselect/outselect.component';
 import { CallAPIDirective } from './shared/directives/call-api.directive';
 import { TopheaderComponent } from './shared/components/topheader/topheader.component';
 import { HeaderformComponent } from './shared/components/headerform/headerform.component';
+import { Outselectv2Component } from './shared/components/outselectv2/outselectv2.component';
+
 
 import { CrudComponent } from './pages/crud/crud.component';
 import { tttComponent } from './ttt/ttt.component';
@@ -80,6 +82,7 @@ const appRoutes: Routes = [
     categoryListComponent,
     TopheaderComponent,
     HeaderformComponent,
+    Outselectv2Component
   ],
   bootstrap: [AppComponent],
 })
