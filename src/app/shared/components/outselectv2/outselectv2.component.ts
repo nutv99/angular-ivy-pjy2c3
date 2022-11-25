@@ -6,6 +6,7 @@ import {
   Output,
   OnChanges,
   SimpleChanges,
+  Renderer2
 } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
@@ -39,7 +40,7 @@ export class Outselectv2Component implements OnInit {
 
   heroesB = this.heroesA;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private renderer: Renderer2) {}
 
   ngOnInit() {
     if (this.dataInit === '') {
@@ -110,5 +111,7 @@ export class Outselectv2Component implements OnInit {
     this.myData = '';
     this.heroesB = this.dataInit;
     this.showList = true;
+    var element = this.renderer.selectRootElement('#myInput');
+    element.focus();
   }
 }
