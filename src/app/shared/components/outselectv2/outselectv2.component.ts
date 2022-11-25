@@ -54,7 +54,7 @@ export class Outselectv2Component implements OnInit {
   }
 
   async InitDataSelect() {
-    this.ModelName = 'category';
+    // this.ModelName = 'category';
     let apiPathA = 'th/' + this.ModelName + '/All/1';
 
     //alert(apiPathA);
@@ -65,12 +65,13 @@ export class Outselectv2Component implements OnInit {
 
     await this.http.get<any>(this.myurl).subscribe((data) => {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา
-      console.table('Data9999 For Select List', data);
+      //console.table('Data9999 For Select List', data);
       //alert(data);
       this.dataInit = data;
       this.results = this.dataInit;
       this.heroesA = this.dataInit;
       this.heroesB = this.heroesA;
+      this.showDelete = false;
 
       //this.myListChange.emit(this.sData);
       //this.AllRec = data.totalRec;
@@ -80,17 +81,19 @@ export class Outselectv2Component implements OnInit {
 
   FilterHeroes(e: any) {
     console.log(e.target.value);
+
+    //this.showList = true;
+    let st = e.target.value;
+    //this.heroesB = this.heroesB.filter(this.isBigEnough(e.target.value))
+    this.heroesB = this.heroesA.filter((entry) => entry[1].includes(st));
+
     if (e.target.value === '') {
+      console.log(this.showDelete);
       this.showDelete = false;
     } else {
       this.showDelete = true;
     }
-
-    this.showList = true;
-    let st = e.target.value;
-    //this.heroesB = this.heroesB.filter(this.isBigEnough(e.target.value))
-    this.heroesB = this.heroesA.filter((entry) => entry[1].includes(st));
-    //console.log(this.heroesB);
+    console.log('After Blank--', this.showDelete);
   }
 
   hideList() {
