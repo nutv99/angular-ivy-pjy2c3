@@ -119,13 +119,14 @@ export class Outselectv2Component implements OnInit {
     } else {
       this.showDelete = true;
     }
-
+    this.showDelete = false;
     this.hideList();
   }
   ClearValue() {
     this.myData = '';
     this.heroesB = this.dataInit;
-    this.showList = true;
+    this.showList = false;
+    this.showDelete = false;
     var element = this.renderer.selectRootElement('#myInput');
     element.focus();
   }
