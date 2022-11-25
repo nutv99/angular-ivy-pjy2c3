@@ -6,7 +6,7 @@ import {
   Output,
   OnChanges,
   SimpleChanges,
-  Renderer2
+  Renderer2,
 } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Component({
@@ -37,10 +37,11 @@ export class Outselectv2Component implements OnInit {
   ];
   myData: string = '';
   myurl: string = '';
+  showDelete: boolean = false;
 
   heroesB = this.heroesA;
 
-  constructor(private http: HttpClient,private renderer: Renderer2) {}
+  constructor(private http: HttpClient, private renderer: Renderer2) {}
 
   ngOnInit() {
     if (this.dataInit === '') {
@@ -78,11 +79,18 @@ export class Outselectv2Component implements OnInit {
   }
 
   FilterHeroes(e: any) {
+    console.log(e.target.value);
+    if (e.target.value === '') {
+      this.showDelete = false;
+    } else {
+      this.showDelete = true;
+    }
+
     this.showList = true;
     let st = e.target.value;
     //this.heroesB = this.heroesB.filter(this.isBigEnough(e.target.value))
     this.heroesB = this.heroesA.filter((entry) => entry[1].includes(st));
-    console.log(this.heroesB);
+    //console.log(this.heroesB);
   }
 
   hideList() {
@@ -97,14 +105,21 @@ export class Outselectv2Component implements OnInit {
   }
 
   setToList(e: any) {
-    console.log(this.heroesA.length, ' vs ', this.heroesB.length);
+    //console.log(this.heroesA.length, ' vs ', this.heroesB.length);
+
     if (this.heroesA.length != this.heroesB.length) {
-      this.myData = this.heroesB[e][1];
+      this.myData = this.heroesB[e][1].trim();
       this.id = this.heroesB[e][0];
     } else {
-      this.myData = this.heroesA[e][1];
+      this.myData = this.heroesA[e][1].trim();
       this.id = this.heroesB[e][0];
     }
+    if (this.myData === '') {
+      this.showDelete = false;
+    } else {
+      this.showDelete = true;
+    }
+
     this.hideList();
   }
   ClearValue() {

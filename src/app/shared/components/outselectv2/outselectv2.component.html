@@ -6,6 +6,7 @@
       (input)="FilterHeroes($event)"
       (focus)="setshowList()"
       [(ngModel)]="myData"
+      
       #myInput
       id="myInput"
     />
@@ -17,6 +18,7 @@
         alt=""
         style="width:20px;height:23px"
         (click)="ClearValue()"
+        *ngIf="showDelete"
       />
 
       <img
