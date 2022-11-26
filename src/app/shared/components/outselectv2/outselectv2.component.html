@@ -6,7 +6,6 @@
       (input)="FilterHeroes($event)"
       (focus)="setshowList()"
       [(ngModel)]="myData"
-      
       #myInput
       id="myInput"
     />
@@ -43,4 +42,5 @@
       {{ hero[1].trim() }}
     </li>
   </div>
+  <span style="color:red" *ngIf="showWarning">***กรุณาเลือกค่า***</span>
 </div>

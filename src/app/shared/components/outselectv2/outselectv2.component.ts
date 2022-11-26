@@ -38,6 +38,7 @@ export class Outselectv2Component implements OnInit {
   myData: string = '';
   myurl: string = '';
   showDelete: boolean = false;
+  showWarning: boolean = false;
 
   heroesB = this.heroesA;
 
@@ -90,14 +91,17 @@ export class Outselectv2Component implements OnInit {
     if (e.target.value === '') {
       console.log(this.showDelete);
       this.showDelete = false;
+      this.showWarning = true ;
     } else {
       this.showDelete = true;
+      this.showWarning = false ;
     }
     console.log('After Blank--', this.showDelete);
   }
 
   hideList() {
     this.showList = false;
+    
   }
   ToogleList() {
     this.showList = !this.showList;
@@ -119,10 +123,12 @@ export class Outselectv2Component implements OnInit {
     }
     if (this.myData === '') {
       this.showDelete = false;
+      this.showWarning = true ;
     } else {
       this.showDelete = true;
+      this.showWarning = false ;
     }
-    this.showDelete = false;
+    //this.showDelete = false;
     this.hideList();
   }
   ClearValue() {
@@ -130,6 +136,7 @@ export class Outselectv2Component implements OnInit {
     this.heroesB = this.dataInit;
     this.showList = false;
     this.showDelete = false;
+    this.showWarning = true;
     var element = this.renderer.selectRootElement('#myInput');
     element.focus();
   }
