@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+// import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { NgbDatepickerConfig, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
-
+// import { NgbDatepickerConfig, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
@@ -30,7 +29,6 @@ import { CallAPIDirective } from './shared/directives/call-api.directive';
 import { TopheaderComponent } from './shared/components/topheader/topheader.component';
 import { HeaderformComponent } from './shared/components/headerform/headerform.component';
 import { Outselectv2Component } from './shared/components/outselectv2/outselectv2.component';
-
 
 import { CrudComponent } from './pages/crud/crud.component';
 import { tttComponent } from './ttt/ttt.component';
@@ -61,9 +59,8 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
-    NgbModule,
-    Ng2SearchPipeModule,
 
+    Ng2SearchPipeModule,
 
     RouterModule.forRoot(
       appRoutes,
@@ -88,11 +85,7 @@ const appRoutes: Routes = [
     categoryListComponent,
     TopheaderComponent,
     HeaderformComponent,
-    Outselectv2Component
+    Outselectv2Component,
   ],
-  
-  
 })
-
-
 export class AppModule {}

@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { CustomvalidationService } from '../services/customvalidation.service';
 import { APIService } from '../../_services/api.service';
 
-import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
+// import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 
 import Swal from 'sweetalert2';
 
@@ -32,8 +32,6 @@ export interface modelTable {
   templateUrl: './department.component.html',
   styleUrls: ['./department.component.css'],
 })
-
-
 export class DepartmentComponent implements OnInit {
   formModal: any;
   varmodelTable: modelTable = {
@@ -228,7 +226,7 @@ export class DepartmentComponent implements OnInit {
     alert('AAA Change Trigger');
     //alert(e.target.value);
     console.log('Emit Data', e);
-    this.dataInit = e.department ;
+    this.dataInit = e.department;
 
     // this.dataInit = [
     //   {
