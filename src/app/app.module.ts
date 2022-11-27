@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -57,7 +58,9 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
+    NgbModule,
     Ng2SearchPipeModule,
+
 
     RouterModule.forRoot(
       appRoutes,
