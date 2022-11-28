@@ -40,6 +40,7 @@ export class DepartmentComponent implements OnInit {
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
+  model: string;
   // Initial Form Model VAR & Value
   departmentModel: full_departmentModel = {
     id: 2,

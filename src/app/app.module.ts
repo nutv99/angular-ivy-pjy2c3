@@ -4,7 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-// import { NgbDatepickerConfig, NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbDatepickerConfig,
+  NgbDateParserFormatter,
+} from '@ng-bootstrap/ng-bootstrap';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
@@ -56,6 +59,7 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     NgbModule,
+
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,

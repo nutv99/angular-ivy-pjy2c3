@@ -1,5 +1,5 @@
 <h2>department</h2>
-<!-- <div class="input-group">
+<div class="input-group">
   <input
     class="form-control date"
     placeholder="dd-mm-yyyy"
@@ -7,15 +7,17 @@
     [(ngModel)]="model"
     ngbDatepicker
     #d="ngbDatepicker"
-    id='pdate'
+    id="pdate"
   />
-  <button class="btn btn-outline-secondary bi bi-calendar3" (click)="d.toggle()" type="button">D</button>
+  <button
+    class="btn btn-outline-secondary bi bi-calendar3"
+    (click)="d.toggle()"
+    type="button"
+  >
+    D
+  </button>
 </div>
-<script type="text/javascript">
-  $("#pdate").datepicker({
-    format: "dd-mm-yyyy",
-  });
-</script> -->
+
 <hr />
 
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
