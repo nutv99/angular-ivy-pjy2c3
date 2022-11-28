@@ -87,5 +87,6 @@ const appRoutes: Routes = [
     HeaderformComponent,
     Outselectv2Component,
   ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
