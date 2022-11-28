@@ -55,6 +55,7 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     BrowserModule,
+    NgbModule,
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
