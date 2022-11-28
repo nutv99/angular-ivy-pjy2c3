@@ -9,6 +9,8 @@ import {
   Renderer2,
 } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-outselectv2',
   templateUrl: './outselectv2.component.html',
@@ -26,7 +28,9 @@ export class Outselectv2Component implements OnInit {
   sData: any = [{}];
   @Input() results: any = [{ ID: '2', departmentDesc: 'CCCCCCC' }];
 
+  faEditIcon = faEdit ; 
   showList: boolean = false;
+  addListMode: boolean = true;
   id: number = -99;
   heroesA = [
     { id: 1, name: 'Superman' },
@@ -91,17 +95,16 @@ export class Outselectv2Component implements OnInit {
     if (e.target.value === '') {
       console.log(this.showDelete);
       this.showDelete = false;
-      this.showWarning = true ;
+      this.showWarning = true;
     } else {
       this.showDelete = true;
-      this.showWarning = false ;
+      this.showWarning = false;
     }
     console.log('After Blank--', this.showDelete);
   }
 
   hideList() {
     this.showList = false;
-    
   }
   ToogleList() {
     this.showList = !this.showList;
@@ -123,10 +126,10 @@ export class Outselectv2Component implements OnInit {
     }
     if (this.myData === '') {
       this.showDelete = false;
-      this.showWarning = true ;
+      this.showWarning = true;
     } else {
       this.showDelete = true;
-      this.showWarning = false ;
+      this.showWarning = false;
     }
     //this.showDelete = false;
     this.hideList();
