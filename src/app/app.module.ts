@@ -59,7 +59,6 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
-
     Ng2SearchPipeModule,
 
     RouterModule.forRoot(
