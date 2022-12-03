@@ -1,4 +1,36 @@
 <h2>department</h2>
+
+<h1>Angular 14 Bootstrap Modal Popup Example - ItSolutionStuff.com</h1>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(mymodal)">
+  Open My Modal
+</button>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header" style="width:100%">
+    <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">This is example from ItSolutionStuff.com</div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="modal.close('Save click')"
+    >
+      Ok
+    </button>
+  </div>
+</ng-template>
+
+<!-- ssssssssssssssssssss -->
 <div class="input-group">
   <input
     class="form-control date"

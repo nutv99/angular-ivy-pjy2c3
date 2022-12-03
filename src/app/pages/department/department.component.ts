@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { Tabledata2Component } from '../../shared/components/tabledata2/tabledata2.component';
-import { SearchselectComponent } from '../../shared/components/searchselect/searchselect.component';
+import { SearchselectComponent } from '../../shared/components/searchselect/searchselect.component'; 
+
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 import { full_departmentModel } from '../../_models/department';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -64,11 +66,13 @@ export class DepartmentComponent implements OnInit {
   stageCrud: boolean = true;
   stageForm: boolean = true;
   myForm: FormGroup;
+  closeResult: string = '';
 
   constructor(
     private fb: FormBuilder,
     private apiService: APIService,
-    private _Activatedroute: ActivatedRoute
+    private _Activatedroute: ActivatedRoute,
+    private modalService: NgbModal
   ) {}
 
   ngOnInit() {
@@ -89,6 +93,32 @@ export class DepartmentComponent implements OnInit {
       } else {
         this.formTitle = 'เพิ่มข้อมูล';
       }
+    }
+  } 
+
+  // const modalRef = this.modalService.open(ModelComponent, { size: 'lg', backdrop: 'static' });
+  // this.modalService.open(MyModalComponent, { size: <any>'xl' }); 
+  // this.modalService.open(MyComponent, { windowClass: 'my-class'});
+  open(content:any) {
+    this.modalService.open(content, {  size: 'xl' ,backdrop: 'static',ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  } 
+    
+  /**
+   * Write code on Method
+   *
+   * @return response()
+   */
+  private getDismissReason(reason: any): string {
+    if (reason === ModalDismissReasons.ESC) {
+      return 'by pressing ESC';
+    } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+      return 'by clicking on a backdrop';
+    } else {
+      return  `with: ${reason}`;
     }
   }
 
