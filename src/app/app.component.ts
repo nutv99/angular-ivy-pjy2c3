@@ -34,7 +34,7 @@ export class AppComponent {
       Child: [
         {
           name: 'aDeparment',
-          linkTo: '/PagetestComponent',
+          linkTo: '/test',
           caption: 'ทดสอบ',
         },
         {
