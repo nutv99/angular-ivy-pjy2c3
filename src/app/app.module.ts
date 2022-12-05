@@ -37,7 +37,7 @@ import { Outselectv2Component } from './shared/components/outselectv2/outselectv
 
 import { CrudComponent } from './pages/crud/crud.component';
 import { tttComponent } from './ttt/ttt.component';
-
+import { PagetestComponent } from './pages/pagetest/pagetest.component';
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -47,6 +47,7 @@ const appRoutes: Routes = [
   { path: 'categoryForm/:id', component: CategoryComponent },
   { path: 'group/1', component: GroupItemComponent },
   { path: 'tbldocument', component: TableDocumentComponent },
+   { path: 'test', component:PagetestComponent },
   { path: 'tbldocument/:id', component: TableDocumentComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
@@ -61,14 +62,12 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     NgbModule,
-
     FormsModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     HttpClientModule,
     Ng2SearchPipeModule,
     PagemoduleModule,
-
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only set true
@@ -92,7 +91,7 @@ const appRoutes: Routes = [
     categoryListComponent,
     TopheaderComponent,
     HeaderformComponent,
-    Outselectv2Component,
+    Outselectv2Component,    
   ],
   bootstrap: [AppComponent],
 })

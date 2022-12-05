@@ -33,6 +33,11 @@ export class AppComponent {
       HeadCaption: 'ฐานข้อมูลหลัก',
       Child: [
         {
+          name: 'aDeparment',
+          linkTo: '/PagetestComponent',
+          caption: 'ทดสอบ',
+        },
+        {
           name: 'Deparment',
           linkTo: '/departmentList/1',
           caption: 'แผนกสินค้า',
