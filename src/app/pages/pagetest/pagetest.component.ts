@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 
 // templateUrl: './department.component.html',
 export class PagetestComponent implements OnInit {
-
+             
   constructor() { }
 
   ngOnInit() {

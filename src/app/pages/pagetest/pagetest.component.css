@@ -1,0 +1,113 @@
+* { font-family: 'Sarabun', sans-serif; } 
+  .flex { display:flex;flex-wrap:wrap; align-items:center }
+  /*.bordergray { border:1px solid lightgray; }*/
+  .mBtn { 
+    border:1px solid lightgray; 
+	border-radius:6px; padding:5px 10px 5px 10px ;
+	background:white; 
+	width:auto;
+	min-width:100px;
+	max-width:200px;
+
+	margin:15px;
+	box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
+	
+	
+
+	
+  } 
+  .mBtn:hover {
+     background-color: #f4f4f4;
+  }
+  /*.active { background-color:#d9ffd9 }*/
+  .colpadding { padding:10px }
+
+  .mytag { margin:5px;padding:5px;background:#8ed1fc ; color:white;border-radius:6px}
+
+  label {color:#398AD7; font-weight:bold ; }
+  input[type=text] { border:none; outline:none ; border-bottom:1px solid lightgray; }
+  th  { text-align:center; background:#0080c0;color:white;height:40px;}
+  td { border:1px solid #f5f5f5; padding:5px }
+  .rowField { margin-bottom:20px }
+  .validtext { font-size:12px; display:none}
+  .row,.noBorder { border:none;}
+  .h4 { font-weight:bold; }
+/*  .labelPos : { text-align:right}*/
+
+  /*.fullWidth { width:calc(100% - 20px);margin-left:10px } ; }*/
+  .fullWidth { 
+    width:calc(100% - 50px);
+	margin-left:20px  ; 
+	border:1px solid whitesmoke;
+	padding:10px;
+  }
+  .rolecontainer {
+    margin-top:15px; 
+  }
+  i { margin-right:8px}
+
+  .breadcrumbs {
+  border: 1px solid #cbd2d9;
+  border-radius: 0.3rem;
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.breadcrumbs__item {
+  background: #fff;
+  color: #333;
+  outline: none;
+  padding: 0.25em 0.75em 0.25em 1.25em;
+
+  position: relative;
+  text-decoration: none;
+  transition: background 0.2s linear;
+}
+
+.breadcrumbs__item:hover:after,
+.breadcrumbs__item:hover {
+  background: #edf1f5;
+}
+
+.breadcrumbs__item:focus:after,
+.breadcrumbs__item:focus,
+.breadcrumbs__item.is-active:focus {
+  background: #323f4a;
+  color: #fff;
+}
+
+.breadcrumbs__item:after,
+.breadcrumbs__item:before {
+  background: white;
+  bottom: 0;
+  clip-path: polygon(50% 50%, -50% -50%, 0 100%);
+  content: "";
+  left: 100%;
+  position: absolute;
+  top: 0;
+  transition: background 0.2s linear;
+  width: 1em;
+  z-index: 1;
+}
+
+.breadcrumbs__item:before {
+  background: #cbd2d9;
+  margin-left: 1px;
+}
+
+.breadcrumbs__item:last-child {
+  border-right: none;
+}
+
+.breadcrumbs__item.is-active {
+  background: #edf1f5;
+}
+
+/* Some styles to make the page look a little nicer */
+
+.headBar {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 40px;
+}

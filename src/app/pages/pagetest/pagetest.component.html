@@ -1,17 +1,416 @@
-<div id="" class="bordergray flex headBar" style="border:1px solid #eee,border-radius: 4px;color:#333333;padding:5px 10px;font-size:20px;font-weight:bold;sssbackground:crimson;color:white;opacity:0.8">
-  <div id="" class="bordergray flex" style="border:1px solid #eee,border-radius: 4px;">
-  ใบแจ้งขอใบเสนอราคา/ใหม่      
+<div
+  id=""
+  class="bordergray flex headBar"
+  style="border:1px solid #eee,border-radius: 4px;color:#333333;padding:5px 10px;font-size:20px;font-weight:bold;sssbackground:crimson;color:white;opacity:0.8"
+>
+  <div
+    id=""
+    class="bordergray flex"
+    style="border:1px solid #eee,border-radius: 4px;"
+  >
+    ใบแจ้งขอใบเสนอราคา/ใหม่
   </div>
-  
-     
-   <div class="flex" style="margin-left:auto;font-size:12px;margin-right:30px">           
-   
-    <div style="margin-right:10px"><i class="far fa-file" style="font-size:16px"></i> เริ่มใหม่  </div>
-    <div style="margin-right:10px"><i class="fas fa-print" style="font-size:16px"></i>  พิมพ์ </div>
-     <div> <i class="fas fa-globe" style="font-size:16px"></i>    การดำเนินการ </div>
-   </div>
-  
-  
-  
-    
+
+  <div class="flex" style="margin-left:auto;font-size:12px;margin-right:30px">
+    <div style="margin-right:10px">
+      <i class="far fa-file" style="font-size:16px"></i> เริ่มใหม่
+    </div>
+    <div style="margin-right:10px">
+      <i class="fas fa-print" style="font-size:16px"></i> พิมพ์
+    </div>
+    <div><i class="fas fa-globe" style="font-size:16px"></i> การดำเนินการ</div>
   </div>
+</div>
+
+<div
+  id=""
+  class="bordergray flex"
+  style="border:1px solid lightgray,border-radius: 4px;color:#333333;background:#f2f2f2;padding:3px 3px 3px 3px "
+>
+  <div
+    id=""
+    class="bordergray flex"
+    style="border:1px solid #eee,border-radius: 4px;color:#333333;padding-left:10px;font-size:14px "
+  >
+    <div
+      style="background:white;border:1px solid gray;border-radius:6px;padding:4px 6px 4px 6px;margin-right:10px"
+    >
+      <i class="fas fa-database" style="color:crimson;font-size:16px"></i>บันทึก
+    </div>
+    <div
+      style="background:#eee;border:1px solid gray;border-radius:6px;padding:4px 6px 4px 6px;margin-right:10px"
+    >
+      <i class="fas fa-print" style="color:crimson;font-size:16px"></i>พิมพ์ RFQ
+    </div>
+    <div
+      style="background:#eee;border:1px solid gray;border-radius:6px;padding:4px 6px 4px 6px"
+    >
+      <i class="fas fa-print" style="color:crimson;font-size:16px"></i
+      >ยืนยันการสั่งซื้อ
+    </div>
+  </div>
+
+  <div style="margin-left:auto;margin-right:2px;background:#eee">
+    <nav class="breadcrumbs">
+      <a href="#home" class="breadcrumbs__item"
+        ><i class="far fa-hand-point-right" style="color:green"></i>New</a
+      >
+      <a href="#shop" class="breadcrumbs__item">Share</a>
+      <a href="#cart" class="breadcrumbs__item">Approve</a>
+      <a href="#checkout" class="breadcrumbs__item is-active">Checkout</a>
+    </nav>
+  </div>
+</div>
+<div>
+  <div id="mainbody" class="bordergray flex">
+    <div class="99container mt-5 fullWidth">
+      <div
+        role="groupcontainer"
+        class="row groupcontainer rolecontainer"
+        id="row_0"
+        datarowno="0"
+        onclick="setContainerID(this.id)"
+      >
+        <div
+          datarole="divinput"
+          rowno="0"
+          id="r_0_0"
+          onclick="SetIDActive('r_0_0')"
+          class="bordergray colpadding col-sm-12"
+        >
+          <div
+            class="row CaptionField"
+            id="caption_0"
+            rowno="0"
+            contenteditable="true"
+          >
+            <h4 style="font-wight:bold">Group Main</h4>
+          </div>
+        </div>
+        <div
+          role="rolecontainer"
+          class="row rolecontainer"
+          id="row_5"
+          datarowno="5"
+          onclick="setContainerID(this.id)"
+        >
+          <div
+            datarole="divinput"
+            rowno="5"
+            id="r_5_0"
+            onclick="SetIDActive('r_5_0')"
+            class="bordergray colpadding col-sm-12"
+          >
+            <div class="row rowField" rowno="5">
+              <div class="col-sm-2 labelPos" rowno="5">
+                <label class="labelPos">Label</label>
+              </div>
+              <div class="col-sm-8" rowno="5">
+                <input type="text" name="" style="width:100%" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          role="rolecontainer"
+          class="row rolecontainer"
+          id="row_6"
+          datarowno="6"
+          onclick="setContainerID(this.id)"
+        >
+          <div
+            datarole="divinput"
+            rowno="6"
+            id="r_6_0"
+            onclick="SetIDActive('r_6_0')"
+            class="bordergray colpadding col-sm-6"
+          >
+            <div class="row rowField" rowno="6">
+              <div class="col-sm-2 labelPos" rowno="6">
+                <label class="labelPos">Label</label>
+              </div>
+              <div class="col-sm-8" rowno="6">
+                <input type="text" name="" style="width:100%" />
+              </div>
+            </div>
+          </div>
+          <div
+            datarole="divinput"
+            rowno="6"
+            id="r_6_1"
+            onclick="SetIDActive('r_6_1')"
+            class="bordergray colpadding col-sm-6"
+          >
+            <div class="row rowField" rowno="6">
+              <div class="col-sm-2 labelPos" rowno="6">
+                <label class="labelPos">Label</label>
+              </div>
+              <div class="col-sm-8" rowno="6">
+                <input type="text" name="" style="width:100%" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          role="rolecontainer"
+          class="row rolecontainer"
+          id="row_7"
+          datarowno="7"
+          onclick="setContainerID(this.id)"
+        >
+          <div
+            datarole="divinput"
+            rowno="7"
+            id="r_7_0"
+            onclick="SetIDActive('r_7_0')"
+            class="bordergray colpadding col-sm-4"
+          >
+            <div class="row rowField" rowno="7">
+              <div class="col-sm-2 labelPos" rowno="7">
+                <label class="labelPos">Label</label>
+              </div>
+              <div class="col-sm-8" rowno="7">
+                <input type="text" name="" style="width:100%" />
+              </div>
+            </div>
+          </div>
+          <div
+            datarole="divinput"
+            rowno="7"
+            id="r_7_1"
+            onclick="SetIDActive('r_7_1')"
+            class="bordergray colpadding col-sm-4"
+          >
+            <div class="row rowField" rowno="7">
+              <div class="col-sm-2 labelPos" rowno="7">
+                <label class="labelPos">Label</label>
+              </div>
+              <div class="col-sm-8" rowno="7">
+                <input type="text" name="" style="width:100%" />
+              </div>
+            </div>
+          </div>
+          <div
+            datarole="divinput"
+            rowno="7"
+            id="r_7_2"
+            onclick="SetIDActive('r_7_2')"
+            class="bordergray colpadding col-sm-4"
+          >
+            <div class="row rowField" rowno="7">
+              <div class="col-sm-2 labelPos" rowno="7">
+                <label class="labelPos">Label</label>
+              </div>
+              <div class="col-sm-8" rowno="7">
+                <input type="text" name="" style="width:100%" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="width:100%;padding-left:10px;margin-top:40px">
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button
+              class="nav-link active"
+              id="nav-tabAA_1-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-tabAA_1"
+              type="button"
+              role="tab"
+              aria-controls="nav-tabAA_1"
+              aria-selected="true"
+            >
+              Group No-1</button
+            ><button
+              class="nav-link"
+              id="nav-tabAA_2-tab"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-tabAA_2"
+              type="button"
+              role="tab"
+              aria-controls="nav-tabAA_2"
+              aria-selected="true"
+            >
+              Group No-2
+            </button>
+          </div>
+        </nav>
+      </div>
+      <div
+        class="tab-content"
+        id="nav-tabContent"
+        style="padding:10px;margin-bottom:100px"
+      >
+        <div
+          class="tab-pane fade"
+          id="nav-tabAA_1"
+          role="tabpanel"
+          aria-labelledby="nav-ts-tab"
+        >
+          <div
+            role="groupcontainer"
+            class="row groupcontainer rolecontainer"
+            id="row_1"
+            datarowno="1"
+            onclick="setContainerID(this.id)"
+          >
+            <div
+              datarole="divinput"
+              rowno="1"
+              id="r_1_0"
+              onclick="SetIDActive('r_1_0')"
+              class="bordergray colpadding col-sm-12 active"
+            >
+              <div
+                class="row CaptionField"
+                id="caption_1"
+                rowno="1"
+                contenteditable="true"
+              >
+                <h4 style="font-wight:bold">Group No-1</h4>
+              </div>
+            </div>
+            <div
+              role="rolecontainer"
+              class="row rolecontainer"
+              id="row_8"
+              datarowno="8"
+              onclick="setContainerID(this.id)"
+            >
+              <div
+                datarole="divinput"
+                rowno="8"
+                id="r_8_0"
+                onclick="SetIDActive('r_8_0')"
+                class="bordergray colpadding col-sm-12"
+              >
+                <div class="row rowField" rowno="8">
+                  <div class="col-sm-2 labelPos" rowno="8">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="8">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              role="rolecontainer"
+              class="row rolecontainer"
+              id="row_9"
+              datarowno="9"
+              onclick="setContainerID(this.id)"
+            >
+              <div
+                datarole="divinput"
+                rowno="9"
+                id="r_9_0"
+                onclick="SetIDActive('r_9_0')"
+                class="bordergray colpadding col-sm-6"
+              >
+                <div class="row rowField" rowno="9">
+                  <div class="col-sm-2 labelPos" rowno="9">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="9">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+              <div
+                datarole="divinput"
+                rowno="9"
+                id="r_9_1"
+                onclick="SetIDActive('r_9_1')"
+                class="bordergray colpadding col-sm-6"
+              >
+                <div class="row rowField" rowno="9">
+                  <div class="col-sm-2 labelPos" rowno="9">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="9">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              role="rolecontainer"
+              class="row rolecontainer"
+              id="row_10"
+              datarowno="10"
+              onclick="setContainerID(this.id)"
+            >
+              <div
+                datarole="divinput"
+                rowno="10"
+                id="r_10_0"
+                onclick="SetIDActive('r_10_0')"
+                class="bordergray colpadding col-sm-6"
+              >
+                <div class="row rowField" rowno="10">
+                  <div class="col-sm-2 labelPos" rowno="10">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="10">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+              <div
+                datarole="divinput"
+                rowno="10"
+                id="r_10_1"
+                onclick="SetIDActive('r_10_1')"
+                class="bordergray colpadding col-sm-6"
+              >
+                <div class="row rowField" rowno="10">
+                  <div class="col-sm-2 labelPos" rowno="10">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="10">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="nav-tabAA_2"
+          role="tabpanel"
+          aria-labelledby="nav-ts-tab"
+        >
+          <div
+            role="groupcontainer"
+            class="row groupcontainer rolecontainer"
+            id="row_2"
+            datarowno="2"
+            onclick="setContainerID(this.id)"
+          >
+            <div
+              datarole="divinput"
+              rowno="2"
+              id="r_2_0"
+              onclick="SetIDActive('r_2_0')"
+              class="bordergray colpadding col-sm-12"
+            >
+              <div
+                class="row CaptionField"
+                id="caption_2"
+                rowno="2"
+                contenteditable="true"
+              >
+                <h4 style="font-wight:bold">Group No-2</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main Body -->
