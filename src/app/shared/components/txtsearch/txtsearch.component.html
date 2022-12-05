@@ -1,0 +1,46 @@
+<!-- <input type="text" style="padding:10px" /> -->
+<div style="width:275px;" *ngIf="showListText">
+  <input
+    #input
+    (input)="searchPokemons(input.value)"
+    type="text"
+    [(ngModel)]="txtSearch"
+    style="padding:10px;width:100%;border:none"
+    placeholder="พิมพ์ค้นชื่อสินค้าที่จะเพิ่ม"
+  />
+
+  <div
+    *ngIf="showListText2"
+    style="position:absolute;width:100%;margin-top:0px;height:300px;border:1px solid gray;overflow-y:scroll;background:white;z-index:1000000"
+    class="tableFixHead"
+  >
+    <!-- <div class="captionTableSearch" style="position:fixed;width:100%;">
+      พบจำนวน :: {{ pokemons.length }} รายการ
+    </div> -->
+    <table class="mTable" style="margin-top:0px">
+      <thead>
+        <tr>
+          <th
+            style="height:60px;background-color:blue;color:white;text-align:left"
+            colspan="2"
+          >
+            พบจำนวน :: {{ pokemons.length }} รายการ
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let hero of pokemons; let i = index"
+          style="padding:10px;cursor:pointer"
+          (click)="AddItem(i)"
+        >
+          <td style="text-align:center;width:60px">{{ i + 1 }}</td>
+          <td>{{ hero[1].trim() }}</td>
+         
+
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div></div>
