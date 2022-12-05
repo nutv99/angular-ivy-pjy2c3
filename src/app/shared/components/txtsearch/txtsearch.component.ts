@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import { MyapiService } from './myapi.service';
-import { MyApiService } from '../myapi.service';
+import { MyapiService } from '../../../myapi.service';
 import { Subscription, Subject, switchMap, debounceTime, pipe } from 'rxjs';
 
 export interface ItemModel {
@@ -40,7 +40,7 @@ export class TxtsearchComponent implements OnInit {
   ItemDatas: ItemModel[] = [];
   heroesB: any[] = [];
 
-  constructor(private http: HttpClient, private myapi: MyApiService) {
+  constructor(private http: HttpClient, private myapi: MyapiService) {
     this.onSearchPokemons
       .pipe(
         debounceTime(200),
