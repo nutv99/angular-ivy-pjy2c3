@@ -8,17 +8,33 @@
     class="bordergray flex"
     style="border:1px solid #eee,border-radius: 4px;"
   >
+    <fa-icon [icon]="faDatabaseIcon" style="color:#c4c4c4"></fa-icon>
     ใบแจ้งขอใบเสนอราคา/ใหม่
   </div>
 
   <div class="flex" style="margin-left:auto;font-size:12px;margin-right:30px">
     <div style="margin-right:10px">
-      <i class="far fa-file" style="font-size:16px"></i> เริ่มใหม่
+      <fa-icon
+        [icon]="faFileIcon"
+        style="color:white;font-size:18px;margin-right:5px"
+      ></fa-icon>
+
+      เริ่มใหม่
     </div>
     <div style="margin-right:10px">
-      <i class="fas fa-print" style="font-size:16px"></i> พิมพ์
+      <fa-icon
+        [icon]="faPrintIcon"
+        style="color:white;font-size:18px;margin-right:5px"
+      ></fa-icon>
+      พิมพ์
     </div>
-    <div><i class="fas fa-globe" style="font-size:16px"></i> การดำเนินการ</div>
+    <div>
+      <fa-icon
+        [icon]="faGlobeIcon"
+        style="color:white;font-size:18px;margin-right:5px"
+      ></fa-icon>
+      การดำเนินการ
+    </div>
   </div>
 </div>
 

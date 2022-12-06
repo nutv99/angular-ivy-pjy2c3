@@ -1,18 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 
+import { faFilm } from '@fortawesome/free-solid-svg-icons';
+
+import { faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faFile } from '@fortawesome/free-solid-svg-icons';
+
+import { faPrint } from '@fortawesome/free-solid-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-pagetest',
   templateUrl: './pagetest.component.html',
-  styleUrls: ['./pagetest.component.css']
+  styleUrls: ['./pagetest.component.css'],
 })
 
 // templateUrl: './department.component.html',
 export class PagetestComponent implements OnInit {
-             
-  constructor() { }
+  faDatabaseIcon = faDatabase;
+  faFileIcon = faFile;
+  faPrintIcon = faPrint;
+  faGlobeIcon = faGlobe;
 
-  ngOnInit() {
-    
-  }
+  constructor() {}
 
+  ngOnInit() {}
 }
