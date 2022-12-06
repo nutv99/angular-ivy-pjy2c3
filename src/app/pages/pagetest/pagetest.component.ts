@@ -9,6 +9,9 @@ import { faPrint } from '@fortawesome/free-solid-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
+import { faAddressBook } from '@fortawesome/free-solid-svg-icons';
+
+
 @Component({
   selector: 'app-pagetest',
   templateUrl: './pagetest.component.html',
@@ -21,7 +24,8 @@ export class PagetestComponent implements OnInit {
   faFileIcon = faFile;
   faPrintIcon = faPrint;
   faGlobeIcon = faGlobe;
-  faCheckIcon = faCheck;
+  faCheckIcon = faCheck; 
+  faBattery3Icon = faAddressBook;
 
   constructor() {}
 
