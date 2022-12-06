@@ -1,5 +1,6 @@
+<!-- Main Body -->
 <div
-  id=""
+  id="mainbody999"
   class="bordergray flex headBar"
   style="border:1px solid #eee,border-radius: 4px;color:#333333;padding:5px 10px;font-size:20px;font-weight:bold;sssbackground:crimson;color:white;opacity:0.8"
 >
@@ -8,21 +9,23 @@
     class="bordergray flex"
     style="border:1px solid #eee,border-radius: 4px;"
   >
-    <fa-icon [icon]="faAddressBookIcon" style="color:white;margin-right:5px"></fa-icon>
-
+    <fa-icon
+      [icon]="faAddressBookIcon"
+      style="color:white;margin-right:5px"
+    ></fa-icon>
     ใบแจ้งขอใบเสนอราคา/ใหม่
   </div>
-
   <div class="flex" style="margin-left:auto;font-size:12px;margin-right:30px">
     <div style="margin-right:10px">
+      <i class="far fa-file" style="font-size:16px"></i>
       <fa-icon
         [icon]="faFileIcon"
         style="color:white;font-size:18px;margin-right:5px"
       ></fa-icon>
-
       เริ่มใหม่
     </div>
     <div style="margin-right:10px">
+      <i class="fas fa-print" style="font-size:16px"></i>
       <fa-icon
         [icon]="faPrintIcon"
         style="color:white;font-size:18px;margin-right:5px"
@@ -30,6 +33,7 @@
       พิมพ์
     </div>
     <div>
+      <i class="fas fa-globe" style="font-size:16px"></i>
       <fa-icon
         [icon]="faGlobeIcon"
         style="color:white;font-size:18px;margin-right:5px"
@@ -38,11 +42,10 @@
     </div>
   </div>
 </div>
-
 <div
   id=""
   class="bordergray flex"
-  style="border:1px solid lightgray,border-radius: 4px;color:#333333;background:#0095a8;padding:6px 3px 6px 3px "
+  style="border:1px solid lightgray,border-radius: 4px;color:#333333;background:#0095a8;padding:8px 3px 8px 3px "
 >
   <div
     id=""
@@ -57,7 +60,6 @@
         [icon]="faDatabaseIcon"
         style="color:green;font-size:18px;margin-right:5px"
       ></fa-icon>
-
       บันทึก
     </div>
     <div
@@ -78,11 +80,9 @@
         [icon]="faCheckIcon"
         style="color:green;font-size:18px;margin-right:5px"
       ></fa-icon>
-
       ยืนยันการสั่งซื้อ
     </div>
   </div>
-
   <div style="margin-left:auto;margin-right:2px;background:#eee">
     <nav class="breadcrumbs">
       <a href="#home" class="breadcrumbs__item"
@@ -102,139 +102,34 @@
         class="row groupcontainer rolecontainer"
         id="row_0"
         datarowno="0"
-        onclick="setContainerID(this.id)"
       >
         <div
           datarole="divinput"
           rowno="0"
           id="r_0_0"
-          onclick="SetIDActive('r_0_0')"
           class="bordergray colpadding col-sm-12"
         >
-          <div
-            class="row CaptionField"
-            id="caption_0"
-            rowno="0"
-            contenteditable="true"
-          >
-            <h4 style="font-wight:bold">Group Main</h4>
+          <div class="row CaptionField" id="caption_0" rowno="0">
+            <h4 style="font-wight:bold">ข้อมูลผู้สั่งซื้อ</h4>
           </div>
         </div>
         <div
           role="rolecontainer"
           class="row rolecontainer"
-          id="row_5"
-          datarowno="5"
-          onclick="setContainerID(this.id)"
+          id="row_3"
+          datarowno="3"
         >
           <div
             datarole="divinput"
-            rowno="5"
-            id="r_5_0"
-            onclick="SetIDActive('r_5_0')"
+            rowno="3"
+            id="r_3_0"
             class="bordergray colpadding col-sm-12"
           >
-            <div class="row rowField" rowno="5">
-              <div class="col-sm-2 labelPos" rowno="5">
+            <div class="row rowField" rowno="3">
+              <div class="col-sm-2 labelPos" rowno="3">
                 <label class="labelPos">Label</label>
               </div>
-              <div class="col-sm-8" rowno="5">
-                <input type="text" name="" style="width:100%" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          role="rolecontainer"
-          class="row rolecontainer"
-          id="row_6"
-          datarowno="6"
-          onclick="setContainerID(this.id)"
-        >
-          <div
-            datarole="divinput"
-            rowno="6"
-            id="r_6_0"
-            onclick="SetIDActive('r_6_0')"
-            class="bordergray colpadding col-sm-6"
-          >
-            <div class="row rowField" rowno="6">
-              <div class="col-sm-2 labelPos" rowno="6">
-                <label class="labelPos">Label</label>
-              </div>
-              <div class="col-sm-8" rowno="6">
-                <input type="text" name="" style="width:100%" />
-              </div>
-            </div>
-          </div>
-          <div
-            datarole="divinput"
-            rowno="6"
-            id="r_6_1"
-            onclick="SetIDActive('r_6_1')"
-            class="bordergray colpadding col-sm-6"
-          >
-            <div class="row rowField" rowno="6">
-              <div class="col-sm-2 labelPos" rowno="6">
-                <label class="labelPos">Label</label>
-              </div>
-              <div class="col-sm-8" rowno="6">
-                <input type="text" name="" style="width:100%" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          role="rolecontainer"
-          class="row rolecontainer"
-          id="row_7"
-          datarowno="7"
-          onclick="setContainerID(this.id)"
-        >
-          <div
-            datarole="divinput"
-            rowno="7"
-            id="r_7_0"
-            onclick="SetIDActive('r_7_0')"
-            class="bordergray colpadding col-sm-4"
-          >
-            <div class="row rowField" rowno="7">
-              <div class="col-sm-2 labelPos" rowno="7">
-                <label class="labelPos">Label</label>
-              </div>
-              <div class="col-sm-8" rowno="7">
-                <input type="text" name="" style="width:100%" />
-              </div>
-            </div>
-          </div>
-          <div
-            datarole="divinput"
-            rowno="7"
-            id="r_7_1"
-            onclick="SetIDActive('r_7_1')"
-            class="bordergray colpadding col-sm-4"
-          >
-            <div class="row rowField" rowno="7">
-              <div class="col-sm-2 labelPos" rowno="7">
-                <label class="labelPos">Label</label>
-              </div>
-              <div class="col-sm-8" rowno="7">
-                <input type="text" name="" style="width:100%" />
-              </div>
-            </div>
-          </div>
-          <div
-            datarole="divinput"
-            rowno="7"
-            id="r_7_2"
-            onclick="SetIDActive('r_7_2')"
-            class="bordergray colpadding col-sm-4"
-          >
-            <div class="row rowField" rowno="7">
-              <div class="col-sm-2 labelPos" rowno="7">
-                <label class="labelPos">Label</label>
-              </div>
-              <div class="col-sm-8" rowno="7">
+              <div class="col-sm-8" rowno="3">
                 <input type="text" name="" style="width:100%" />
               </div>
             </div>
@@ -286,43 +181,49 @@
             class="row groupcontainer rolecontainer"
             id="row_1"
             datarowno="1"
-            onclick="setContainerID(this.id)"
           >
             <div
               datarole="divinput"
               rowno="1"
               id="r_1_0"
-              onclick="SetIDActive('r_1_0')"
-              class="bordergray colpadding col-sm-12 active"
+              class="bordergray colpadding col-sm-12"
             >
-              <div
-                class="row CaptionField"
-                id="caption_1"
-                rowno="1"
-                contenteditable="true"
-              >
+              <div class="row CaptionField" id="caption_1" rowno="1">
                 <h4 style="font-wight:bold">Group No-1</h4>
               </div>
             </div>
             <div
               role="rolecontainer"
               class="row rolecontainer"
-              id="row_8"
-              datarowno="8"
-              onclick="setContainerID(this.id)"
+              id="row_4"
+              datarowno="4"
             >
               <div
                 datarole="divinput"
-                rowno="8"
-                id="r_8_0"
-                onclick="SetIDActive('r_8_0')"
-                class="bordergray colpadding col-sm-12"
+                rowno="4"
+                id="r_4_0"
+                class="bordergray colpadding col-sm-6"
               >
-                <div class="row rowField" rowno="8">
-                  <div class="col-sm-2 labelPos" rowno="8">
+                <div class="row rowField" rowno="4">
+                  <div class="col-sm-2 labelPos" rowno="4">
                     <label class="labelPos">Label</label>
                   </div>
-                  <div class="col-sm-8" rowno="8">
+                  <div class="col-sm-8" rowno="4">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+              <div
+                datarole="divinput"
+                rowno="4"
+                id="r_4_1"
+                class="bordergray colpadding col-sm-6"
+              >
+                <div class="row rowField" rowno="4">
+                  <div class="col-sm-2 labelPos" rowno="4">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="4">
                     <input type="text" name="" style="width:100%" />
                   </div>
                 </div>
@@ -331,78 +232,35 @@
             <div
               role="rolecontainer"
               class="row rolecontainer"
-              id="row_9"
-              datarowno="9"
-              onclick="setContainerID(this.id)"
+              id="row_5"
+              datarowno="5"
             >
               <div
                 datarole="divinput"
-                rowno="9"
-                id="r_9_0"
-                onclick="SetIDActive('r_9_0')"
+                rowno="5"
+                id="r_5_0"
                 class="bordergray colpadding col-sm-6"
               >
-                <div class="row rowField" rowno="9">
-                  <div class="col-sm-2 labelPos" rowno="9">
+                <div class="row rowField" rowno="5">
+                  <div class="col-sm-2 labelPos" rowno="5">
                     <label class="labelPos">Label</label>
                   </div>
-                  <div class="col-sm-8" rowno="9">
+                  <div class="col-sm-8" rowno="5">
                     <input type="text" name="" style="width:100%" />
                   </div>
                 </div>
               </div>
               <div
                 datarole="divinput"
-                rowno="9"
-                id="r_9_1"
-                onclick="SetIDActive('r_9_1')"
+                rowno="5"
+                id="r_5_1"
                 class="bordergray colpadding col-sm-6"
               >
-                <div class="row rowField" rowno="9">
-                  <div class="col-sm-2 labelPos" rowno="9">
+                <div class="row rowField" rowno="5">
+                  <div class="col-sm-2 labelPos" rowno="5">
                     <label class="labelPos">Label</label>
                   </div>
-                  <div class="col-sm-8" rowno="9">
-                    <input type="text" name="" style="width:100%" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              role="rolecontainer"
-              class="row rolecontainer"
-              id="row_10"
-              datarowno="10"
-              onclick="setContainerID(this.id)"
-            >
-              <div
-                datarole="divinput"
-                rowno="10"
-                id="r_10_0"
-                onclick="SetIDActive('r_10_0')"
-                class="bordergray colpadding col-sm-6"
-              >
-                <div class="row rowField" rowno="10">
-                  <div class="col-sm-2 labelPos" rowno="10">
-                    <label class="labelPos">Label</label>
-                  </div>
-                  <div class="col-sm-8" rowno="10">
-                    <input type="text" name="" style="width:100%" />
-                  </div>
-                </div>
-              </div>
-              <div
-                datarole="divinput"
-                rowno="10"
-                id="r_10_1"
-                onclick="SetIDActive('r_10_1')"
-                class="bordergray colpadding col-sm-6"
-              >
-                <div class="row rowField" rowno="10">
-                  <div class="col-sm-2 labelPos" rowno="10">
-                    <label class="labelPos">Label</label>
-                  </div>
-                  <div class="col-sm-8" rowno="10">
+                  <div class="col-sm-8" rowno="5">
                     <input type="text" name="" style="width:100%" />
                   </div>
                 </div>
@@ -421,22 +279,119 @@
             class="row groupcontainer rolecontainer"
             id="row_2"
             datarowno="2"
-            onclick="setContainerID(this.id)"
           >
             <div
               datarole="divinput"
               rowno="2"
               id="r_2_0"
-              onclick="SetIDActive('r_2_0')"
-              class="bordergray colpadding col-sm-12"
+              class="bordergray colpadding col-sm-12 active"
+            >
+              <div class="row CaptionField" id="caption_2" rowno="2">
+                <h4 style="font-wight:bold">Group No-2</h4>
+              </div>
+            </div>
+            <div
+              role="rolecontainer"
+              class="row rolecontainer"
+              id="row_6"
+              datarowno="6"
             >
               <div
-                class="row CaptionField"
-                id="caption_2"
-                rowno="2"
-                contenteditable="true"
+                datarole="divinput"
+                rowno="6"
+                id="r_6_0"
+                class="bordergray colpadding col-sm-4"
               >
-                <h4 style="font-wight:bold">Group No-2</h4>
+                <div class="row rowField" rowno="6">
+                  <div class="col-sm-2 labelPos" rowno="6">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="6">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+              <div
+                datarole="divinput"
+                rowno="6"
+                id="r_6_1"
+                class="bordergray colpadding col-sm-4"
+              >
+                <div class="row rowField" rowno="6">
+                  <div class="col-sm-2 labelPos" rowno="6">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="6">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+              <div
+                datarole="divinput"
+                rowno="6"
+                id="r_6_2"
+                class="bordergray colpadding col-sm-4"
+              >
+                <div class="row rowField" rowno="6">
+                  <div class="col-sm-2 labelPos" rowno="6">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="6">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              role="rolecontainer"
+              class="row rolecontainer"
+              id="row_7"
+              datarowno="7"
+            >
+              <div
+                datarole="divinput"
+                rowno="7"
+                id="r_7_0"
+                class="bordergray colpadding col-sm-4"
+              >
+                <div class="row rowField" rowno="7">
+                  <div class="col-sm-2 labelPos" rowno="7">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="7">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+              <div
+                datarole="divinput"
+                rowno="7"
+                id="r_7_1"
+                class="bordergray colpadding col-sm-4"
+              >
+                <div class="row rowField" rowno="7">
+                  <div class="col-sm-2 labelPos" rowno="7">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="7">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
+              </div>
+              <div
+                datarole="divinput"
+                rowno="7"
+                id="r_7_2"
+                class="bordergray colpadding col-sm-4"
+              >
+                <div class="row rowField" rowno="7">
+                  <div class="col-sm-2 labelPos" rowno="7">
+                    <label class="labelPos">Label</label>
+                  </div>
+                  <div class="col-sm-8" rowno="7">
+                    <input type="text" name="" style="width:100%" />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -445,5 +400,4 @@
     </div>
   </div>
 </div>
-
 <!-- Main Body -->
