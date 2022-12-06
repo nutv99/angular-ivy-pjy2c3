@@ -25,7 +25,7 @@ export class PagetestComponent implements OnInit {
   faPrintIcon = faPrint;
   faGlobeIcon = faGlobe;
   faCheckIcon = faCheck; 
-  faBattery3Icon = faAddressBook;
+  faAddressBookIcon = faAddressBook;
 
   constructor() {}
 
