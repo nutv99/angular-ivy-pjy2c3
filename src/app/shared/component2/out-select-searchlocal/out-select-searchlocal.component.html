@@ -1,0 +1,58 @@
+<div style="width:400px;margin-bottom:20px" (blur)="hideList()">
+  <div style="display:flex;align-items:center">
+    <input
+      type="text"
+      style="width:100%;padding:11px; outline:none;border:1px solid lightgray;border-right:0px solid gray;border-radius:6px 0px 0px 0px"
+      (input)="FilterHeroes($event)"
+      (focus)="setshowList()"
+      [(ngModel)]="myData"
+      #myInput
+      id="myInput"
+    />
+    <div
+      style="display:flex;border:1px solid lightgray;padding:3px;;border-radius:0px 4px 0px 0px;align-items:center"
+    >
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/401/401036.png"
+        alt=""
+        style="width:20px;height:23px"
+        (click)="ClearValue()"
+        *ngIf="showDelete"
+      />
+
+      <img
+        src="https://static.thenounproject.com/png/1144832-200.png"
+        alt=""
+        style="width:33px;height:40px"
+        (click)="ToogleList()"
+      />
+    </div>
+  </div>
+  <div *ngIf="showList" style="border:1px solid lightgray;padding:8px">
+    <button
+      style="box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);border:none;background:whitesmoke;font-size:14px"
+    >
+      <fa-icon
+        [icon]="faEditIcon"
+        style="color:#c4c4c4"
+        style="color:blue"
+      ></fa-icon>
+      เพิ่มรายการ
+    </button>
+  </div>
+  <div
+    style="position:absolute;border:1px solid lightgray;width:400px;height:300px; 
+    border-top:0px solid lightgray; overflow-y:scroll;
+    box-sizing: border-box;z-index:200000;background:white"
+    *ngIf="showList"
+  >
+    <li
+      *ngFor="let hero of heroesB; let i = index"
+      (click)="setToList(i)"
+      style="padding:10px;cursor:pointer"
+    >
+      {{ hero[1].trim() }}
+    </li>
+  </div>
+  <span style="color:red" *ngIf="showWarning">***กรุณาเลือกค่า***</span>
+</div>

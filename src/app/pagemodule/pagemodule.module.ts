@@ -5,6 +5,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {BoutselectComponent} from '../shared/component2/boutselect/boutselect.component' ;
+import {OutSelectSearchlocalComponent} from '../shared/component2/out-select-searchlocal/out-select-searchlocal.component' ;
 
 import {PagetestComponent }  from '../pages/pagetest/pagetest.component' ;
 
@@ -12,7 +13,7 @@ import {PagetestComponent }  from '../pages/pagetest/pagetest.component' ;
   imports: [
     CommonModule,FontAwesomeModule
   ],
-  declarations: [BoutselectComponent,PagetestComponent],
+  declarations: [BoutselectComponent,OutSelectSearchlocalComponent,PagetestComponent],
   exports:[PagetestComponent] 
 })
 

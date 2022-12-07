@@ -1,0 +1,27 @@
+p {
+  font-family: Lato;
+}
+li:hover {
+  background: lightgreen;
+}
+
+.closeFrame {
+  animation: myHeight 5s 1;
+}
+
+@keyframes myHeight {
+  from {
+    height: 300px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+.bb {
+  background-image: url('https://www.iconpacks.net/icons/2/free-arrow-down-icon-3101-thumb.png');
+  background-size: 25px 25px;
+  background-position: 95% center;
+  background-repeat: no-repeat;
+}
+

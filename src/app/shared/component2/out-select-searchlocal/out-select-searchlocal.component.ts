@@ -8,16 +8,19 @@ import {
   SimpleChanges,
   Renderer2,
 } from '@angular/core';
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment, apiPath } from '../../../environment';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-outselectv2',
-  templateUrl: './outselectv2.component.html',
-  styleUrls: ['./outselectv2.component.css'],
+  selector: 'app-out-select-searchlocal',
+  templateUrl: './out-select-searchlocal.component.html',
+  styleUrls: ['./out-select-searchlocal.component.css']
 })
 
-export class Outselectv2Component implements OnInit {
+export class OutSelectSearchlocalComponent implements OnInit {
+
   @Input() apiPathInput: string;
   @Input() ModelName: string;
   @Input() HaveChild: string;
@@ -40,6 +43,7 @@ export class Outselectv2Component implements OnInit {
     { id: 3, name: 'Robin' },
     { id: 4, name: 'Flash' },
   ];
+  
   myData: string = '';
   myurl: string = '';
   showDelete: boolean = false;
@@ -144,4 +148,5 @@ export class Outselectv2Component implements OnInit {
     var element = this.renderer.selectRootElement('#myInput');
     element.focus();
   }
+
 }
