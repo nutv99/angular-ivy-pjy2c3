@@ -16,11 +16,9 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-out-select-searchlocal',
   templateUrl: './out-select-searchlocal.component.html',
-  styleUrls: ['./out-select-searchlocal.component.css']
+  styleUrls: ['./out-select-searchlocal.component.css'],
 })
-
 export class OutSelectSearchlocalComponent implements OnInit {
-
   @Input() apiPathInput: string;
   @Input() ModelName: string;
   @Input() HaveChild: string;
@@ -32,7 +30,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
   sData: any = [{}];
   @Input() results: any = [{ ID: '2', departmentDesc: 'CCCCCCC' }];
 
-  faEditIcon = faEdit ; 
+  faEditIcon = faEdit;
   showList: boolean = false;
   addListMode: boolean = true;
   id: number = -99;
@@ -43,7 +41,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
     { id: 3, name: 'Robin' },
     { id: 4, name: 'Flash' },
   ];
-  
+
   myData: string = '';
   myurl: string = '';
   showDelete: boolean = false;
@@ -139,6 +137,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
     //this.showDelete = false;
     this.hideList();
   }
+
   ClearValue() {
     this.myData = '';
     this.heroesB = this.dataInit;
@@ -148,5 +147,4 @@ export class OutSelectSearchlocalComponent implements OnInit {
     var element = this.renderer.selectRootElement('#myInput');
     element.focus();
   }
-
 }
