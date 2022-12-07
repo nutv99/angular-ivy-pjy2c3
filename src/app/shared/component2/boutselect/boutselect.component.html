@@ -1,0 +1,13 @@
+<p>{{ Title }}</p>
+<select
+  id="myselect"
+  class="form-select form-select-lg mb-3 select"
+  aria-label=".form-select-lg example"
+  style="font-size:16px"
+  (change)="setOutData($event)"
+>
+  <option selected>เลือก {{ ModelName }}</option>
+  <option *ngFor="let result of results" value="{{ result[0] }}">
+    {{ result[1] }}
+  </option>
+</select>
