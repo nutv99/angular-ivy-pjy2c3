@@ -8,6 +8,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment, apiPath } from '../../../environment';
 
 @Component({
   selector: 'app-boutselect',
@@ -27,9 +28,14 @@ export class BoutselectComponent implements OnInit {
   @Input() results: any = [{ ID: '2', departmentDesc: 'CCCCCCC' }];
   myurl: string = '';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+
+  }
 
   ngOnInit() {
+    //alert(environment.apiUrl);
+    
+    this.InitDataSelect();
     if (this.dataInit === '') {
       this.InitDataSelect();
     } else {
@@ -37,29 +43,25 @@ export class BoutselectComponent implements OnInit {
     }
     //this.InitDataSelect();
   }
-
+  /*
   ngOnChanges(changes: SimpleChanges) {
-    const veganValue = changes['dataInit'];
-    console.log('Change ', changes);
+    // const veganValue = changes['dataInit'];
+    // console.log('Change ', changes);
     //veganValue.isFirstChange
-    if (veganValue.firstChange === false) {
-      this.results = veganValue.currentValue;
-      return;
-    }
-    //alert(veganValue.currentValue);
-    console.log(veganValue.firstChange);
+    // if (veganValue.firstChange === false) {
+    //   this.results = veganValue.currentValue;
+    //   return;
+    // }
+    // //alert(veganValue.currentValue);
+    // console.log(veganValue.firstChange);
     //this.results = this.dataInit;
   }
-
+*/
   async InitDataSelect() {
-    let apiPathA = 'th/' + this.ModelName + '/All/1';
+    let apiPathA = environment.apiUrl + '?modelname=' + this.ModelName;
 
     //alert(apiPathA);
-    this.myurl =
-      'https://lovetoshopmall.com/swagger/marlinshopWork2/' + apiPathA;
-    // this.myurl =
-    //   'https://lovetoshopmall.com/swagger/marlinshopWork2/th/department/All/1';
-
+    this.myurl = apiPathA;
     await this.http.get<any>(this.myurl).subscribe((data) => {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา
       console.table('Data9999 For Select List', data);
