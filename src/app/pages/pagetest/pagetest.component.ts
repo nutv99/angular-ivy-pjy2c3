@@ -65,7 +65,7 @@ export class PagetestComponent implements OnInit {
     alert(e);
   }
 
-  MyListChange(e: any) {
-    alert(e);
-  }
+  // MyListChange(e: any) {
+  //   alert(e);
+  // }
 }

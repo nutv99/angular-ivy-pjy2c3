@@ -3,7 +3,7 @@
 
 <app-out-select-searchlocal
   [ModelName]="'department'"
-  [SetDepartmentID]="MyListChange"
+  (myListChange)="SetDepartmentID($event)"
 ></app-out-select-searchlocal>
 <!-- <app-outselectv2 [ModelName]="'department'"></app-outselectv2> -->
 <div
