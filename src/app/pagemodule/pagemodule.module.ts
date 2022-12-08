@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons'; 
 
@@ -11,7 +12,7 @@ import {PagetestComponent }  from '../pages/pagetest/pagetest.component' ;
 
 @NgModule({
   imports: [
-    CommonModule,FontAwesomeModule
+    CommonModule,FontAwesomeModule ,FormsModule, ReactiveFormsModule 
   ],
   declarations: [BoutselectComponent,OutSelectSearchlocalComponent,PagetestComponent],
   exports:[PagetestComponent] 

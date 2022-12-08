@@ -3,11 +3,11 @@
     <input
       type="text"
       style="width:100%;padding:11px; outline:none;border:1px solid lightgray;border-right:0px solid gray;border-radius:6px 0px 0px 0px"
+      [(ngModel)]="myData"
       (input)="FilterHeroes($event)"
       (focus)="setshowList()"
-      [(ngModel)]="myData"
       #myInput
-      id="myInput"
+      id="myInput9999"
     />
     <div
       style="display:flex;border:1px solid lightgray;padding:3px;;border-radius:0px 4px 0px 0px;align-items:center"

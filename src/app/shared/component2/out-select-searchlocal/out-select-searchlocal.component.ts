@@ -43,6 +43,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
   ];
 
   myData: string = '';
+  txtSearch: string = '';
   myurl: string = '';
   showDelete: boolean = false;
   showWarning: boolean = false;
@@ -63,11 +64,10 @@ export class OutSelectSearchlocalComponent implements OnInit {
 
   async InitDataSelect() {
     // this.ModelName = 'category';
-    let apiPathA = 'th/' + this.ModelName + '/All/1';
-
+    let apiPathA = environment.apiUrl+  'th/' + this.ModelName + '/All/1';
+   // alert(environment.apiUrl);
     //alert(apiPathA);
-    this.myurl =
-      'https://lovetoshopmall.com/swagger/marlinshopWork2/' + apiPathA;
+    this.myurl = apiPathA;
     // this.myurl =
     //   'https://lovetoshopmall.com/swagger/marlinshopWork2/th/department/All/1';
 
@@ -144,7 +144,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
     this.showList = false;
     this.showDelete = false;
     this.showWarning = true;
-    var element = this.renderer.selectRootElement('#myInput');
+    var element = this.renderer.selectRootElement('#myInput9999');
     element.focus();
   }
 }
