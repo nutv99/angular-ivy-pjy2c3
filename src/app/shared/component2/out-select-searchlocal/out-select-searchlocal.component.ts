@@ -18,6 +18,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './out-select-searchlocal.component.html',
   styleUrls: ['./out-select-searchlocal.component.css'],
 })
+
 export class OutSelectSearchlocalComponent implements OnInit {
   @Input() apiPathInput: string;
   @Input() ModelName: string;
