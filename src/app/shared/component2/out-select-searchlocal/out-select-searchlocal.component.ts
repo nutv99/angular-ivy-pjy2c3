@@ -18,7 +18,6 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './out-select-searchlocal.component.html',
   styleUrls: ['./out-select-searchlocal.component.css'],
 })
-
 export class OutSelectSearchlocalComponent implements OnInit {
   @Input() apiPathInput: string;
   @Input() ModelName: string;
@@ -65,8 +64,8 @@ export class OutSelectSearchlocalComponent implements OnInit {
 
   async InitDataSelect() {
     // this.ModelName = 'category';
-    let apiPathA = environment.apiUrl+  'th/' + this.ModelName + '/All/1';
-   // alert(environment.apiUrl);
+    let apiPathA = environment.apiUrl + 'th/' + this.ModelName + '/All/1';
+    // alert(environment.apiUrl);
     //alert(apiPathA);
     this.myurl = apiPathA;
     // this.myurl =
@@ -128,6 +127,12 @@ export class OutSelectSearchlocalComponent implements OnInit {
       this.myData = this.heroesA[e][1].trim();
       this.id = this.heroesB[e][0];
     }
+
+    
+    let id2 = this.id.toString();
+
+    this.myListChange.emit(id2);
+
     if (this.myData === '') {
       this.showDelete = false;
       this.showWarning = true;

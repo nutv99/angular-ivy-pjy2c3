@@ -1,7 +1,10 @@
 <!-- Main Body -->
 <app-boutselect [ModelName]="'category'"></app-boutselect>
 
-<app-out-select-searchlocal [ModelName]="'department'"></app-out-select-searchlocal>
+<app-out-select-searchlocal
+  [ModelName]="'department'"
+  [SetDepartmentID]="MyListChange"
+></app-out-select-searchlocal>
 <!-- <app-outselectv2 [ModelName]="'department'"></app-outselectv2> -->
 <div
   id="mainbody999"
