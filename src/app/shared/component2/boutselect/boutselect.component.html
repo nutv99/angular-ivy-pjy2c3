@@ -6,7 +6,7 @@
   style="font-size:16px"
   (change)="setOutData($event)"
 >
-  <option selected>เลือก {{ ModelName }}</option>
+  <option selected>เลือก {{ modelname }}</option>
   <option *ngFor="let result of results" value="{{ result[0] }}">
     {{ result[1] }}
   </option>

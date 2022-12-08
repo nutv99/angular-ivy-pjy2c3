@@ -1,12 +1,17 @@
 <!-- Main Body -->
-<app-boutselect [ModelName]="'category'"></app-boutselect>
+<app-boutselect [modelname]="'category'"></app-boutselect>
 
 <app-out-select-searchlocal
-  [ModelName]="'department'"
-  (myListChange)="SetDepartmentID($event)"
+  [modelname]="'department'"
+  (mylistchange)="SetDepartmentID($event)"
 ></app-out-select-searchlocal>
 
-<!-- <app-outselectv2 [ModelName]="'department'"></app-outselectv2> -->
+<app-out-select-searchlocal
+  [modelname]="'InvOrder'"
+  (mylistchange)="SetDepartmentID($event)"
+></app-out-select-searchlocal>
+
+<!-- <app-outselectv2 [modelname]="'department'"></app-outselectv2> -->
 <div
   id="mainbody999"
   class="bordergray flex headBar"

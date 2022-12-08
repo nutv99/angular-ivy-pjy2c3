@@ -20,13 +20,13 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 })
 export class OutSelectSearchlocalComponent implements OnInit {
   @Input() apiPathInput: string;
-  @Input() ModelName: string;
+  @Input() modelname: string;
   @Input() HaveChild: string;
 
   @Input() dataInit: any;
   @Input() Title: string;
 
-  @Output() myListChange: EventEmitter<string> = new EventEmitter();
+  @Output() mylistchange: EventEmitter<string> = new EventEmitter();
   sData: any = [{}];
   @Input() results: any = [{ ID: '2', departmentDesc: 'CCCCCCC' }];
 
@@ -63,8 +63,8 @@ export class OutSelectSearchlocalComponent implements OnInit {
   }
 
   async InitDataSelect() {
-    // this.ModelName = 'category';
-    let apiPathA = environment.apiUrl + 'th/' + this.ModelName + '/All/1';
+    // this.modelname = 'category';
+    let apiPathA = environment.apiUrl + 'th/' + this.modelname + '/All/1';
     // alert(environment.apiUrl);
     //alert(apiPathA);
     this.myurl = apiPathA;
@@ -81,7 +81,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
       this.heroesB = this.heroesA;
       this.showDelete = false;
 
-      //this.myListChange.emit(this.sData);
+      //this.mylistchange.emit(this.sData);
       //this.AllRec = data.totalRec;
       // this.results = data;
     });
@@ -131,7 +131,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
     
     let id2 = this.id.toString();
 
-    this.myListChange.emit(id2);
+    this.mylistchange.emit(id2);
 
     if (this.myData === '') {
       this.showDelete = false;

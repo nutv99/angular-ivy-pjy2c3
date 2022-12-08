@@ -17,13 +17,13 @@ import { environment, apiPath } from '../../../environment';
 })
 export class BoutselectComponent implements OnInit {
   @Input() apiPathInput: string;
-  @Input() ModelName: string;
+  @Input() modelname: string;
   @Input() HaveChild: string;
 
   @Input() dataInit: any;
   @Input() Title: string;
 
-  @Output() myListChange: EventEmitter<string> = new EventEmitter();
+  @Output() mylistchange: EventEmitter<string> = new EventEmitter();
   sData: any = [{}];
   @Input() results: any = [{ ID: '2', departmentDesc: 'CCCCCCC' }];
   myurl: string = '';
@@ -58,7 +58,7 @@ export class BoutselectComponent implements OnInit {
   }
 */
   async InitDataSelect() {
-    let apiPathA = environment.apiUrl + '?modelname=' + this.ModelName;
+    let apiPathA = environment.apiUrl + '?modelname=' + this.modelname;
 
     //alert(apiPathA);
     this.myurl = apiPathA;
@@ -68,7 +68,7 @@ export class BoutselectComponent implements OnInit {
       //alert(data);
       this.dataInit = data;
       this.results = this.dataInit;
-      //this.myListChange.emit(this.sData);
+      //this.mylistchange.emit(this.sData);
       //this.AllRec = data.totalRec;
       // this.results = data;
     });
@@ -83,7 +83,7 @@ export class BoutselectComponent implements OnInit {
     }
     this.myurl =
       'https://lovetoshopmall.com/swagger/marlinshopWork2/th/' +
-      this.ModelName +
+      this.modelname +
       '/WithChild/' +
       sParentID.target.value;
     //alert(this.myurl);
@@ -92,7 +92,7 @@ export class BoutselectComponent implements OnInit {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา
       console.table('Data For Select List OutData', data);
       this.sData = data;
-      this.myListChange.emit(this.sData);
+      this.mylistchange.emit(this.sData);
       //this.AllRec = data.totalRec;
       // this.results = data;
     });
@@ -105,9 +105,9 @@ How To Use
 ที่ไฟล์ Parent เรียกใช้
 <app-out-select 
  [apiPathInput]="'th/department/All/1'"  
- (myListChange)="BShowNumBerChange($event)"
+ (mylistchange)="BShowNumBerChange($event)"
 ></app-out-select>
-// myListChange คือ OutputEmitter ที่จะ พ่่นค่า (Inject) ออกไปให้ Parent
+// mylistchange คือ OutputEmitter ที่จะ พ่่นค่า (Inject) ออกไปให้ Parent
 
 ที่ไฟล์ Parent สร้าง function เพื่อรับค่า จาก emit
 ในที่นี้คือ 
@@ -120,24 +120,24 @@ BShowNumBerChange($event)
   }
 
 Case การใช้   
- 1. ต้องการ Child ให้กำหนด Parameter -> ModelName = ชื่อ Table
+ 1. ต้องการ Child ให้กำหนด Parameter -> modelname = ชื่อ Table
             [dataInit]="''"
             [HaveChild]="'n'"
-            (myListChange)="setChildData($event)"
+            (mylistchange)="setChildData($event)"
      หรือ 
       <app-out-select
             [apiPathInput]="'th/department/All/1'"
-            [ModelName]="'department'"
+            [modelname]="'department'"
             [dataInit]="''"
             [HaveChild]="'y'"
-            (myListChange)="setChildData($event)" // ไปสร้าง function setChildData ไว้ใน Parent Component
+            (mylistchange)="setChildData($event)" // ไปสร้าง function setChildData ไว้ใน Parent Component
           >
       </app-out-select>       
- 2. ไม่ต้องการ Child ให้กำหนด Parameter -> ModelName
+ 2. ไม่ต้องการ Child ให้กำหนด Parameter -> modelname
       <app-out-select
             [apiPathInput]="'th/category/All/1'"
             [dataInit]="dataInit"
-            [ModelName]="'category'"
+            [modelname]="'category'"
             [HaveChild]="'n'"
           >
       </app-out-select>
