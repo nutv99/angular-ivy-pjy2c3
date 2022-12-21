@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
-import { PagemoduleModule } from './pagemodule/pagemodule.module' ;
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PagemoduleModule } from './pagemodule/pagemodule.module';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -38,6 +38,9 @@ import { Outselectv2Component } from './shared/components/outselectv2/outselectv
 import { CrudComponent } from './pages/crud/crud.component';
 import { tttComponent } from './ttt/ttt.component';
 import { PagetestComponent } from './pages/pagetest/pagetest.component';
+
+import { Company_optionComponent } from './pages/company-option/company-option.component';
+import { company_optionListComponent } from './pages/company-option/company_optionList.component';
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -47,10 +50,15 @@ const appRoutes: Routes = [
   { path: 'categoryForm/:id', component: CategoryComponent },
   { path: 'group/1', component: GroupItemComponent },
   { path: 'tbldocument', component: TableDocumentComponent },
-   { path: 'test', component:PagetestComponent },
+  { path: 'test', component: PagetestComponent },
   { path: 'tbldocument/:id', component: TableDocumentComponent },
+
+  { path: 'company_optionList', component: company_optionListComponent },
+  { path: 'company_option/:id', component: Company_optionComponent },
+
   { path: '**', redirectTo: '/', pathMatch: 'full' },
-];
+]; 
+
 
 // {
 //   path: 'contact',
@@ -91,7 +99,9 @@ const appRoutes: Routes = [
     categoryListComponent,
     TopheaderComponent,
     HeaderformComponent,
-    Outselectv2Component,    
+    Outselectv2Component,
+    Company_optionComponent,
+    company_optionListComponent,
   ],
   bootstrap: [AppComponent],
 })

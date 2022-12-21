@@ -15,7 +15,7 @@ export interface modelTable {
 @Component({
   selector: 'app-company_optionList',
   templateUrl: './company_optionList.component.html',
-  styleUrls: ['./company_option.component.css'],
+  styleUrls: ['./company-option.component.css'],
 })
 export class company_optionListComponent implements OnInit, OnChanges {
   formModal: any;

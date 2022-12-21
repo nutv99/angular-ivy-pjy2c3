@@ -8,10 +8,7 @@ import { faFilm } from '@fortawesome/free-solid-svg-icons';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons'; 
-
-
-
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 //<i class="fa-solid fa-chevrons-right"></i>
 
@@ -56,6 +53,12 @@ export class AppComponent {
           name: 'tbldocument',
           linkTo: 'tbldocument/1',
           caption: 'เอกสาร',
+        },
+
+        {
+          name: 'company_optionList',
+          linkTo: 'company_optionList',
+          caption: 'ตั้งค่าทั่วไป',
         },
       ],
     },
