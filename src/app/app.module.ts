@@ -38,6 +38,7 @@ import { Outselectv2Component } from './shared/components/outselectv2/outselectv
 import { CrudComponent } from './pages/crud/crud.component';
 import { tttComponent } from './ttt/ttt.component';
 import { PagetestComponent } from './pages/pagetest/pagetest.component';
+import { CompanyOptionComponent } from './pages/company-option/company-option.component';
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -49,6 +50,7 @@ const appRoutes: Routes = [
   { path: 'tbldocument', component: TableDocumentComponent },
    { path: 'test', component:PagetestComponent },
   { path: 'tbldocument/:id', component: TableDocumentComponent },
+  { path: 'ccoption', component: CompanyOptionComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
