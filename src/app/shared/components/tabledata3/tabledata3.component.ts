@@ -42,7 +42,7 @@ export class Tabledata3Component implements OnInit {
 
   pageid: string = '';
   pageno: string = '';
-  formCode = 'category'; 
+  formCode = 'category';
 
   faFilter = faFilter;
 
@@ -86,7 +86,8 @@ export class Tabledata3Component implements OnInit {
     if (this._Activatedroute.snapshot.paramMap.get('pageno')) {
       this.pageno = this._Activatedroute.snapshot.paramMap.get('pageno');
     } else {
-      this.pageno = this._Activatedroute.snapshot.paramMap.get('pageno');
+      //this.pageno = this._Activatedroute.snapshot.paramMap.get('pageno');
+      this.pageno = '1';
     }
 
     this.fetchData(this.pageno);

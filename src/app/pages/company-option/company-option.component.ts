@@ -15,7 +15,7 @@ export interface modelTable {
 })
 export class CompanyOptionComponent implements OnInit {
   varmodelTable: modelTable = {
-    apiTable: 'category',
+    apiTable: 'department',
     Caption: 'แผนกสินค้า',
     pageno: 1,
     headerColTable: ['รหัสแผนก', 'ชื่อแผนก', 'รหัส-2', 'รูป'],
