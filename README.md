@@ -4,4 +4,4 @@
 
 NGBootstrap==>https://ng-bootstrap.github.io/#/components/carousel/examples
 
-Version-->Trak
+Version-->Trak  1.0.0
