@@ -1,0 +1,7 @@
+<h2>ตั้งค่าทั่วไป</h2>
+<button [routerLink]="['/company_optionForm/new']">เพิ่มข้อมูล</button>
+<app-tabledata2
+  [varModelTable]="varmodelTable"
+  (MYIDOutDelete)="OnDeleteCompany_option($event)"
+>
+</app-tabledata2>
