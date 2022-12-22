@@ -8,12 +8,14 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../environment';
 
 @Component({
   selector: 'app-out-select',
   templateUrl: './outselect.component.html',
   styleUrls: ['./outselect.component.css'],
 })
+
 export class OutSelect implements OnInit, OnChanges {
   @Input() apiPathInput: string;
   @Input() ModelName: string;
@@ -59,6 +61,7 @@ export class OutSelect implements OnInit, OnChanges {
       'https://lovetoshopmall.com/swagger/marlinshopWork2/' + apiPathA;
     // this.myurl =
     //   'https://lovetoshopmall.com/swagger/marlinshopWork2/th/department/All/1';
+    this.myurl = environment.apiUrl2 + '?code=L002';
 
     await this.http.get<any>(this.myurl).subscribe((data) => {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา

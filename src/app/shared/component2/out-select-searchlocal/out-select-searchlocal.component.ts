@@ -68,6 +68,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
     // alert(environment.apiUrl);
     //alert(apiPathA);
     this.myurl = apiPathA;
+    this.myurl =  environment.apiUrl2 + '?code=L002'  ;
     // this.myurl =
     //   'https://lovetoshopmall.com/swagger/marlinshopWork2/th/department/All/1';
 

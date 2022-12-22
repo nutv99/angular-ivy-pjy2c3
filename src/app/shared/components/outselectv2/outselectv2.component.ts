@@ -9,6 +9,7 @@ import {
   Renderer2,
 } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { environment } from '../../../environment';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -16,7 +17,6 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './outselectv2.component.html',
   styleUrls: ['./outselectv2.component.css'],
 })
-
 export class Outselectv2Component implements OnInit {
   @Input() apiPathInput: string;
   @Input() ModelName: string;
@@ -29,7 +29,7 @@ export class Outselectv2Component implements OnInit {
   sData: any = [{}];
   @Input() results: any = [{ ID: '2', departmentDesc: 'CCCCCCC' }];
 
-  faEditIcon = faEdit ; 
+  faEditIcon = faEdit;
   showList: boolean = false;
   addListMode: boolean = true;
   id: number = -99;
@@ -68,10 +68,11 @@ export class Outselectv2Component implements OnInit {
       'https://lovetoshopmall.com/swagger/marlinshopWork2/' + apiPathA;
     // this.myurl =
     //   'https://lovetoshopmall.com/swagger/marlinshopWork2/th/department/All/1';
+    this.myurl = environment.apiUrl2 + '?code=L002';
 
     await this.http.get<any>(this.myurl).subscribe((data) => {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา
-      //console.table('Data9999 For Select List', data);
+      console.table('Data9999 For Select List', data);
       //alert(data);
       this.dataInit = data;
       this.results = this.dataInit;
