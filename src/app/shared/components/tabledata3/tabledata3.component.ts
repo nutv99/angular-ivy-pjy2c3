@@ -109,15 +109,7 @@ export class Tabledata3Component implements OnInit {
     }
     this.results = '';
     //pageno = this.varModelTable.pageno;
-    this.myurl =
-      'https://lovetoshopmall.com/swagger/mall/th/' +
-      this.varModelTable.apiTable +
-      '/ByFormCodeAndPageNo/' +
-      this.formCode +
-      '/' +
-      wantpageno;
-    this.myurl = environment.apiUrl2 + '?code=a002&pagenno=' + wantpageno ;
-
+    this.myurl = environment.apiUrl2 + '?code=a002&pagenno=' + wantpageno;
 
     // this.myurl =
     // environment.apiUrl + this.varModelTable.apiTable +'/ByPageNo/' +pageno;
@@ -128,7 +120,7 @@ export class Tabledata3Component implements OnInit {
       this.tableCaption = data.caption;
       this.ListRecnoCaption = data.startRec + '-' + data.EndRec;
       this.totalPage = data.totalPage;
-      this.results = data.data;
+      this.results = data.DataResult;
       this.headerTable = data.HeadCol;
       console.table(data.HeadCol);
       this.AllRec = data.totalRec;
