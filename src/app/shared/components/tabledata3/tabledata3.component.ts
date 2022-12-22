@@ -38,6 +38,7 @@ export class Tabledata3Component implements OnInit {
   @Output() MYIDOutDelete: EventEmitter<any> = new EventEmitter();
   tableAPI: string;
   @Input() varModelTable;
+  @Input() formName;
   @Input() pageno999;
 
   pageid: string = '';
@@ -60,7 +61,8 @@ export class Tabledata3Component implements OnInit {
   totalrow: number = 0;
   headerTable = ['ชื่อ', 'นามสกุล', 'อีเมล์', 'เบอร์โทร', ''];
 
-  nextPageNo: number = 0;
+  nextPageNo: number = 0; 
+  formName99 = 'ccop999';
 
   Pagination = [2, 3, 4];
   faEdit = faEdit;
