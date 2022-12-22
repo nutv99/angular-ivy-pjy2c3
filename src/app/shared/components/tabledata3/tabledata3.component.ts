@@ -114,6 +114,8 @@ export class Tabledata3Component implements OnInit {
       'https://lovetoshopmall.com/apiservice/tshop/?code=a002&pagenno=' +
       wantpageno;
 
+    this.myurl = environment.apiUrl2 + '?code=a002&pagenno=' + wantpageno;
+
     // this.myurl =
     // environment.apiUrl + this.varModelTable.apiTable +'/ByPageNo/' +pageno;
 
