@@ -109,7 +109,10 @@ export class Tabledata3Component implements OnInit {
     }
     this.results = '';
     //pageno = this.varModelTable.pageno;
-    this.myurl = environment.apiUrl2 + '?code=a002&pagenno=' + wantpageno;
+
+    this.myurl =
+      'https://lovetoshopmall.com/apiservice/tshop/?code=a002&pagenno=' +
+      wantpageno;
 
     // this.myurl =
     // environment.apiUrl + this.varModelTable.apiTable +'/ByPageNo/' +pageno;
@@ -121,8 +124,8 @@ export class Tabledata3Component implements OnInit {
       this.ListRecnoCaption = data.startRec + '-' + data.EndRec;
       this.totalPage = data.totalPage;
       this.results = data.DataResult;
-      this.headerTable = data.HeadCol;
-      console.table(data.HeadCol);
+      this.headerTable = data.headerAr;
+      console.table(data.DataResult);
       this.AllRec = data.totalRec;
       this.currentPageNo = parseInt(wantpageno);
       // this.nextPageNo = parseInt(wantpageno) + 1;
