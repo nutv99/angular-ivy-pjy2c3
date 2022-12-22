@@ -116,6 +116,8 @@ export class Tabledata3Component implements OnInit {
       this.formCode +
       '/' +
       wantpageno;
+    this.myurl = environment.apiUrl2 + '?code=a002&pagenno=' + wantpageno ;
+
 
     // this.myurl =
     // environment.apiUrl + this.varModelTable.apiTable +'/ByPageNo/' +pageno;
