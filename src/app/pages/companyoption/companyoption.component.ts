@@ -102,6 +102,30 @@ id : ['',Validators.required],uxDefaultWebsiteLanguageLabel : ['',Validators.req
 
   }
 
+  setYesNoValue(e:any,fname:string) {
+
+    // if (this.myForm.get(fname).value === 'y') {
+    //    this.myForm.get(fname).setValue('n')
+    // } else {
+    //   this.myForm.get(fname).setValue('y')
+    // }
+    this.myForm.get(fname).setValue(e)
+
+  }
+
+  setOutSelect(e:any,fname:string) {
+
+    // if (this.myForm.get(fname).value === 'y') {
+    //    this.myForm.get(fname).setValue('n')
+    // } else {
+    //   this.myForm.get(fname).setValue('y')
+    // }
+    this.myForm.get(fname).setValue(e)
+
+  }
+
+  
+
   setStageForm() {
     if (this.stageForm === false) {
       this.stageForm = true;
