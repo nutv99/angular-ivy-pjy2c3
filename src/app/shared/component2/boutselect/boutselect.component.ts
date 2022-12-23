@@ -63,7 +63,7 @@ export class BoutselectComponent implements OnInit {
     //alert(apiPathA);
     this.myurl = apiPathA;
     
-    this.myurl =  environment.apiUrl2 + '?code=L002'  ;
+    this.myurl =  environment.apiUrl2 + '?code='+ this.modelname  ;
 
     await this.http.get<any>(this.myurl).subscribe((data) => {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา

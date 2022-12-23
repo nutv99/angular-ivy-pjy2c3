@@ -24,4 +24,8 @@ export class CompanyOptionComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  reciveOutSelect(e: any, varname) {
+    alert(e);
+  }
 }

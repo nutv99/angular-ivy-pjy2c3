@@ -1,8 +1,17 @@
 <p>company-option works!</p>
 <app-boutselect [modelname]="'category'"></app-boutselect>
-<app-out-select-searchlocal
+<!-- <app-out-select-searchlocal
   [modelname]="'department'"
   datarole="dddd8878"
-></app-out-select-searchlocal>
+></app-out-select-searchlocal> -->
+
+<app-out-select-searchlocal
+  [Title]="'ค่าเริ่มต้นของประเทศ'"
+  [apiPathInput]="'country'"
+  [modelname]="'country'"
+  [HaveChild]="'n'"
+  (mylistchange)="reciveOutSelect($event, 'countryid')"
+>
+</app-out-select-searchlocal>
 
 <app-tabledata3 [varModelTable]="varmodelTable"></app-tabledata3>
