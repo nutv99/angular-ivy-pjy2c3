@@ -68,7 +68,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
     // alert(environment.apiUrl);
     //alert(apiPathA);
     this.myurl = apiPathA;
-    this.myurl = environment.apiUrl2 + '?code=' + this.modelname;
+    this.myurl = environment.apiUrl2 + 'select/?code=' + this.modelname;
     // this.myurl =
     //   'https://lovetoshopmall.com/swagger/marlinshopWork2/th/department/All/1';
 
@@ -91,13 +91,11 @@ export class OutSelectSearchlocalComponent implements OnInit {
 
   FilterHeroes(e: any) {
     console.log(e.target.value);
-    
 
     //this.showList = true;
     let st = e.target.value;
     //this.heroesB = this.heroesB.filter(this.isBigEnough(e.target.value))
-    this.heroesB = this.heroesA.filter((entry) => entry[1].includes(st)); 
-    
+    this.heroesB = this.heroesA.filter((entry) => entry[1].includes(st));
 
     if (e.target.value === '') {
       console.log(this.showDelete);
