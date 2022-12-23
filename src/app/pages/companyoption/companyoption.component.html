@@ -20,14 +20,17 @@
           >ภาษาหลักในหน้าเว็บไซต์</label
         >
         <div class="dropdown">
-          <!-- <app-bout-select
-            [Title]="'ภาษาหลักในหน้าเว็บไซต์'"
-            [apiPathInput]="'uxDefaultWebsiteLanguageLabel'"
-            [dataInit]="dataInit"
-            [ModelName]="'lang'"
-            [HaveChild]="'n'"
-          >
-          </app-bout-select> -->
+          <!-- 
+	  <app-bout-select
+	    [Title]="'ภาษาหลักในหน้าเว็บไซต์'"
+        [apiPathInput]="'uxDefaultWebsiteLanguageLabel'"
+        [dataInit]="dataInit"
+        [ModelName]="'lang'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-bout-select>
+	   -->
 
           <app-out-select-searchlocal
             [Title]="'ภาษาหลักในหน้าเว็บไซต์'"
@@ -35,7 +38,9 @@
             [dataInit]="dataInit"
             [modelname]="'lang'"
             [HaveChild]="'n'"
-            (mylistchange)="setOutSelect($event, 'uxDefaultWebsiteLanguageLabel')"
+            (mylistchange)="
+              reciveOutSelect($event, 'uxDefaultWebsiteLanguageLabel')
+            "
           >
           </app-out-select-searchlocal>
         </div>
@@ -44,7 +49,7 @@
       <!-- แบบเมนูเปลี่ยนภาษา -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          แบบเมนูเปลี่ยนภาษา
+          แบบเมนูเปลี่ยนภาษา<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -70,14 +75,17 @@
           >ค่าเริ่มต้นของประเทศ</label
         >
         <div class="dropdown">
-          <!-- <app-bout-select
-            [Title]="'ค่าเริ่มต้นของประเทศ'"
-            [apiPathInput]="'country'"
-            [dataInit]="dataInit"
-            [ModelName]="'countries'"
-            [HaveChild]="'n'"
-          >
-          </app-bout-select> -->
+          <!-- 
+	  <app-bout-select
+	    [Title]="'ค่าเริ่มต้นของประเทศ'"
+        [apiPathInput]="'country'"
+        [dataInit]="dataInit"
+        [ModelName]="'countries'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-bout-select>
+	   -->
 
           <app-out-select-searchlocal
             [Title]="'ค่าเริ่มต้นของประเทศ'"
@@ -85,7 +93,7 @@
             [dataInit]="dataInit"
             [modelname]="'countries'"
             [HaveChild]="'n'"
-            (mylistchange)="reciveOutSelect($event, 'countryid')"
+            (mylistchange)="reciveOutSelect($event, 'countryID')"
           >
           </app-out-select-searchlocal>
         </div>
@@ -99,8 +107,7 @@
           role="switch"
           id="uxRestrictAccessToShopLabel"
           formControlName="uxRestrictAccessToShopLabel"
-          (change)="setChecked('uxRestrictAccessToShopLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           จำกัดการเข้าถึงเฉพาะเว็บไซต์
         </label>
@@ -123,8 +130,7 @@
           role="switch"
           id="uxPriceRequireLoginLabel"
           formControlName="uxPriceRequireLoginLabel"
-          (change)="setChecked('uxPriceRequireLoginLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           แสดงราคาเมื่อเข้าสู่ระบบ
         </label>
@@ -147,8 +153,7 @@
           role="switch"
           id="uxEnableMaintenanceWebsiteLabel"
           formControlName="uxEnableMaintenanceWebsiteLabel"
-          (change)="setChecked('uxEnableMaintenanceWebsiteLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           ปรับปรุงร้านค้าชั่วคราว
         </label>
@@ -166,7 +171,7 @@
       <!-- หัวข้อแสดงในหน้าปรับปรุงร้านค้า -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          หัวข้อแสดงในหน้าปรับปรุงร้านค้า
+          หัวข้อแสดงในหน้าปรับปรุงร้านค้า<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -189,7 +194,7 @@
       <!-- ข้อความแสดงในหน้าปรับปรุงร้านค้า -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          ข้อความแสดงในหน้าปรับปรุงร้านค้า
+          ข้อความแสดงในหน้าปรับปรุงร้านค้า<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -212,7 +217,7 @@
       <!-- รูปภาพพื้นหลัง -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          รูปภาพพื้นหลัง
+          รูปภาพพื้นหลัง<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -239,8 +244,7 @@
           role="switch"
           id="uxEnableFacebookLoginLabel"
           formControlName="uxEnableFacebookLoginLabel"
-          (change)="setChecked('uxEnableFacebookLoginLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           ล็อกอินด้วย Facebook
         </label>
@@ -258,7 +262,7 @@
       <!-- App ID/API key * -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          App ID/API key *
+          App ID/API key *<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -281,7 +285,7 @@
       <!-- App Secret * -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          App Secret *
+          App Secret *<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -302,6 +306,27 @@
       </span>
 
       <!-- เปิดใช้การบังคับใช้ HTTPS -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxEnableFacebookLoginEnforceHTTPSLabel"
+          formControlName="uxEnableFacebookLoginEnforceHTTPSLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้การบังคับใช้ HTTPS
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxEnableFacebookLoginEnforceHTTPSLabel.touched &&
+          f.uxEnableFacebookLoginEnforceHTTPSLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า เปิดใช้การบังคับใช้ HTTPS
+      </span>
 
       <!-- ล็อกอินด้วย Line -->
       <div class="mt-3 form-check form-switch">
@@ -311,8 +336,7 @@
           role="switch"
           id="uxEnableLineLoginLabel"
           formControlName="uxEnableLineLoginLabel"
-          (change)="setChecked('uxEnableLineLoginLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           ล็อกอินด้วย Line
         </label>
@@ -335,8 +359,7 @@
           role="switch"
           id="uxCustomerAutoApproveLabel"
           formControlName="uxCustomerAutoApproveLabel"
-          (change)="setChecked('uxCustomerAutoApproveLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           ยืนยันการสมัครสมาชิกอัตโนมัติ
         </label>
@@ -359,8 +382,7 @@
           role="switch"
           id="uxEmailNewRegistrationLabel"
           formControlName="uxEmailNewRegistrationLabel"
-          (change)="setChecked('uxEmailNewRegistrationLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           ส่งอีเมลยืนยันการสมัครสมาชิก
           อีเมลยืนยันจะถูกส่งเมื่อการสมัครสมาชิกเสร็จสมบูรณ์
@@ -378,6 +400,27 @@
       </span>
 
       <!-- ระบบสต็อกสินค้า -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxUseInventoryControlLabel"
+          formControlName="uxUseInventoryControlLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          ระบบสต็อกสินค้า
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxUseInventoryControlLabel.touched &&
+          f.uxUseInventoryControlLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า ระบบสต็อกสินค้า
+      </span>
 
       <!-- แสดงจำนวนสต็อกที่มีอยู่ ในรายละเอียดสินค้าด้านหน้าร้าน -->
       <div class="mt-3 form-check form-switch">
@@ -387,8 +430,7 @@
           role="switch"
           id="uxDisplayRemainingQuantityLabel"
           formControlName="uxDisplayRemainingQuantityLabel"
-          (change)="setChecked('uxDisplayRemainingQuantityLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           แสดงจำนวนสต็อกที่มีอยู่ ในรายละเอียดสินค้าด้านหน้าร้าน
         </label>
@@ -431,63 +473,53 @@
       </span>
 
       <!-- หน่วยน้ำหนัก -->
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"
-          >หน่วยน้ำหนัก</label
-        >
-        <div class="dropdown">
-          <!-- <app-bout-select
-            [Title]="'หน่วยน้ำหนัก'"
-            [apiPathInput]="'uxWeightUnitLabel'"
-            [dataInit]="dataInit"
-            [ModelName]="'weightUnit'"
-            [HaveChild]="'n'"
-          >
-          </app-bout-select> -->
-
-          <app-out-select-searchlocal
-            [Title]="'หน่วยน้ำหนัก'"
-            [apiPathInput]="'uxWeightUnitLabel'"
-            [dataInit]="dataInit"
-            [modelname]="'weightUnit'"
-            [HaveChild]="'n'"
-            (mylistchange)="reciveOutSelect($event, 'countryid')"
-          >
-          </app-out-select-searchlocal>
-        </div>
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          หน่วยน้ำหนัก
+        </label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="uxWeightUnitLabel"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
       </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxWeightUnitLabel.touched && f.uxWeightUnitLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า หน่วยน้ำหนัก
+      </span>
 
       <!-- หน่วยความยาว -->
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"
-          >หน่วยความยาว</label
-        >
-        <div class="dropdown">
-          <!-- <app-bout-select
-            [Title]="'หน่วยความยาว'"
-            [apiPathInput]="'uxHeightUnitLabel'"
-            [dataInit]="dataInit"
-            [ModelName]="'lengthUnit'"
-            [HaveChild]="'n'"
-          >
-          </app-bout-select> -->
-
-          <app-out-select-searchlocal
-            [Title]="'หน่วยความยาว'"
-            [apiPathInput]="'uxHeightUnitLabel'"
-            [dataInit]="dataInit"
-            [modelname]="'lengthUnit'"
-            [HaveChild]="'n'"
-            (mylistchange)="reciveOutSelect($event, 'countryid')"
-          >
-          </app-out-select-searchlocal>
-        </div>
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          หน่วยความยาว
+        </label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="uxHeightUnitLabel"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
       </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxHeightUnitLabel.touched && f.uxHeightUnitLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า หน่วยความยาว
+      </span>
 
       <!-- สกุลเงิน -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          สกุลเงิน
+          สกุลเงิน<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -508,6 +540,27 @@
       </span>
 
       <!-- การชำระเงินแบบไม่ระบุตัวตน อนุญาตให้ชำระเงินแบบไม่ระบุตัวตน -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxAllowAnonymousCheckoutLabel"
+          formControlName="uxAllowAnonymousCheckoutLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          การชำระเงินแบบไม่ระบุตัวตน อนุญาตให้ชำระเงินแบบไม่ระบุตัวตน
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxAllowAnonymousCheckoutLabel.touched &&
+          f.uxAllowAnonymousCheckoutLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า การชำระเงินแบบไม่ระบุตัวตน อนุญาตให้ชำระเงินแบบไม่ระบุตัวตน
+      </span>
 
       <!-- กรอกที่อยู่สำหรับจัดส่งในหน้าชำระเงิน -->
       <div class="mt-3 form-check form-switch">
@@ -517,8 +570,7 @@
           role="switch"
           id="uxShippingAddressModeLabel"
           formControlName="uxShippingAddressModeLabel"
-          (change)="setChecked('uxShippingAddressModeLabel')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           กรอกที่อยู่สำหรับจัดส่งในหน้าชำระเงิน
         </label>
@@ -541,8 +593,7 @@
           role="switch"
           id="lcPolicyAgreementEnabled"
           formControlName="lcPolicyAgreementEnabled"
-          (change)="setChecked('lcPolicyAgreementEnabled')"
-        />"
+        />
         <label for="exampleFormControlInput1" class="form-label" style="">
           เปิดใช้งานนโยบายข้อตกลง
         </label>
@@ -560,7 +611,7 @@
       <!-- รูปแบบการชำระเงิน -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          รูปแบบการชำระเงิน
+          รูปแบบการชำระเงิน<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -583,7 +634,7 @@
       <!-- ประเทศผู้ขาย -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          ประเทศผู้ขาย
+          ประเทศผู้ขาย<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -604,11 +655,32 @@
       </span>
 
       <!-- หักส่วนลดก่อนคิดค่าขนส่ง -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxShippingIncludeDiscountLabel"
+          formControlName="uxShippingIncludeDiscountLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          หักส่วนลดก่อนคิดค่าขนส่ง
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxShippingIncludeDiscountLabel.touched &&
+          f.uxShippingIncludeDiscountLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า หักส่วนลดก่อนคิดค่าขนส่ง
+      </span>
 
       <!-- การประมาณค่าจัดส่ง -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          การประมาณค่าจัดส่ง
+          การประมาณค่าจัดส่ง<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -631,7 +703,7 @@
       <!-- สถานะการจัดส่งสินค้า -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          สถานะการจัดส่งสินค้า
+          สถานะการจัดส่งสินค้า<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -654,7 +726,7 @@
       <!-- ข้อความสถานะการจัดส่งสินค้า -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          ข้อความสถานะการจัดส่งสินค้า
+          ข้อความสถานะการจัดส่งสินค้า<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -677,7 +749,9 @@
       <!-- คิดค่าดำเนินการ (รวมอยู่ในค่าจัดส่ง) -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          คิดค่าดำเนินการ (รวมอยู่ในค่าจัดส่ง)
+          คิดค่าดำเนินการ (รวมอยู่ในค่าจัดส่ง)<span class="text-danger"
+            >***</span
+          >
         </label>
         <input
           type="text"
@@ -699,7 +773,9 @@
       <!-- คิดส่วนลดเชิงปริมาณแยกตามตัวเลือกสินค้า -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          คิดส่วนลดเชิงปริมาณแยกตามตัวเลือกสินค้า
+          คิดส่วนลดเชิงปริมาณแยกตามตัวเลือกสินค้า<span class="text-danger"
+            >***</span
+          >
         </label>
         <input
           type="text"
@@ -723,7 +799,7 @@
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
           คิดส่วนลดช่องทางชำระเงิน หลังจากหักส่วนลดอื่นๆ (เช่น คูปอง
-          ส่วนลดเชิงปริมาณ)
+          ส่วนลดเชิงปริมาณ)<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -748,7 +824,7 @@
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
           หน้ารายการสินค้า * (ค่ากำหนดใส่เป็นตัวเลข แยกด้วยจุลภาค ตัวอย่าง
-          8,12,16)
+          8,12,16)<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -773,7 +849,7 @@
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
           หน้ารายการหมวดหมู่สินค้า * (ค่ากำหนดใส่เป็นตัวเลข แยกด้วยจุลภาค
-          ตัวอย่าง 8,12,16)
+          ตัวอย่าง 8,12,16)<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -798,7 +874,7 @@
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
           หน้ารายการแผนกสินค้า * (ค่ากำหนดใส่เป็นตัวเลข แยกด้วยจุลภาค ตัวอย่าง
-          8,12,16)
+          8,12,16)<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -823,7 +899,7 @@
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
           หน้ารายการแบรนด์สินค้า * (ค่ากำหนดใส่เป็นตัวเลข แยกด้วยจุลภาค ตัวอย่าง
-          8,12,16)
+          8,12,16)<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -1007,11 +1083,34 @@
       </span>
 
       <!-- ใส่เครื่องหมายรับรอง DBD Registered ของกรมพัฒนาธุรกิจการค้า -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxDBDSourceCodeLabel"
+          formControlName="uxDBDSourceCodeLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          ใส่เครื่องหมายรับรอง DBD Registered ของกรมพัฒนาธุรกิจการค้า
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxDBDSourceCodeLabel.touched &&
+          f.uxDBDSourceCodeLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า ใส่เครื่องหมายรับรอง DBD Registered ของกรมพัฒนาธุรกิจการค้า
+      </span>
 
       <!-- แสดง popup ขอความยินยอมในการใช้คุกกี้ -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          แสดง popup ขอความยินยอมในการใช้คุกกี้
+          แสดง popup ขอความยินยอมในการใช้คุกกี้<span class="text-danger"
+            >***</span
+          >
         </label>
         <input
           type="text"
@@ -1034,7 +1133,7 @@
       <!-- ข้อความขอความยินยอมคุกกี้ * -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          ข้อความขอความยินยอมคุกกี้ *
+          ข้อความขอความยินยอมคุกกี้ *<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -1055,13 +1154,55 @@
       </span>
 
       <!-- ข้อความปุ่มนโยบายคุกกี้ * -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxCookiePolicyBtnTextLabel"
+          formControlName="uxCookiePolicyBtnTextLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          ข้อความปุ่มนโยบายคุกกี้ *
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxCookiePolicyBtnTextLabel.touched &&
+          f.uxCookiePolicyBtnTextLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า ข้อความปุ่มนโยบายคุกกี้ *
+      </span>
 
       <!-- ลิ้งค์ไปยังหน้านโยบายคุกกี้ * -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxCookiePolicyLinkLabel"
+          formControlName="uxCookiePolicyLinkLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          ลิ้งค์ไปยังหน้านโยบายคุกกี้ *
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxCookiePolicyLinkLabel.touched &&
+          f.uxCookiePolicyLinkLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า ลิ้งค์ไปยังหน้านโยบายคุกกี้ *
+      </span>
 
       <!-- ข้อความยอมรับคุกกี้ * -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          ข้อความยอมรับคุกกี้ *
+          ข้อความยอมรับคุกกี้ *<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -1082,11 +1223,32 @@
       </span>
 
       <!-- นโยบายคุกกี้ -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxCookiePolicyTextLabel"
+          formControlName="uxCookiePolicyTextLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          นโยบายคุกกี้
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxCookiePolicyTextLabel.touched &&
+          f.uxCookiePolicyTextLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า นโยบายคุกกี้
+      </span>
 
       <!-- ลิ้งสำหรับ Facebook Commerce -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          ลิ้งสำหรับ Facebook Commerce
+          ลิ้งสำหรับ Facebook Commerce<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -1109,7 +1271,7 @@
       <!-- การค้นหาแบบรวดเร็ว -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          การค้นหาแบบรวดเร็ว
+          การค้นหาแบบรวดเร็ว<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -1132,7 +1294,7 @@
       <!-- แสดงหมวดสินค้าที่ช่องค้นหา -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          แสดงหมวดสินค้าที่ช่องค้นหา
+          แสดงหมวดสินค้าที่ช่องค้นหา<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -1155,7 +1317,7 @@
       <!-- รูปแบบการค้นหา -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          รูปแบบการค้นหา
+          รูปแบบการค้นหา<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -1177,7 +1339,7 @@
       <!-- รูปแบบของการค้นหาแบบละเอียด -->
       <div class="mt-3">
         <label for="exampleFormControlInput1" class="form-label" style="">
-          รูปแบบของการค้นหาแบบละเอียด
+          รูปแบบของการค้นหาแบบละเอียด<span class="text-danger">***</span>
         </label>
         <input
           type="text"
@@ -1221,10 +1383,73 @@
       </span>
 
       <!-- เปิดใช้การจำกัดยอดสั่งซื้อสูงสุด -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxOrderMaximumEnabledLabel"
+          formControlName="uxOrderMaximumEnabledLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้การจำกัดยอดสั่งซื้อสูงสุด
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxOrderMaximumEnabledLabel.touched &&
+          f.uxOrderMaximumEnabledLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า เปิดใช้การจำกัดยอดสั่งซื้อสูงสุด
+      </span>
 
       <!-- เปิดใช้การจำกัดยอดสั่งซื้อขั้นต่ำ -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxOrderMinimumEnabledLabel"
+          formControlName="uxOrderMinimumEnabledLabel"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้การจำกัดยอดสั่งซื้อขั้นต่ำ
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxOrderMinimumEnabledLabel.touched &&
+          f.uxOrderMinimumEnabledLabel.errors?.required
+        "
+      >
+        กรุณาป้อนค่า เปิดใช้การจำกัดยอดสั่งซื้อขั้นต่ำ
+      </span>
 
       <!-- Popup โฆษณา -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="uxAdsPopupConfigurationTitle"
+          formControlName="uxAdsPopupConfigurationTitle"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          Popup โฆษณา
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.uxAdsPopupConfigurationTitle.touched &&
+          f.uxAdsPopupConfigurationTitle.errors?.required
+        "
+      >
+        กรุณาป้อนค่า Popup โฆษณา
+      </span>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" (click)="closeForm()">

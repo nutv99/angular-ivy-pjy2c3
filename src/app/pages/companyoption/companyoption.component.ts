@@ -38,7 +38,7 @@ export class CompanyoptionComponent implements OnInit {
   formModal: any;
   varmodelTable: modelTable = {
     apiTable: 'companyoption',
-    Caption: 'sssss',
+    Caption: 'กกกก',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
@@ -60,7 +60,7 @@ export class CompanyoptionComponent implements OnInit {
   id: number = 1;
   ModelName: string = 'companyoption';
   FormMode: string = 'post';
-  formTitle: string = 'เพิ่มข้อมูล-sssss ';
+  formTitle: string = 'เพิ่มข้อมูล-กกกก ';
 
   stageCrud: boolean = true;
   stageForm: boolean = true;
@@ -101,30 +101,6 @@ id : ['',Validators.required],uxDefaultWebsiteLanguageLabel : ['',Validators.req
     }
 
   }
-
-  setYesNoValue(e:any,fname:string) {
-
-    // if (this.myForm.get(fname).value === 'y') {
-    //    this.myForm.get(fname).setValue('n')
-    // } else {
-    //   this.myForm.get(fname).setValue('y')
-    // }
-    this.myForm.get(fname).setValue(e)
-
-  }
-
-  setOutSelect(e:any,fname:string) {
-
-    // if (this.myForm.get(fname).value === 'y') {
-    //    this.myForm.get(fname).setValue('n')
-    // } else {
-    //   this.myForm.get(fname).setValue('y')
-    // }
-    this.myForm.get(fname).setValue(e)
-
-  }
-
-  
 
   setStageForm() {
     if (this.stageForm === false) {
@@ -317,7 +293,19 @@ this.myForm.get('uxAdsPopupConfigurationTitle').setValue('');
   }
 
   reciveOutSelect(e: any, varname) {
-    alert(e);
+    this.myForm.get(varname).setValue(e);
+  }
+
+  setYesNoValue(e:any,fname:string) {
+
+    this.myForm.get(fname).setValue(e)
+
+  }
+
+  setOutSelect(e:any,fname:string) {
+
+    this.myForm.get(fname).setValue(e)
+
   }
 
   // openFormModal() {
