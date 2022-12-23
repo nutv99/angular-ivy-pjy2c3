@@ -15,6 +15,8 @@ import { Tabledata3Component } from '../shared/components/tabledata3/tabledata3.
 import { PagetestComponent } from '../pages/pagetest/pagetest.component';
 import { CompanyOptionComponent } from '../pages/company-option/company-option.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { CompanyoptionComponent } from'../pages/companyoption/companyoption.component';
+import { companyoptionListComponent } from '../pages/companyoption/companyoptionList.component';
 
 @NgModule({
   imports: [
@@ -32,7 +34,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
     PagetestComponent,
     CompanyOptionComponent,
+    CompanyoptionComponent,
+    companyoptionListComponent
   ],
-  exports: [PagetestComponent, CompanyOptionComponent],
+  exports: [PagetestComponent, CompanyOptionComponent,CompanyoptionComponent,
+    companyoptionListComponent],
 })
 export class PagemoduleModule {}

@@ -39,6 +39,9 @@ import { CrudComponent } from './pages/crud/crud.component';
 import { tttComponent } from './ttt/ttt.component';
 import { PagetestComponent } from './pages/pagetest/pagetest.component';
 import { CompanyOptionComponent } from './pages/company-option/company-option.component';
+
+import { CompanyoptionComponent } from'./pages/companyoption/companyoption.component';
+import { companyoptionListComponent } from './pages/companyoption/companyoptionList.component';
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -51,8 +54,11 @@ const appRoutes: Routes = [
    { path: 'test', component:PagetestComponent },
   { path: 'tbldocument/:id', component: TableDocumentComponent },
   { path: 'ccoption', component: CompanyOptionComponent },
+  { path: 'companyoptionList', component: companyoptionListComponent },
+  { path: 'companyoption/:id', component: CompanyoptionComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
+
 
 // {
 //   path: 'contact',

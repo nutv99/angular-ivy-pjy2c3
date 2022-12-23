@@ -59,6 +59,11 @@ export class AppComponent {
           linkTo: 'ccoption', //เอาค่า จาก path ใน appRoutes
           caption: 'ตั้งค่าเอกสาร',
         },
+        {
+          name: 'companyoptionList',
+          linkTo: 'companyoptionList',
+          caption: 'ตั้งค่าใหม่',
+        },
       ],
     },
     {
