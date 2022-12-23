@@ -74,7 +74,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
 
     await this.http.get<any>(this.myurl).subscribe((data) => {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา
-      //console.table('Data9999 For Select List', data);
+      console.table('Data9999 For Select List', data);
       //alert(data);
       this.dataInit = data.DataResult[0];
       this.results = this.dataInit;

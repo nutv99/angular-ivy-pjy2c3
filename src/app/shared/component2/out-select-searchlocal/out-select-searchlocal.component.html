@@ -1,4 +1,4 @@
-<div style="width:400px;margin-bottom:20px" (blur)="hideList()">
+<div style="width:100%;margin-bottom:20px;margin-top:0px" (blur)="hideList()">
   <div style="display:flex;align-items:center">
     <input
       type="text"
@@ -41,7 +41,7 @@
     </button>
   </div>
   <div
-    style="position:absolute;border:1px solid lightgray;width:400px;height:300px; 
+    style="position:absolute;border:1px solid lightgray;width:400px;height:auto;max-height:300px; 
     border-top:0px solid lightgray; overflow-y:scroll;
     box-sizing: border-box;z-index:200000;background:white"
     *ngIf="showList"

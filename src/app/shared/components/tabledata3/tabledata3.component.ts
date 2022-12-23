@@ -20,7 +20,7 @@ import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 
 //from '@fortawesome/free-regular-svg-icons'
 
-import { faFilter } from '@fortawesome/free-solid-svg-icons';
+// import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 import { environment } from '../../../environment';
 
@@ -45,7 +45,7 @@ export class Tabledata3Component implements OnInit {
   pageno: string = '';
   formCode = 'category';
 
-  faFilter = faFilter;
+  //faFilter = faFilter;
 
   searchText;
 
@@ -61,7 +61,7 @@ export class Tabledata3Component implements OnInit {
   totalrow: number = 0;
   headerTable = ['ชื่อ', 'นามสกุล', 'อีเมล์', 'เบอร์โทร', ''];
 
-  nextPageNo: number = 0; 
+  nextPageNo: number = 0;
   formName99 = 'ccop999';
 
   Pagination = [2, 3, 4];
