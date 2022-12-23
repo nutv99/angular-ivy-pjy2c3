@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environment';
 import { Emp } from '../_models/emp';
 
-const baseUrl = environment.apiUrl;
+const baseUrl = environment.apiUrl2;
 
 @Injectable({
   providedIn: 'root',
