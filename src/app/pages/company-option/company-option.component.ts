@@ -28,4 +28,5 @@ export class CompanyOptionComponent implements OnInit {
   reciveOutSelect(e: any, varname) {
     alert(e);
   }
+  
 }
