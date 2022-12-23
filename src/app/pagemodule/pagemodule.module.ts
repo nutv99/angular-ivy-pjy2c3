@@ -16,7 +16,7 @@ import { PagetestComponent } from '../pages/pagetest/pagetest.component';
 import { CompanyOptionComponent } from '../pages/company-option/company-option.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CompanyoptionComponent } from'../pages/companyoption/companyoption.component';
-import { companyoptionListComponent } from '../pages/companyoption/companyoptionList.component';
+import { CompanyoptionListComponent } from '../pages/companyoption/companyoptionList.component';
 
 @NgModule({
   imports: [
@@ -35,9 +35,9 @@ import { companyoptionListComponent } from '../pages/companyoption/companyoption
     PagetestComponent,
     CompanyOptionComponent,
     CompanyoptionComponent,
-    companyoptionListComponent
+    CompanyoptionListComponent
   ],
   exports: [PagetestComponent, CompanyOptionComponent,CompanyoptionComponent,
-    companyoptionListComponent],
+    CompanyoptionListComponent],
 })
 export class PagemoduleModule {}

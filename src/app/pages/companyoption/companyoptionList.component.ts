@@ -17,7 +17,7 @@ export interface modelTable {
   templateUrl: './companyoptionList.component.html',
   styleUrls: ['./companyoption.component.css'],
 })
-export class companyoptionListComponent implements OnInit, OnChanges {
+export class CompanyoptionListComponent implements OnInit, OnChanges {
   formModal: any;
   pageid: string = '';
   pageno: string = this._Activatedroute.snapshot.paramMap.get('pageno');

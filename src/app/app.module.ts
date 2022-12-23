@@ -41,7 +41,7 @@ import { PagetestComponent } from './pages/pagetest/pagetest.component';
 import { CompanyOptionComponent } from './pages/company-option/company-option.component';
 
 import { CompanyoptionComponent } from'./pages/companyoption/companyoption.component';
-import { companyoptionListComponent } from './pages/companyoption/companyoptionList.component';
+import { CompanyoptionListComponent } from './pages/companyoption/companyoptionList.component';
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -54,7 +54,7 @@ const appRoutes: Routes = [
    { path: 'test', component:PagetestComponent },
   { path: 'tbldocument/:id', component: TableDocumentComponent },
   { path: 'ccoption', component: CompanyOptionComponent },
-  { path: 'companyoptionList', component: companyoptionListComponent },
+  { path: 'companyoptionList', component: CompanyoptionListComponent },
   { path: 'companyoption/:id', component: CompanyoptionComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];

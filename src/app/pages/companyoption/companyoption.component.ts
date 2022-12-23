@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { Tabledata2Component } from '../../shared/components/tabledata2/tabledata2.component';
 import { SearchselectComponent } from '../../shared/components/searchselect/searchselect.component';
 
+//import { full_companyoptionModel } from '../../_models/companyoption';
 import { full_companyoptionModel } from './companyoption';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { CustomvalidationService } from '../services/customvalidation.service';
@@ -37,7 +38,7 @@ export class CompanyoptionComponent implements OnInit {
   formModal: any;
   varmodelTable: modelTable = {
     apiTable: 'companyoption',
-    Caption: 'sdasd',
+    Caption: 'sssss',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
@@ -59,7 +60,7 @@ export class CompanyoptionComponent implements OnInit {
   id: number = 1;
   ModelName: string = 'companyoption';
   FormMode: string = 'post';
-  formTitle: string = 'เพิ่มข้อมูล-sdasd ';
+  formTitle: string = 'เพิ่มข้อมูล-sssss ';
 
   stageCrud: boolean = true;
   stageForm: boolean = true;
