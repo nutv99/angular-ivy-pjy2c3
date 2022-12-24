@@ -30,7 +30,7 @@ export class APIService {
     let lang = 'th';
     //return this.http.get<any>(`${baseUrl}/${lang}/${modelName}/BySelf/${id}`);
     let getUrl = baseUrl + 'getdata/?id=' + id + '&modelName=' + modelName;
-    alert(getUrl);
+   //alert(getUrl);
     return this.http.get<any>(getUrl);
   }
 

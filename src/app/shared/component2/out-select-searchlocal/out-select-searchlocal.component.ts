@@ -24,6 +24,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
   @Input() HaveChild: string;
 
   @Input() dataInit: any;
+  @Input() dataDefault: any;
   @Input() Title: string;
 
   @Output() mylistchange: EventEmitter<string> = new EventEmitter();
