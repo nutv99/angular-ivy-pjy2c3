@@ -64,6 +64,11 @@ export class OutSelectSearchlocalComponent implements OnInit {
     this.InitDataSelect();
   }
 
+  ngOnChanges() {
+    // alert('Change-'+ this.dataDefault) ;
+    this.setToList2(this.dataDefault);
+  }
+
   async InitDataSelect() {
     // this.modelname = 'category';
     let apiPathA = environment.apiUrl + 'th/' + this.modelname + '/All/1';
@@ -133,6 +138,18 @@ export class OutSelectSearchlocalComponent implements OnInit {
     this.showList = true;
   }
 
+  setToList2(e: any) {
+    for (let i = 0; i <= this.dataInit.length - 1; i++) {
+      //console.log('222 Data Init-'+i, this.dataInit[i][0], ' VS ' , this.dataDefault) ;
+      if (parseInt(this.dataInit[i][0]) === parseInt(this.dataDefault)) {
+        this.txtDefault = this.dataInit[i][1];
+        console.log('Found', this.dataInit[i][1]);
+        this.txtDefault = this.dataInit[i][1];
+        alert(this.txtDefault);
+      }
+    }
+
+  }
   setToList(e: any) {
     //console.log(this.heroesA.length, ' vs ', this.heroesB.length);
 
@@ -143,6 +160,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
       this.myData = this.heroesA[e][1].trim();
       this.id = this.heroesB[e][0];
     }
+    
 
     let id2 = this.id.toString();
 
