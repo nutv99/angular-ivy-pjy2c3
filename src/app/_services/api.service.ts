@@ -28,7 +28,10 @@ export class APIService {
 
   getById(modelName: string, id: number) {
     let lang = 'th';
-    return this.http.get<any>(`${baseUrl}/${lang}/${modelName}/BySelf/${id}`);
+    //return this.http.get<any>(`${baseUrl}/${lang}/${modelName}/BySelf/${id}`);
+    let getUrl = baseUrl + 'getdata/?id=' + id + '&modelName=' + modelName;
+    alert(getUrl);
+    return this.http.get<any>(getUrl);
   }
 
   getByPageNo(id: number) {
@@ -50,7 +53,7 @@ export class APIService {
   // params คือ  payload
   create(formcode: string, payload: any) {
     console.clear();
-    
+
     let postUrl = baseUrl + 'postdata/?code=' + formcode;
     //return this.http.get<any>(postUrl);
     return this.http.post(postUrl, payload, this.httpOptions);

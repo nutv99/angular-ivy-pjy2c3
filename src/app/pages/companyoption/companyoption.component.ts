@@ -138,7 +138,7 @@ export class CompanyoptionComponent implements OnInit {
       // this.myForm.get('id').setValue(id);
       if (id != 'new') {
         this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;
-        this.getByID(id);
+        this.getByID(id);        
       } else {
         this.formTitle = 'เพิ่มข้อมูล' + this.varmodelTable.Caption;
       }
@@ -274,8 +274,9 @@ export class CompanyoptionComponent implements OnInit {
     console.clear();
     this.apiService.getById(this.ModelName, id).subscribe((response: any) => {
       //this.companyoptionModel = response;
-      console.log('res', response);
-
+      console.log('res', response.DataResult);
+      response = response.DataResult[0] ;
+      response = response[0] ;
       this.myForm
         .get('uxDefaultWebsiteLanguageLabel')
         .setValue(response.uxDefaultWebsiteLanguageLabel);
