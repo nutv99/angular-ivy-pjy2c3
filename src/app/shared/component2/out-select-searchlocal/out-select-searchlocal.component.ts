@@ -48,7 +48,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
   myurl: string = '';
   showDelete: boolean = false;
   showWarning: boolean = false;
-  txtDefault:string ;
+  txtDefault: string;
 
   heroesB = this.heroesA;
 
@@ -82,16 +82,18 @@ export class OutSelectSearchlocalComponent implements OnInit {
       this.results = this.dataInit;
       this.heroesA = this.dataInit;
 
-      this.heroesB = data.DataResult[0]; 
+      this.heroesB = data.DataResult[0];
 
-      //console.log('Data Init', this.dataInit) ;
+      console.log('Data Init', this.dataInit);
       //dataDefault
-      for (let i=0 ; i<= this.dataInit.length-1;i++) {
-        console.log('Data Init-'+i, this.dataInit[i][0], ' VS ' , this.dataDefault) ;
-          if (parseInt(this.dataInit[i][0]) === parseInt(this.dataDefault) ) {
-            this.txtDefault = this.dataInit[i][1] ;
-            console.log('Found') ;
-          }
+      for (let i = 0; i <= this.dataInit.length - 1; i++) {
+        //console.log('222 Data Init-'+i, this.dataInit[i][0], ' VS ' , this.dataDefault) ;
+        if (parseInt(this.dataInit[i][0]) === parseInt(this.dataDefault)) {
+          this.txtDefault = this.dataInit[i][1];
+          console.log('Found', this.dataInit[i][1]);
+          this.txtDefault = this.dataInit[i][1];
+          alert(this.txtDefault);
+        }
       }
       this.showDelete = false;
 
