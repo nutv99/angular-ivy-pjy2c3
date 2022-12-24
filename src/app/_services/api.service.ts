@@ -12,14 +12,15 @@ const baseUrl = environment.apiUrl2;
 export class APIService {
   constructor(private http: HttpClient) {}
 
-  httpOptions = {
-      headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          "Access-Control-Allow-Origin": "*"
-      }), responseType: 'text' as 'json'
-  };
+  // httpOptions = {
+  //   headers: new HttpHeaders({
+  //     'Content-Type': 'application/json',
+  //     'Access-Control-Allow-Origin': '*',
+  //   }),
+  //   responseType: 'text' as 'json',
+  // };
 
-  //httpOptions = {};
+  httpOptions = {};
 
   getAll() {
     return this.http.get<any>(baseUrl);
@@ -48,8 +49,10 @@ export class APIService {
 
   // params คือ  payload
   create(formcode: string, payload: any) {
+    console.clear();
     
-    let postUrl = baseUrl + 'postdata/?code=' + formcode ;
+    let postUrl = baseUrl + 'postdata/?code=' + formcode;
+    //return this.http.get<any>(postUrl);
     return this.http.post(postUrl, payload, this.httpOptions);
   }
 

@@ -10,6 +10,13 @@
       "prefix": "app",
       "schematics": {},
       "architect": {
+
+        "serve": {
+          "builder": "",
+          "options": {
+            "proxyConfig": "src/proxy.conf.json"
+          },
+
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {

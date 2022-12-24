@@ -1,0 +1,7 @@
+{
+  "/apiservice/*": {
+      "target": "https://lovetoshopmall.com",
+      "secure": false,
+      "logLevel": "debug"
+  }
+}
