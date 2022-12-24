@@ -35,7 +35,7 @@ export class CompanyoptionComponent implements OnInit {
   formModal: any;
   varmodelTable: modelTable = {
     apiTable: 'companyoption',
-    Caption: 'กกกก',
+    Caption: 'ตั้งรายละเอียดร้านค้า',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
@@ -56,9 +56,7 @@ export class CompanyoptionComponent implements OnInit {
   id: number = 1;
   ModelName: string = 'companyoption';
   FormMode: string = 'post';
-  formTitle: string = 'เพิ่มข้อมูล-กกกก ';
-
-  FormCode = 'A001';
+  formTitle: string = 'เพิ่มข้อมูล-ตั้งรายละเอียดร้านค้า ';
 
   stageCrud: boolean = true;
   stageForm: boolean = true;
@@ -72,9 +70,7 @@ export class CompanyoptionComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      id: ['', Validators.required],
-      uxDefaultWebsiteLanguageLabel: ['', Validators.required],
-      uxLanguageMenuDisplayLabel: [''],
+      uxDefaultWebsiteLanguageLabel: [''],
       countryID: [''],
       uxRestrictAccessToShopLabel: [''],
       uxPriceRequireLoginLabel: [''],
@@ -139,7 +135,7 @@ export class CompanyoptionComponent implements OnInit {
     if (this._Activatedroute.snapshot.paramMap.get('id')) {
       //alert(this._Activatedroute.snapshot.paramMap.get('id'));
       let id = this._Activatedroute.snapshot.paramMap.get('id');
-      this.myForm.get('id').setValue(id);
+      // this.myForm.get('id').setValue(id);
       if (id != 'new') {
         this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;
         this.getByID(id);
@@ -173,7 +169,6 @@ export class CompanyoptionComponent implements OnInit {
 
   onSubmit() {
     //this.registerForm.valid
-    //alert(this.FormMode);
     if (this.myForm.invalid) {
       alert('Cannot Submit');
       return;
@@ -183,10 +178,8 @@ export class CompanyoptionComponent implements OnInit {
       let PayLoad = {
         dataPayload: this.myForm.value,
       };
-      alert(this.ModelName);
       this.apiService
-
-        .create(this.FormCode, PayLoad)
+        .create(this.ModelName, PayLoad)
         .subscribe((response: any) => {
           this.alertWithSuccess();
         });
@@ -215,9 +208,7 @@ export class CompanyoptionComponent implements OnInit {
   newForm() {
     console.clear();
 
-    this.myForm.get('id').setValue('');
     this.myForm.get('uxDefaultWebsiteLanguageLabel').setValue('');
-    this.myForm.get('uxLanguageMenuDisplayLabel').setValue('');
     this.myForm.get('countryID').setValue('');
     this.myForm.get('uxRestrictAccessToShopLabel').setValue('');
     this.myForm.get('uxPriceRequireLoginLabel').setValue('');
@@ -285,13 +276,9 @@ export class CompanyoptionComponent implements OnInit {
       //this.companyoptionModel = response;
       console.log('res', response);
 
-      this.myForm.get('id').setValue(response.id);
       this.myForm
         .get('uxDefaultWebsiteLanguageLabel')
         .setValue(response.uxDefaultWebsiteLanguageLabel);
-      this.myForm
-        .get('uxLanguageMenuDisplayLabel')
-        .setValue(response.uxLanguageMenuDisplayLabel);
       this.myForm.get('countryID').setValue(response.countryID);
       this.myForm
         .get('uxRestrictAccessToShopLabel')
