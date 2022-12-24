@@ -48,6 +48,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
   myurl: string = '';
   showDelete: boolean = false;
   showWarning: boolean = false;
+  txtDefault:string ;
 
   heroesB = this.heroesA;
 
@@ -75,13 +76,23 @@ export class OutSelectSearchlocalComponent implements OnInit {
 
     await this.http.get<any>(this.myurl).subscribe((data) => {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา
-      console.table('Data9999 For Select List', data);
+      //console.table('Data9999 For Select List', data);
       //alert(data);
       this.dataInit = data.DataResult[0];
       this.results = this.dataInit;
       this.heroesA = this.dataInit;
 
-      this.heroesB = data.DataResult[0];
+      this.heroesB = data.DataResult[0]; 
+
+      //console.log('Data Init', this.dataInit) ;
+      //dataDefault
+      for (let i=0 ; i<= this.dataInit.length-1;i++) {
+        console.log('Data Init-'+i, this.dataInit[i][0], ' VS ' , this.dataDefault) ;
+          if (parseInt(this.dataInit[i][0]) === parseInt(this.dataDefault) ) {
+            this.txtDefault = this.dataInit[i][1] ;
+            console.log('Found') ;
+          }
+      }
       this.showDelete = false;
 
       //this.mylistchange.emit(this.sData);
