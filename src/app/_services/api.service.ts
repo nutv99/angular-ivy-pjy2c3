@@ -48,8 +48,7 @@ export class APIService {
 
   // params คือ  payload
   create(formcode: string, payload: any) {
-    // let postUrl = baseUrl + '' + formcode  + '/create';
-    // let postUrl = baseUrl + '' + formcode + '';
+    
     let postUrl = baseUrl + 'postdata/?code=' + formcode ;
     return this.http.post(postUrl, payload, this.httpOptions);
   }
