@@ -58,7 +58,7 @@ export class BoutselectComponent implements OnInit {
   }
 */
   async InitDataSelect() {
-    let apiPathA = environment.apiUrl + '?modelname=' + this.modelname;
+    let apiPathA = environment.apiUrl2 + '?modelname=' + this.modelname;
 
     //alert(apiPathA);
     this.myurl = apiPathA;
