@@ -524,6 +524,9 @@ export class CompanyoptionComponent implements OnInit {
 
   setChanges() {
     this.aaa = 1;
+    this.myForm
+        .get('uxDefaultWebsiteLanguageLabel')
+        .setValue(this.aaa);
     console.log('hange Occur');
   }
 
