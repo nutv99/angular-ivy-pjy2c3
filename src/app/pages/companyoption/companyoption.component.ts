@@ -58,6 +58,8 @@ export class CompanyoptionComponent implements OnInit {
   FormMode: string = 'post';
   formTitle: string = 'เพิ่มข้อมูล-กกกก ';
 
+  FormCode = 'A001';
+
   stageCrud: boolean = true;
   stageForm: boolean = true;
   myForm: FormGroup;
@@ -72,13 +74,13 @@ export class CompanyoptionComponent implements OnInit {
     this.myForm = this.fb.group({
       id: ['', Validators.required],
       uxDefaultWebsiteLanguageLabel: ['', Validators.required],
-      uxLanguageMenuDisplayLabel: ['', Validators.required],
+      uxLanguageMenuDisplayLabel: [''],
       countryID: [''],
       uxRestrictAccessToShopLabel: [''],
       uxPriceRequireLoginLabel: [''],
       uxEnableMaintenanceWebsiteLabel: [''],
-      uxMaintenanceTitleLabel: ['', Validators.required],
-      uxMaintenanceTextLabel: ['', Validators.required],
+      uxMaintenanceTitleLabel: [''],
+      uxMaintenanceTextLabel: [''],
       uxBackgroudTitle: [''],
       uxEnableFacebookLoginLabel: [''],
       uxFacebookAPIKeyLabel: [''],
@@ -184,7 +186,7 @@ export class CompanyoptionComponent implements OnInit {
       alert(this.ModelName);
       this.apiService
 
-        .create(this.ModelName, PayLoad)
+        .create(this.FormCode, PayLoad)
         .subscribe((response: any) => {
           this.alertWithSuccess();
         });

@@ -47,8 +47,10 @@ export class APIService {
   }
 
   // params คือ  payload
-  create(modelName: string, payload: any) {
-    let postUrl = baseUrl + '/' + modelName + '/create';
+  create(formcode: string, payload: any) {
+    // let postUrl = baseUrl + '' + formcode  + '/create';
+    // let postUrl = baseUrl + '' + formcode + '';
+    let postUrl = baseUrl + 'postdata/?code=' + formcode ;
     return this.http.post(postUrl, payload, this.httpOptions);
   }
 
@@ -58,7 +60,7 @@ export class APIService {
   }
 
   delete999(modelName: string, id: number) {
-    let deleteUrl = baseUrl + '/th/' + modelName + '/delete/'+ id ;
+    let deleteUrl = baseUrl + '/th/' + modelName + '/delete/' + id;
     return this.http.delete(deleteUrl, this.httpOptions);
   }
 }
