@@ -128,6 +128,9 @@ export class PaymentchannelComponent implements OnInit {
         next: (result: any) => {
           //console.log(result);
           if (result.resultstatus === 'success') {
+            
+            this.myForm.get('id').setValue(result.DataResult);
+            this.FormMode = 'put';
             this.alertWithSuccess();
           } else {
             this.alertWithError(result.ErrorMsg);
