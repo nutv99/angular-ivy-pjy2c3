@@ -124,23 +124,22 @@ export class PaymentchannelComponent implements OnInit {
       let PayLoad = {
         dataPayload: this.myForm.value,
       };
-      this.apiService
-        .create(this.ModelName, PayLoad)
-        .subscribe(
-          {
-            next: data => {
-                console.log(data);
-            },
-            error: error => {
-                //this.errorMessage = error.message;
-                alert('Error') ;
-                console.error('There was an error!', error);
-            }
-        }
-
-         )
-        
-        
+      this.apiService.create(this.ModelName, PayLoad).subscribe({
+        next: (result: any) => {
+          //console.log(result);
+          if (result.resultstatus === 'success') {
+            this.alertWithSuccess();
+          } else {
+            this.alertWithError(result.ErrorMsg);
+          }
+        },
+        error: (error) => {
+          //this.errorMessage = error.message;
+          //alert('Error');
+          this.alertWithError(error.message);
+          console.error('There was an error!', error);
+        },
+      });
     }
 
     if (this.FormMode === 'patch') {
@@ -217,9 +216,10 @@ export class PaymentchannelComponent implements OnInit {
 
   searchPaymentchannel() {}
 
-  alertWithError() {
-    alert('Error');
-    // Swal.fire('Thank you...', 'You submitted succesfully!', 'error');
+  alertWithError(errormsg) {
+    //alert('Error');
+    Swal.fire('ล้มเหลว...', 'การบันทึกข้อมูล ไม่สำเร็จ!', 'error');
+    console.log('Post Result :: ', errormsg);
   }
 
   confirmBox() {
