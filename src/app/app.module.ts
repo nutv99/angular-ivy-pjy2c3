@@ -43,7 +43,10 @@ import { CompanyOptionComponent } from './pages/company-option/company-option.co
 import { CompanyoptionComponent } from'./pages/companyoption/companyoption.component';
 import { CompanyoptionListComponent } from './pages/companyoption/companyoptionList.component';
 
-import { CompanyComponent } from'./pages/company/company.component';
+import { CompanyComponent } from'./pages/company/company.component' ;
+
+import { PaymentchannelComponent } from'./pages/paymentchannel/paymentchannel.component';
+import { PaymentchannelListComponent } from './pages/paymentchannel/paymentchannelList.component';
 
 
 // ใส่ใน Declaration
@@ -61,6 +64,8 @@ const appRoutes: Routes = [
   { path: 'companyoptionList', component: CompanyoptionListComponent },
   { path: 'companyoption/:id', component: CompanyoptionComponent },
   { path: 'company', component: CompanyComponent },
+  { path: 'paymentchannelList', component: PaymentchannelListComponent },
+  { path: 'paymentchannel/:id', component: PaymentchannelComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 

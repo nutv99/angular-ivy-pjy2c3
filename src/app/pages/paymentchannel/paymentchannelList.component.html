@@ -1,0 +1,9 @@
+<h2>ตั้งช่องทางการชำระเงิน</h2>
+<button [routerLink]="['/paymentchannel/new']">เพิ่มข้อมูล</button>
+<app-tabledata3
+  [varModelTable]="varmodelTable"
+  (MYIDOutDelete)="OnDeletePaymentchannel($event)"
+>
+</app-tabledata3>
+
+

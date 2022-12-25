@@ -19,7 +19,8 @@ import { CompanyoptionComponent } from'../pages/companyoption/companyoption.comp
 import { CompanyoptionListComponent } from '../pages/companyoption/companyoptionList.component';
 
 import { CompanyComponent } from'../pages/company/company.component';
-
+import { PaymentchannelComponent } from'../pages/paymentchannel/paymentchannel.component';
+import { PaymentchannelListComponent } from '../pages/paymentchannel/paymentchannelList.component';
 
 
 @NgModule({
@@ -40,7 +41,7 @@ import { CompanyComponent } from'../pages/company/company.component';
     CompanyOptionComponent,
     CompanyoptionComponent,
     CompanyoptionListComponent,
-    CompanyComponent
+    CompanyComponent,PaymentchannelComponent,PaymentchannelListComponent
   ],
   exports: [PagetestComponent, CompanyOptionComponent,CompanyoptionComponent,
     CompanyoptionListComponent],

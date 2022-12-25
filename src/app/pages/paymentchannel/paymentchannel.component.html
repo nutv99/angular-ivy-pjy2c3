@@ -1,0 +1,96 @@
+<h2>paymentchannel</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+
+<!-- id -->
+
+<!-- เปิดใช้งาน -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="lcIsEnabled" formControlName="lcIsEnabled">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.lcIsEnabled.touched && f.lcIsEnabled.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน </span>
+
+<!-- ชื่อช่องทางชำระเงิน * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อช่องทางชำระเงิน *
+     </label>
+     <input type="text" class="form-control" formControlName="lcDisplayName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcDisplayName.touched && f.lcDisplayName.errors?.required"> กรุณาป้อนค่า ชื่อช่องทางชำระเงิน * </span>
+
+<!-- คำบรรยาย -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          คำบรรยาย
+     </label>
+     <input type="text" class="form-control" formControlName="lcDescription" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcDescription.touched && f.lcDescription.errors?.required"> กรุณาป้อนค่า คำบรรยาย </span>
+
+<!-- รูปภาพ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปภาพ
+     </label>
+     <input type="text" class="form-control" formControlName="lcPaymentImage" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcPaymentImage.touched && f.lcPaymentImage.errors?.required"> กรุณาป้อนค่า รูปภาพ </span>
+
+<!-- เปิดใช้งานส่วนลด -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxIsDiscountLabel" formControlName="uxIsDiscountLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งานส่วนลด
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxIsDiscountLabel.touched && f.uxIsDiscountLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้งานส่วนลด </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
