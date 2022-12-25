@@ -35,6 +35,9 @@ export class OutSelectSearchlocalComponent implements OnInit {
   showList: boolean = false;
   addListMode: boolean = true;
   id: number = -99;
+  svarname = 'var_' + Math.ceil(Math.random() * 10000).toString();
+  // svarname = svarname.toString();
+
   heroesA = [
     { id: 1, name: 'Superman' },
     { id: 2, name: 'Batman' },
@@ -55,6 +58,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
   constructor(private http: HttpClient, private renderer: Renderer2) {}
 
   ngOnInit() {
+    alert(this.svarname);
     if (this.dataInit === '') {
       this.InitDataSelect();
     } else {
@@ -148,7 +152,6 @@ export class OutSelectSearchlocalComponent implements OnInit {
         alert(this.txtDefault);
       }
     }
-
   }
   setToList(e: any) {
     //console.log(this.heroesA.length, ' vs ', this.heroesB.length);
@@ -160,7 +163,6 @@ export class OutSelectSearchlocalComponent implements OnInit {
       this.myData = this.heroesA[e][1].trim();
       this.id = this.heroesB[e][0];
     }
-    
 
     let id2 = this.id.toString();
 
@@ -183,7 +185,8 @@ export class OutSelectSearchlocalComponent implements OnInit {
     this.showList = false;
     this.showDelete = false;
     this.showWarning = true;
-    var element = this.renderer.selectRootElement('#myInput9999');
+    var element = this.renderer.selectRootElement(this.svarname);
+    element.value = '';
     element.focus();
   }
 }
