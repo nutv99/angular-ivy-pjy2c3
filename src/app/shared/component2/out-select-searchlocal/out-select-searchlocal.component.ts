@@ -58,7 +58,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
   constructor(private http: HttpClient, private renderer: Renderer2) {}
 
   ngOnInit() {
-    alert(this.svarname);
+    //alert(this.svarname);
     if (this.dataInit === '') {
       this.InitDataSelect();
     } else {

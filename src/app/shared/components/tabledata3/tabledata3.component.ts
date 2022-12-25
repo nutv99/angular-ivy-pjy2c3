@@ -84,7 +84,7 @@ export class Tabledata3Component implements OnInit {
     this.headerTable = this.varModelTable.headerColTable;
     // this.headerTable = this.varModelTable.headerTable;
     this.tableAPI = this.varModelTable.apiTable;
-    //alert(this.tableAPI);
+    
     if (this._Activatedroute.snapshot.paramMap.get('pageno')) {
       this.pageno = this._Activatedroute.snapshot.paramMap.get('pageno');
     } else {
@@ -112,12 +112,12 @@ export class Tabledata3Component implements OnInit {
     this.results = '';
     //pageno = this.varModelTable.pageno;
 
-    this.myurl =
-      'https://lovetoshopmall.com/apiservice/tshop/?code=a002&pagenno=' +
-      wantpageno;
+    // this.myurl =
+    //   'https://lovetoshopmall.com/apiservice/tshop/?code='+ this.varModelTable.apiTable +'&pagenno=' +
+    //   wantpageno;
 
-    this.myurl = environment.apiUrl2 + '?code=a002&pagenno=' + wantpageno;
-
+    this.myurl = environment.apiUrl2 + 'getlist/?code=' + this.varModelTable.apiTable + '&pageno=' + wantpageno;
+    //alert(this.myurl) ;
     // this.myurl =
     // environment.apiUrl + this.varModelTable.apiTable +'/ByPageNo/' +pageno;
 
