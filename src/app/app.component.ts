@@ -56,13 +56,13 @@ export class AppComponent {
         },
         {
           name: 'copmanyoption', // ชื่อตัวแปรเมนูอันนี้
-          linkTo: 'ccoption', //เอาค่า จาก path ใน appRoutes
+          linkTo: 'ccoption', //เอาค่า จาก path ใน appRoutes เช่น companyoption/:id'
           caption: 'ตั้งค่าเอกสาร',
         },
         {
-          name: 'companyoptionList',
-          linkTo: 'companyoptionList',
-          caption: 'ตั้งค่าใหม่',
+          name: 'CompanyoptionComponent',
+          linkTo: 'companyoption/1',
+          caption: 'ตั้งรายละเอียดร้านค้า',
         },
       ],
     },

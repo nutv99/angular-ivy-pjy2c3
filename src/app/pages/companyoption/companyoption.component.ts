@@ -57,7 +57,7 @@ export class CompanyoptionComponent implements OnInit {
   ModelName: string = 'companyoption';
   FormMode: string = 'post';
   formTitle: string = 'เพิ่มข้อมูล-ตั้งรายละเอียดร้านค้า ';
-  aaa: any = 2;
+  aaa: any = -1;
 
   stageCrud: boolean = true;
   stageForm: boolean = true;
@@ -278,6 +278,7 @@ export class CompanyoptionComponent implements OnInit {
       console.log('res', response.DataResult);
       response = response.DataResult[0];
       response = response[0];
+      this.aaa = response.uxDefaultWebsiteLanguageLabel;
       this.myForm
         .get('uxDefaultWebsiteLanguageLabel')
         .setValue(response.uxDefaultWebsiteLanguageLabel);
