@@ -31,9 +31,6 @@ export interface modelTable {
   templateUrl: './paymentchannel.component.html',
   styleUrls: ['./paymentchannel.component.css'],
 })
-
-
-
 export class PaymentchannelComponent implements OnInit {
   formModal: any;
   varmodelTable: modelTable = {
@@ -44,15 +41,14 @@ export class PaymentchannelComponent implements OnInit {
   };
   // Initial Form Model VAR & Value
   paymentchannelModel: full_paymentchannelModel = {
-    id: 2
+    id: 2,
   };
 
   dataInit = [
     {
       ID: 1,
       '0': 1,
-      categoryDesc:
-        'เลือก...',
+      categoryDesc: 'เลือก...',
       '1': 'เลือก...',
     },
   ];
@@ -66,26 +62,33 @@ export class PaymentchannelComponent implements OnInit {
   stageForm: boolean = true;
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private apiService: APIService,private _Activatedroute: ActivatedRoute) {}
+  constructor(
+    private fb: FormBuilder,
+    private apiService: APIService,
+    private _Activatedroute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.myForm = this.fb.group({
+      id: [''],
+      lcIsEnabled: [''],
+      lcDisplayName: [''],
+      lcDescription: [''],
+      lcPaymentImage: [''],
+      uxIsDiscountLabel: [''],
+    });
 
-	
-this.myForm = this.fb.group({
-id : [''],lcIsEnabled : [''],lcDisplayName : [''],lcDescription : [''],lcPaymentImage : [''],uxIsDiscountLabel : ['']});
-
-	if (this._Activatedroute.snapshot.paramMap.get('id')) {
+    if (this._Activatedroute.snapshot.paramMap.get('id')) {
       //alert(this._Activatedroute.snapshot.paramMap.get('id'));
       let id = this._Activatedroute.snapshot.paramMap.get('id');
       this.myForm.get('id').setValue(id);
       if (id != 'new') {
-        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;;
+        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;
         this.getByID(id);
       } else {
-        this.formTitle = 'เพิ่มข้อมูล' +this.varmodelTable.Caption;;
+        this.formTitle = 'เพิ่มข้อมูล' + this.varmodelTable.Caption;
       }
     }
-
   }
 
   get f() {
@@ -93,13 +96,11 @@ id : [''],lcIsEnabled : [''],lcDisplayName : [''],lcDescription : [''],lcPayment
   }
 
   setChecked(fname) {
-
     if (this.myForm.get(fname).value === 'y') {
-       this.myForm.get(fname).setValue('n')
+      this.myForm.get(fname).setValue('n');
     } else {
-      this.myForm.get(fname).setValue('y')
+      this.myForm.get(fname).setValue('y');
     }
-
   }
 
   setStageForm() {
@@ -125,9 +126,21 @@ id : [''],lcIsEnabled : [''],lcDisplayName : [''],lcDescription : [''],lcPayment
       };
       this.apiService
         .create(this.ModelName, PayLoad)
-        .subscribe((response: any) => {
-          this.alertWithSuccess();
-        });
+        .subscribe(
+          {
+            next: data => {
+                console.log(data);
+            },
+            error: error => {
+                //this.errorMessage = error.message;
+                alert('Error') ;
+                console.error('There was an error!', error);
+            }
+        }
+
+         )
+        
+        
     }
 
     if (this.FormMode === 'patch') {
@@ -154,13 +167,11 @@ id : [''],lcIsEnabled : [''],lcDisplayName : [''],lcDescription : [''],lcPayment
     console.clear();
 
     this.myForm.get('id').setValue('');
-this.myForm.get('lcIsEnabled').setValue('');
-this.myForm.get('lcDisplayName').setValue('');
-this.myForm.get('lcDescription').setValue('');
-this.myForm.get('lcPaymentImage').setValue('');
-this.myForm.get('uxIsDiscountLabel').setValue('');
-
-
+    this.myForm.get('lcIsEnabled').setValue('');
+    this.myForm.get('lcDisplayName').setValue('');
+    this.myForm.get('lcDescription').setValue('');
+    this.myForm.get('lcPaymentImage').setValue('');
+    this.myForm.get('uxIsDiscountLabel').setValue('');
   }
 
   getByID(id) {
@@ -169,8 +180,12 @@ this.myForm.get('uxIsDiscountLabel').setValue('');
       //this.paymentchannelModel = response;
       console.log('res', response);
 
-      this.myForm.get('id').setValue(response.id);this.myForm.get('lcIsEnabled').setValue(response.lcIsEnabled);this.myForm.get('lcDisplayName').setValue(response.lcDisplayName);this.myForm.get('lcDescription').setValue(response.lcDescription);this.myForm.get('lcPaymentImage').setValue(response.lcPaymentImage);this.myForm.get('uxIsDiscountLabel').setValue(response.uxIsDiscountLabel);
-
+      this.myForm.get('id').setValue(response.id);
+      this.myForm.get('lcIsEnabled').setValue(response.lcIsEnabled);
+      this.myForm.get('lcDisplayName').setValue(response.lcDisplayName);
+      this.myForm.get('lcDescription').setValue(response.lcDescription);
+      this.myForm.get('lcPaymentImage').setValue(response.lcPaymentImage);
+      this.myForm.get('uxIsDiscountLabel').setValue(response.uxIsDiscountLabel);
 
       //this.myForm.get('Mode').setValue('patch');
     });
@@ -202,6 +217,11 @@ this.myForm.get('uxIsDiscountLabel').setValue('');
 
   searchPaymentchannel() {}
 
+  alertWithError() {
+    alert('Error');
+    // Swal.fire('Thank you...', 'You submitted succesfully!', 'error');
+  }
+
   confirmBox() {
     Swal.fire({
       title: 'ท่านต้องการ ลบข้อมูลนี้ ?',
@@ -231,25 +251,20 @@ this.myForm.get('uxIsDiscountLabel').setValue('');
     Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
   }
 
-  paymentchannel_Emit(e:any) {
-     this.dataInit  = e ;
-
+  paymentchannel_Emit(e: any) {
+    this.dataInit = e;
   }
 
   reciveOutSelect(e: any, varname) {
     this.myForm.get(varname).setValue(e);
   }
 
-  setYesNoValue(e:any,fname:string) {
-
-    this.myForm.get(fname).setValue(e)
-
+  setYesNoValue(e: any, fname: string) {
+    this.myForm.get(fname).setValue(e);
   }
 
-  setOutSelect(e:any,fname:string) {
-
-    this.myForm.get(fname).setValue(e)
-
+  setOutSelect(e: any, fname: string) {
+    this.myForm.get(fname).setValue(e);
   }
 
   // openFormModal() {
