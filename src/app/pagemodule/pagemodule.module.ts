@@ -18,6 +18,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CompanyoptionComponent } from'../pages/companyoption/companyoption.component';
 import { CompanyoptionListComponent } from '../pages/companyoption/companyoptionList.component';
 
+import { CompanyComponent } from'../pages/company/company.component';
+
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -35,7 +39,8 @@ import { CompanyoptionListComponent } from '../pages/companyoption/companyoption
     PagetestComponent,
     CompanyOptionComponent,
     CompanyoptionComponent,
-    CompanyoptionListComponent
+    CompanyoptionListComponent,
+    CompanyComponent
   ],
   exports: [PagetestComponent, CompanyOptionComponent,CompanyoptionComponent,
     CompanyoptionListComponent],

@@ -42,6 +42,10 @@ import { CompanyOptionComponent } from './pages/company-option/company-option.co
 
 import { CompanyoptionComponent } from'./pages/companyoption/companyoption.component';
 import { CompanyoptionListComponent } from './pages/companyoption/companyoptionList.component';
+
+import { CompanyComponent } from'./pages/company/company.component';
+
+
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -56,6 +60,7 @@ const appRoutes: Routes = [
   { path: 'ccoption', component: CompanyOptionComponent },
   { path: 'companyoptionList', component: CompanyoptionListComponent },
   { path: 'companyoption/:id', component: CompanyoptionComponent },
+  { path: 'company', component: CompanyComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 

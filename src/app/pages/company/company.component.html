@@ -1,0 +1,1040 @@
+<h2>company</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+
+<!-- id -->
+<div class="mt-3"> 
+     <input type="hidden" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
+</div>
+
+
+<!-- ชื่อบริษัท -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อบริษัท<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessName.touched && f.lcBusinessName.errors?.required"> กรุณาป้อนค่า ชื่อบริษัท </span>
+
+<!-- ที่อยู่ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ที่อยู่<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessAddress" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessAddress.touched && f.lcBusinessAddress.errors?.required"> กรุณาป้อนค่า ที่อยู่ </span>
+
+<!-- เขต/อำเภอ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เขต/อำเภอ
+     </label>
+     <input type="number" class="form-control" formControlName="lcBusinessCity" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessCity.touched && f.lcBusinessCity.errors?.required"> กรุณาป้อนค่า เขต/อำเภอ </span>
+
+<!-- จังหวัด -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">จังหวัด</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'จังหวัด'"
+        [apiPathInput]="'lcBusinessState'"
+        [dataInit]="dataInit"
+        [ModelName]="'province'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'จังหวัด'"
+        [apiPathInput]="'lcBusinessState'"
+        [dataInit]="dataInit"
+        [modelname]="'province'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'lcBusinessState')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+
+<!-- รหัสไปรษณีย์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสไปรษณีย์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessZip" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessZip.touched && f.lcBusinessZip.errors?.required"> กรุณาป้อนค่า รหัสไปรษณีย์ </span>
+
+<!-- ประเทศ -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">ประเทศ</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'ประเทศ'"
+        [apiPathInput]="'lcBusinessCountry'"
+        [dataInit]="dataInit"
+        [ModelName]="'countries'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'ประเทศ'"
+        [apiPathInput]="'lcBusinessCountry'"
+        [dataInit]="dataInit"
+        [modelname]="'countries'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'lcBusinessCountry')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+
+<!-- ใช้เครื่องหมายคอมม่า (,) คั่นระหว่างหมายเลข -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxBusinessPhoneNoteLabel" formControlName="uxBusinessPhoneNoteLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ใช้เครื่องหมายคอมม่า (,) คั่นระหว่างหมายเลข
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxBusinessPhoneNoteLabel.touched && f.uxBusinessPhoneNoteLabel.errors?.required"> กรุณาป้อนค่า ใช้เครื่องหมายคอมม่า (,) คั่นระหว่างหมายเลข </span>
+
+<!-- แฟกซ์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แฟกซ์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessFax" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessFax.touched && f.lcBusinessFax.errors?.required"> กรุณาป้อนค่า แฟกซ์ </span>
+
+<!-- อีเมล * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          อีเมล *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessEmail" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessEmail.touched && f.lcBusinessEmail.errors?.required"> กรุณาป้อนค่า อีเมล * </span>
+
+<!-- แผนที่ร้านค้า -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxEnableMapLabel" formControlName="uxEnableMapLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แผนที่ร้านค้า
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEnableMapLabel.touched && f.uxEnableMapLabel.errors?.required"> กรุณาป้อนค่า แผนที่ร้านค้า </span>
+
+<!-- รูปแบบแสดงแผนที่ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปแบบแสดงแผนที่<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxGoogleMapTypeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxGoogleMapTypeLabel.touched && f.uxGoogleMapTypeLabel.errors?.required"> กรุณาป้อนค่า รูปแบบแสดงแผนที่ </span>
+
+<!-- Google Map API Key * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Google Map API Key *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxGoogleMapAPIKeyLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxGoogleMapAPIKeyLabel.touched && f.uxGoogleMapAPIKeyLabel.errors?.required"> กรุณาป้อนค่า Google Map API Key * </span>
+
+<!-- ละติจูด * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ละติจูด *
+     </label>
+     <input type="number" class="form-control" formControlName="uxLatitudeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLatitudeLabel.touched && f.uxLatitudeLabel.errors?.required"> กรุณาป้อนค่า ละติจูด * </span>
+
+<!-- ลองจิจูด * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ลองจิจูด *
+     </label>
+     <input type="number" class="form-control" formControlName="uxLongitudeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLongitudeLabel.touched && f.uxLongitudeLabel.errors?.required"> กรุณาป้อนค่า ลองจิจูด * </span>
+
+<!-- ผู้ให้บริการอีเมล -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ผู้ให้บริการอีเมล<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxEmailProviderLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEmailProviderLabel.touched && f.uxEmailProviderLabel.errors?.required"> กรุณาป้อนค่า ผู้ให้บริการอีเมล </span>
+
+<!-- อีเมลเซิร์ฟเวอร์ (SMTP) * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          อีเมลเซิร์ฟเวอร์ (SMTP) *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcSmtpServer" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcSmtpServer.touched && f.lcSmtpServer.errors?.required"> กรุณาป้อนค่า อีเมลเซิร์ฟเวอร์ (SMTP) * </span>
+
+<!-- Port * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Port *
+     </label>
+     <input type="number" class="form-control" formControlName="lcSmtpPort" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcSmtpPort.touched && f.lcSmtpPort.errors?.required"> กรุณาป้อนค่า Port * </span>
+
+<!-- ต้องการข้อมูลผู้ใช้อีเมล -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="lcSmtpAuthenRequired" formControlName="lcSmtpAuthenRequired">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ต้องการข้อมูลผู้ใช้อีเมล
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.lcSmtpAuthenRequired.touched && f.lcSmtpAuthenRequired.errors?.required"> กรุณาป้อนค่า ต้องการข้อมูลผู้ใช้อีเมล </span>
+
+<!-- เปิดใช้ SSL -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxRequireEmailSslLabel" formControlName="uxRequireEmailSslLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้ SSL
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxRequireEmailSslLabel.touched && f.uxRequireEmailSslLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้ SSL </span>
+
+<!-- Facebook Fanpage -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebook Fanpage<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxEnableFacebookPageLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEnableFacebookPageLabel.touched && f.uxEnableFacebookPageLabel.errors?.required"> กรุณาป้อนค่า Facebook Fanpage </span>
+
+<!-- Facebooks Page URL * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebooks Page URL *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacebookPageURLLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookPageURLLabel.touched && f.uxFacebookPageURLLabel.errors?.required"> กรุณาป้อนค่า Facebooks Page URL * </span>
+
+<!-- LINE -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          LINE<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxLineEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLineEnabledLabel.touched && f.uxLineEnabledLabel.errors?.required"> กรุณาป้อนค่า LINE </span>
+
+<!-- LINE ID * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          LINE ID *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxLineAccountLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLineAccountLabel.touched && f.uxLineAccountLabel.errors?.required"> กรุณาป้อนค่า LINE ID * </span>
+
+<!-- Twitter -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Twitter<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxTwitterEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxTwitterEnabledLabel.touched && f.uxTwitterEnabledLabel.errors?.required"> กรุณาป้อนค่า Twitter </span>
+
+<!-- Twitter URL * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Twitter URL *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxTwitterUrlLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxTwitterUrlLabel.touched && f.uxTwitterUrlLabel.errors?.required"> กรุณาป้อนค่า Twitter URL * </span>
+
+<!-- Instagram -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Instagram<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxInstagramEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxInstagramEnabledLabel.touched && f.uxInstagramEnabledLabel.errors?.required"> กรุณาป้อนค่า Instagram </span>
+
+<!-- Instagram URL * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Instagram URL *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxInstagramUrlLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxInstagramUrlLabel.touched && f.uxInstagramUrlLabel.errors?.required"> กรุณาป้อนค่า Instagram URL * </span>
+
+<!-- Youtube -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Youtube<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxYoutubeEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxYoutubeEnabledLabel.touched && f.uxYoutubeEnabledLabel.errors?.required"> กรุณาป้อนค่า Youtube </span>
+
+<!-- Youtube URL * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Youtube URL *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxYoutubeUrlLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxYoutubeUrlLabel.touched && f.uxYoutubeUrlLabel.errors?.required"> กรุณาป้อนค่า Youtube URL * </span>
+
+<!-- แชร์ผ่าน Facebook (Like&amp;Share) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFaceBookLikeButtonLabel" formControlName="uxFaceBookLikeButtonLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แชร์ผ่าน Facebook (Like&amp;Share)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFaceBookLikeButtonLabel.touched && f.uxFaceBookLikeButtonLabel.errors?.required"> กรุณาป้อนค่า แชร์ผ่าน Facebook (Like&amp;Share) </span>
+
+<!-- แชร์ผ่าน LINE (LINE it!) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxLineItLabel" formControlName="uxLineItLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แชร์ผ่าน LINE (LINE it!)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLineItLabel.touched && f.uxLineItLabel.errors?.required"> กรุณาป้อนค่า แชร์ผ่าน LINE (LINE it!) </span>
+
+<!-- แชร์ผ่าน Twitter (Tweet) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxTwitterTweetLabel" formControlName="uxTwitterTweetLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แชร์ผ่าน Twitter (Tweet)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxTwitterTweetLabel.touched && f.uxTwitterTweetLabel.errors?.required"> กรุณาป้อนค่า แชร์ผ่าน Twitter (Tweet) </span>
+
+<!-- Zendesk Chat -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxZopimEnabledLabel" formControlName="uxZopimEnabledLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Zendesk Chat
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxZopimEnabledLabel.touched && f.uxZopimEnabledLabel.errors?.required"> กรุณาป้อนค่า Zendesk Chat </span>
+
+<!-- Facebook Messenger -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFacebookMessengerEnabledLabel" formControlName="uxFacebookMessengerEnabledLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebook Messenger
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookMessengerEnabledLabel.touched && f.uxFacebookMessengerEnabledLabel.errors?.required"> กรุณาป้อนค่า Facebook Messenger </span>
+
+<!-- เมื่อคลิ๊กที่ปุ่ม Facebook Messenger ให้ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เมื่อคลิ๊กที่ปุ่ม Facebook Messenger ให้<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacebookMessengerInfoLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookMessengerInfoLabel.touched && f.uxFacebookMessengerInfoLabel.errors?.required"> กรุณาป้อนค่า เมื่อคลิ๊กที่ปุ่ม Facebook Messenger ให้ </span>
+
+<!-- ลิ้งค์ไปยังโปรแกรม Facebook Messenger -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFacebookMessengerLabel" formControlName="uxFacebookMessengerLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ลิ้งค์ไปยังโปรแกรม Facebook Messenger
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookMessengerLabel.touched && f.uxFacebookMessengerLabel.errors?.required"> กรุณาป้อนค่า ลิ้งค์ไปยังโปรแกรม Facebook Messenger </span>
+
+<!-- แสดงกล่องข้อความที่หน้าเว็บไซต์ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFacebookCustomerLabel" formControlName="uxFacebookCustomerLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แสดงกล่องข้อความที่หน้าเว็บไซต์
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookCustomerLabel.touched && f.uxFacebookCustomerLabel.errors?.required"> กรุณาป้อนค่า แสดงกล่องข้อความที่หน้าเว็บไซต์ </span>
+
+<!-- Facebook Fanpage ID * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebook Fanpage ID *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacebookCustomerFanpageID" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookCustomerFanpageID.touched && f.uxFacebookCustomerFanpageID.errors?.required"> กรุณาป้อนค่า Facebook Fanpage ID * </span>
+
+<!-- Facebook App ID * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebook App ID *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacebookCustomerAppID" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookCustomerAppID.touched && f.uxFacebookCustomerAppID.errors?.required"> กรุณาป้อนค่า Facebook App ID * </span>
+
+<!-- ความยาวไม่เกิน 80 ตัวอักษร -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFacebookCustomerWelcomeNoteText" formControlName="uxFacebookCustomerWelcomeNoteText">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ความยาวไม่เกิน 80 ตัวอักษร
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookCustomerWelcomeNoteText.touched && f.uxFacebookCustomerWelcomeNoteText.errors?.required"> กรุณาป้อนค่า ความยาวไม่เกิน 80 ตัวอักษร </span>
+
+<!-- รหัสผ่านปัจจุบัน -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสผ่านปัจจุบัน<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxOldPasswordLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxOldPasswordLabel.touched && f.uxOldPasswordLabel.errors?.required"> กรุณาป้อนค่า รหัสผ่านปัจจุบัน </span>
+
+<!-- รหัสผ่านใหม่ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสผ่านใหม่<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxNewPasswordLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxNewPasswordLabel.touched && f.uxNewPasswordLabel.errors?.required"> กรุณาป้อนค่า รหัสผ่านใหม่ </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} 
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+<!-- routerLinkActive="active" -->
+<h2>company</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+
+<!-- id -->
+<div class="mt-3"> 
+     <input type="hidden" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
+</div>
+
+
+<!-- ชื่อบริษัท -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อบริษัท<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessName.touched && f.lcBusinessName.errors?.required"> กรุณาป้อนค่า ชื่อบริษัท </span>
+
+<!-- ที่อยู่ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ที่อยู่<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessAddress" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessAddress.touched && f.lcBusinessAddress.errors?.required"> กรุณาป้อนค่า ที่อยู่ </span>
+
+<!-- เขต/อำเภอ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เขต/อำเภอ
+     </label>
+     <input type="number" class="form-control" formControlName="lcBusinessCity" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessCity.touched && f.lcBusinessCity.errors?.required"> กรุณาป้อนค่า เขต/อำเภอ </span>
+
+<!-- จังหวัด -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">จังหวัด</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'จังหวัด'"
+        [apiPathInput]="'lcBusinessState'"
+        [dataInit]="dataInit"
+        [ModelName]="'province'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'จังหวัด'"
+        [apiPathInput]="'lcBusinessState'"
+        [dataInit]="dataInit"
+        [modelname]="'province'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'lcBusinessState')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+
+<!-- รหัสไปรษณีย์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสไปรษณีย์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessZip" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessZip.touched && f.lcBusinessZip.errors?.required"> กรุณาป้อนค่า รหัสไปรษณีย์ </span>
+
+<!-- ประเทศ -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">ประเทศ</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'ประเทศ'"
+        [apiPathInput]="'lcBusinessCountry'"
+        [dataInit]="dataInit"
+        [ModelName]="'countries'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'ประเทศ'"
+        [apiPathInput]="'lcBusinessCountry'"
+        [dataInit]="dataInit"
+        [modelname]="'countries'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'lcBusinessCountry')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+
+<!-- ใช้เครื่องหมายคอมม่า (,) คั่นระหว่างหมายเลข -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxBusinessPhoneNoteLabel" formControlName="uxBusinessPhoneNoteLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ใช้เครื่องหมายคอมม่า (,) คั่นระหว่างหมายเลข
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxBusinessPhoneNoteLabel.touched && f.uxBusinessPhoneNoteLabel.errors?.required"> กรุณาป้อนค่า ใช้เครื่องหมายคอมม่า (,) คั่นระหว่างหมายเลข </span>
+
+<!-- แฟกซ์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แฟกซ์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessFax" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessFax.touched && f.lcBusinessFax.errors?.required"> กรุณาป้อนค่า แฟกซ์ </span>
+
+<!-- อีเมล * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          อีเมล *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcBusinessEmail" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcBusinessEmail.touched && f.lcBusinessEmail.errors?.required"> กรุณาป้อนค่า อีเมล * </span>
+
+<!-- แผนที่ร้านค้า -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxEnableMapLabel" formControlName="uxEnableMapLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แผนที่ร้านค้า
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEnableMapLabel.touched && f.uxEnableMapLabel.errors?.required"> กรุณาป้อนค่า แผนที่ร้านค้า </span>
+
+<!-- รูปแบบแสดงแผนที่ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปแบบแสดงแผนที่<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxGoogleMapTypeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxGoogleMapTypeLabel.touched && f.uxGoogleMapTypeLabel.errors?.required"> กรุณาป้อนค่า รูปแบบแสดงแผนที่ </span>
+
+<!-- Google Map API Key * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Google Map API Key *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxGoogleMapAPIKeyLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxGoogleMapAPIKeyLabel.touched && f.uxGoogleMapAPIKeyLabel.errors?.required"> กรุณาป้อนค่า Google Map API Key * </span>
+
+<!-- ละติจูด * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ละติจูด *
+     </label>
+     <input type="number" class="form-control" formControlName="uxLatitudeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLatitudeLabel.touched && f.uxLatitudeLabel.errors?.required"> กรุณาป้อนค่า ละติจูด * </span>
+
+<!-- ลองจิจูด * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ลองจิจูด *
+     </label>
+     <input type="number" class="form-control" formControlName="uxLongitudeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLongitudeLabel.touched && f.uxLongitudeLabel.errors?.required"> กรุณาป้อนค่า ลองจิจูด * </span>
+
+<!-- ผู้ให้บริการอีเมล -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ผู้ให้บริการอีเมล<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxEmailProviderLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEmailProviderLabel.touched && f.uxEmailProviderLabel.errors?.required"> กรุณาป้อนค่า ผู้ให้บริการอีเมล </span>
+
+<!-- อีเมลเซิร์ฟเวอร์ (SMTP) * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          อีเมลเซิร์ฟเวอร์ (SMTP) *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcSmtpServer" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcSmtpServer.touched && f.lcSmtpServer.errors?.required"> กรุณาป้อนค่า อีเมลเซิร์ฟเวอร์ (SMTP) * </span>
+
+<!-- Port * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Port *
+     </label>
+     <input type="number" class="form-control" formControlName="lcSmtpPort" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcSmtpPort.touched && f.lcSmtpPort.errors?.required"> กรุณาป้อนค่า Port * </span>
+
+<!-- ต้องการข้อมูลผู้ใช้อีเมล -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="lcSmtpAuthenRequired" formControlName="lcSmtpAuthenRequired">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ต้องการข้อมูลผู้ใช้อีเมล
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.lcSmtpAuthenRequired.touched && f.lcSmtpAuthenRequired.errors?.required"> กรุณาป้อนค่า ต้องการข้อมูลผู้ใช้อีเมล </span>
+
+<!-- เปิดใช้ SSL -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxRequireEmailSslLabel" formControlName="uxRequireEmailSslLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้ SSL
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxRequireEmailSslLabel.touched && f.uxRequireEmailSslLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้ SSL </span>
+
+<!-- Facebook Fanpage -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebook Fanpage<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxEnableFacebookPageLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEnableFacebookPageLabel.touched && f.uxEnableFacebookPageLabel.errors?.required"> กรุณาป้อนค่า Facebook Fanpage </span>
+
+<!-- Facebooks Page URL * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebooks Page URL *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacebookPageURLLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookPageURLLabel.touched && f.uxFacebookPageURLLabel.errors?.required"> กรุณาป้อนค่า Facebooks Page URL * </span>
+
+<!-- LINE -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          LINE<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxLineEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLineEnabledLabel.touched && f.uxLineEnabledLabel.errors?.required"> กรุณาป้อนค่า LINE </span>
+
+<!-- LINE ID * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          LINE ID *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxLineAccountLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLineAccountLabel.touched && f.uxLineAccountLabel.errors?.required"> กรุณาป้อนค่า LINE ID * </span>
+
+<!-- Twitter -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Twitter<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxTwitterEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxTwitterEnabledLabel.touched && f.uxTwitterEnabledLabel.errors?.required"> กรุณาป้อนค่า Twitter </span>
+
+<!-- Twitter URL * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Twitter URL *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxTwitterUrlLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxTwitterUrlLabel.touched && f.uxTwitterUrlLabel.errors?.required"> กรุณาป้อนค่า Twitter URL * </span>
+
+<!-- Instagram -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Instagram<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxInstagramEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxInstagramEnabledLabel.touched && f.uxInstagramEnabledLabel.errors?.required"> กรุณาป้อนค่า Instagram </span>
+
+<!-- Instagram URL * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Instagram URL *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxInstagramUrlLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxInstagramUrlLabel.touched && f.uxInstagramUrlLabel.errors?.required"> กรุณาป้อนค่า Instagram URL * </span>
+
+<!-- Youtube -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Youtube<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxYoutubeEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxYoutubeEnabledLabel.touched && f.uxYoutubeEnabledLabel.errors?.required"> กรุณาป้อนค่า Youtube </span>
+
+<!-- Youtube URL * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Youtube URL *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxYoutubeUrlLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxYoutubeUrlLabel.touched && f.uxYoutubeUrlLabel.errors?.required"> กรุณาป้อนค่า Youtube URL * </span>
+
+<!-- แชร์ผ่าน Facebook (Like&amp;Share) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFaceBookLikeButtonLabel" formControlName="uxFaceBookLikeButtonLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แชร์ผ่าน Facebook (Like&amp;Share)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFaceBookLikeButtonLabel.touched && f.uxFaceBookLikeButtonLabel.errors?.required"> กรุณาป้อนค่า แชร์ผ่าน Facebook (Like&amp;Share) </span>
+
+<!-- แชร์ผ่าน LINE (LINE it!) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxLineItLabel" formControlName="uxLineItLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แชร์ผ่าน LINE (LINE it!)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLineItLabel.touched && f.uxLineItLabel.errors?.required"> กรุณาป้อนค่า แชร์ผ่าน LINE (LINE it!) </span>
+
+<!-- แชร์ผ่าน Twitter (Tweet) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxTwitterTweetLabel" formControlName="uxTwitterTweetLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แชร์ผ่าน Twitter (Tweet)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxTwitterTweetLabel.touched && f.uxTwitterTweetLabel.errors?.required"> กรุณาป้อนค่า แชร์ผ่าน Twitter (Tweet) </span>
+
+<!-- Zendesk Chat -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxZopimEnabledLabel" formControlName="uxZopimEnabledLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Zendesk Chat
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxZopimEnabledLabel.touched && f.uxZopimEnabledLabel.errors?.required"> กรุณาป้อนค่า Zendesk Chat </span>
+
+<!-- Facebook Messenger -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFacebookMessengerEnabledLabel" formControlName="uxFacebookMessengerEnabledLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebook Messenger
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookMessengerEnabledLabel.touched && f.uxFacebookMessengerEnabledLabel.errors?.required"> กรุณาป้อนค่า Facebook Messenger </span>
+
+<!-- เมื่อคลิ๊กที่ปุ่ม Facebook Messenger ให้ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เมื่อคลิ๊กที่ปุ่ม Facebook Messenger ให้<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacebookMessengerInfoLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookMessengerInfoLabel.touched && f.uxFacebookMessengerInfoLabel.errors?.required"> กรุณาป้อนค่า เมื่อคลิ๊กที่ปุ่ม Facebook Messenger ให้ </span>
+
+<!-- ลิ้งค์ไปยังโปรแกรม Facebook Messenger -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFacebookMessengerLabel" formControlName="uxFacebookMessengerLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ลิ้งค์ไปยังโปรแกรม Facebook Messenger
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookMessengerLabel.touched && f.uxFacebookMessengerLabel.errors?.required"> กรุณาป้อนค่า ลิ้งค์ไปยังโปรแกรม Facebook Messenger </span>
+
+<!-- แสดงกล่องข้อความที่หน้าเว็บไซต์ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFacebookCustomerLabel" formControlName="uxFacebookCustomerLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แสดงกล่องข้อความที่หน้าเว็บไซต์
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookCustomerLabel.touched && f.uxFacebookCustomerLabel.errors?.required"> กรุณาป้อนค่า แสดงกล่องข้อความที่หน้าเว็บไซต์ </span>
+
+<!-- Facebook Fanpage ID * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebook Fanpage ID *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacebookCustomerFanpageID" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookCustomerFanpageID.touched && f.uxFacebookCustomerFanpageID.errors?.required"> กรุณาป้อนค่า Facebook Fanpage ID * </span>
+
+<!-- Facebook App ID * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Facebook App ID *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacebookCustomerAppID" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookCustomerAppID.touched && f.uxFacebookCustomerAppID.errors?.required"> กรุณาป้อนค่า Facebook App ID * </span>
+
+<!-- ความยาวไม่เกิน 80 ตัวอักษร -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFacebookCustomerWelcomeNoteText" formControlName="uxFacebookCustomerWelcomeNoteText">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ความยาวไม่เกิน 80 ตัวอักษร
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacebookCustomerWelcomeNoteText.touched && f.uxFacebookCustomerWelcomeNoteText.errors?.required"> กรุณาป้อนค่า ความยาวไม่เกิน 80 ตัวอักษร </span>
+
+<!-- รหัสผ่านปัจจุบัน -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสผ่านปัจจุบัน<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxOldPasswordLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxOldPasswordLabel.touched && f.uxOldPasswordLabel.errors?.required"> กรุณาป้อนค่า รหัสผ่านปัจจุบัน </span>
+
+<!-- รหัสผ่านใหม่ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสผ่านใหม่<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxNewPasswordLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxNewPasswordLabel.touched && f.uxNewPasswordLabel.errors?.required"> กรุณาป้อนค่า รหัสผ่านใหม่ </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+

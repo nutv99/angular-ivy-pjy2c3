@@ -64,6 +64,7 @@ export class AppComponent {
           linkTo: 'companyoption/1',
           caption: 'ตั้งรายละเอียดร้านค้า',
         },
+        { name: 'company', linkTo: 'company', caption: 'ตั้งค่าร้านค้าเบื้องต้น' },
       ],
     },
     {
