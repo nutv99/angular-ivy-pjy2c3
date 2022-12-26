@@ -23,7 +23,6 @@ import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 // import { faFilter } from '@fortawesome/free-solid-svg-icons';
 
 import { environment } from '../../../environment';
-
 import { Emp } from '../../../_models/emp';
 import { first } from 'rxjs';
 

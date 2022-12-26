@@ -20,8 +20,10 @@ import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 declare var window: any;
 export interface modelTable {
+  formCode: string;
   apiTable: string;
   Caption: string;
+  formNameEdit: string;
   headerColTable: string[];
   ParentTableList: string[];
 }
@@ -32,10 +34,15 @@ export interface modelTable {
   styleUrls: ['./paymentchannel.component.css'],
 })
 export class PaymentchannelComponent implements OnInit {
+  formCode: string = 'A004';
   formModal: any;
+
+  // Table Crud
   varmodelTable: modelTable = {
+    formCode: 'A004',
     apiTable: 'paymentchannel',
-    Caption: 'ตั้งช่องทางการชำระเงิน',
+    formNameEdit: 'paymentchannel',
+    Caption: 'ddhousin_tshop',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
@@ -56,7 +63,7 @@ export class PaymentchannelComponent implements OnInit {
   id: number = 1;
   ModelName: string = 'paymentchannel';
   FormMode: string = 'post';
-  formTitle: string = 'เพิ่มข้อมูล-ตั้งช่องทางการชำระเงิน ';
+  formTitle: string = 'เพิ่มข้อมูล-ddhousin_tshop ';
 
   stageCrud: boolean = true;
   stageForm: boolean = true;
@@ -70,12 +77,12 @@ export class PaymentchannelComponent implements OnInit {
 
   ngOnInit() {
     this.myForm = this.fb.group({
-      id: [''],
-      lcIsEnabled: [''],
-      lcDisplayName: [''],
-      lcDescription: [''],
-      lcPaymentImage: [''],
-      uxIsDiscountLabel: [''],
+      id: ['', Validators.required],
+      lcIsEnabled: ['', Validators.required],
+      lcDisplayName: ['', Validators.required],
+      lcDescription: ['', Validators.required],
+      lcPaymentImage: ['', Validators.required],
+      uxIsDiscountLabel: ['', Validators.required],
     });
 
     if (this._Activatedroute.snapshot.paramMap.get('id')) {
@@ -113,6 +120,8 @@ export class PaymentchannelComponent implements OnInit {
     }
   }
 
+  /**************   Submit ****************/
+
   onSubmit() {
     //this.registerForm.valid
     if (this.myForm.invalid) {
@@ -126,10 +135,9 @@ export class PaymentchannelComponent implements OnInit {
       };
       this.apiService.create(this.ModelName, PayLoad).subscribe({
         next: (result: any) => {
-          //console.log(result);
           if (result.resultstatus === 'success') {
-            
-            this.myForm.get('id').setValue(result.DataResult);
+            //this.myForm.id = result.DataResult.id;
+            this.myForm.get('id').setValue(result.DataResult.id);
             this.FormMode = 'put';
             this.alertWithSuccess();
           } else {
@@ -137,8 +145,6 @@ export class PaymentchannelComponent implements OnInit {
           }
         },
         error: (error) => {
-          //this.errorMessage = error.message;
-          //alert('Error');
           this.alertWithError(error.message);
           console.error('There was an error!', error);
         },
@@ -150,12 +156,19 @@ export class PaymentchannelComponent implements OnInit {
         dataPayload: this.myForm.value,
       };
       // alert('Update')
-      this.apiService
-        .update999(this.ModelName, PayLoad)
-        .subscribe((response: any) => {
-          // alert('Success Update');
-          this.alertWithSuccess();
-        });
+      this.apiService.update999(this.ModelName, PayLoad).subscribe({
+        next: (result: any) => {
+          if (result.resultstatus === 'success') {
+            this.alertWithSuccess();
+          } else {
+            this.alertWithError(result.ErrorMsg);
+          }
+        },
+        error: (error) => {
+          this.alertWithError(error.message);
+          console.error('There was an error!', error);
+        },
+      });
     }
     //this.apiService.create(payload)
   }
@@ -180,6 +193,7 @@ export class PaymentchannelComponent implements OnInit {
     console.clear();
     this.apiService.getById(this.ModelName, id).subscribe((response: any) => {
       //this.paymentchannelModel = response;
+      response = response.DataResult;
       console.log('res', response);
 
       this.myForm.get('id').setValue(response.id);
@@ -218,6 +232,8 @@ export class PaymentchannelComponent implements OnInit {
   savePaymentchannel() {}
 
   searchPaymentchannel() {}
+
+  /******************* ALERT SECTION ************************/
 
   alertWithError(errormsg) {
     //alert('Error');
