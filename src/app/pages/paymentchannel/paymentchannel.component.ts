@@ -193,6 +193,7 @@ export class PaymentchannelComponent implements OnInit {
     console.clear();
     this.apiService.getById(this.ModelName, id).subscribe((response: any) => {
       //this.paymentchannelModel = response;
+      this.FormMode = 'put';
       response = response.DataResult;
       console.log('res', response);
 
