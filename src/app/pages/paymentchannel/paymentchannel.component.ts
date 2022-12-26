@@ -33,6 +33,8 @@ export interface modelTable {
   templateUrl: './paymentchannel.component.html',
   styleUrls: ['./paymentchannel.component.css'],
 })
+
+
 export class PaymentchannelComponent implements OnInit {
   formCode: string = 'A004';
   formModal: any;
