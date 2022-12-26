@@ -1,0 +1,9 @@
+<h2>bannerSlide</h2>
+<button [routerLink]="['/bannerSlideForm/new']">เพิ่มข้อมูล</button>
+<app-tabledata3
+  [varModelTable]="varmodelTable"
+  (MYIDOutDelete)="OnDeleteBannerSlide($event)"
+>
+</app-tabledata3>
+
+
