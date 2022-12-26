@@ -1,0 +1,117 @@
+<h2>department</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+
+<!-- id -->
+
+<!-- ชื่อแผนกสินค้า * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อแผนกสินค้า *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcName.touched && f.lcName.errors?.required"> กรุณาป้อนค่า ชื่อแผนกสินค้า * </span>
+
+<!-- คำบรรยาย -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          คำบรรยาย<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcDescription" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcDescription.touched && f.lcDescription.errors?.required"> กรุณาป้อนค่า คำบรรยาย </span>
+
+<!-- รูปภาพ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปภาพ<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcImage" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcImage.touched && f.lcImage.errors?.required"> กรุณาป้อนค่า รูปภาพ </span>
+
+<!-- แผนกสินค้าหลัก -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แผนกสินค้าหลัก<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcParent" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcParent.touched && f.lcParent.errors?.required"> กรุณาป้อนค่า แผนกสินค้าหลัก </span>
+
+<!-- เปิดใช้งาน -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="lcIsEnabled" formControlName="lcIsEnabled">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.lcIsEnabled.touched && f.lcIsEnabled.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน </span>
+
+<!-- แสดงสินค้ามาใหม่ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxIsShowNewArrivalLabel" formControlName="uxIsShowNewArrivalLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แสดงสินค้ามาใหม่
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxIsShowNewArrivalLabel.touched && f.uxIsShowNewArrivalLabel.errors?.required"> กรุณาป้อนค่า แสดงสินค้ามาใหม่ </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} 
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+routerLinkActive="active" -->

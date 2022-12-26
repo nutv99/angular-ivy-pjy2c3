@@ -20,10 +20,10 @@ import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 declare var window: any;
 export interface modelTable {
-  formCode:string;
+  formCode: string;
   apiTable: string;
   Caption: string;
-  formNameEdit:string;
+  formNameEdit: string;
   headerColTable: string[];
   ParentTableList: string[];
 }
@@ -33,34 +33,29 @@ export interface modelTable {
   templateUrl: './departmentForm.component.html',
   styleUrls: ['./departmentForm.component.css'],
 })
-
-
-
 export class DepartmentFormComponent implements OnInit {
-
-  formCode : string = 'A005' ;
+  formCode: string = 'A005';
   formModal: any;
 
   // Table Crud
   varmodelTable: modelTable = {
     formCode: 'A005',
     apiTable: 'department',
-	formNameEdit : 'departmentForm',
+    formNameEdit: 'departmentForm',
     Caption: 'แผนกสินค้า',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
   // Initial Form Model VAR & Value
   departmentModel: full_departmentModel = {
-    id: 2
+    id: 2,
   };
 
   dataInit = [
     {
       ID: 1,
       '0': 1,
-      categoryDesc:
-        'เลือก...',
+      categoryDesc: 'เลือก...',
       '1': 'เลือก...',
     },
   ];
@@ -74,26 +69,34 @@ export class DepartmentFormComponent implements OnInit {
   stageForm: boolean = true;
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private apiService: APIService,private _Activatedroute: ActivatedRoute) {}
+  constructor(
+    private fb: FormBuilder,
+    private apiService: APIService,
+    private _Activatedroute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.myForm = this.fb.group({
+      id: ['', Validators.required],
+      lcName: ['', Validators.required],
+      lcDescription: ['', Validators.required],
+      lcImage: ['', Validators.required],
+      lcParent: ['', Validators.required],
+      lcIsEnabled: ['', Validators.required],
+      uxIsShowNewArrivalLabel: ['', Validators.required],
+    });
 
-	
-this.myForm = this.fb.group({
-id : ['',Validators.required],lcName : ['',Validators.required],lcDescription : ['',Validators.required],lcImage : ['',Validators.required],lcParent : ['',Validators.required],lcIsEnabled : ['',Validators.required],uxIsShowNewArrivalLabel : ['',Validators.required]});
-
-	if (this._Activatedroute.snapshot.paramMap.get('id')) {
+    if (this._Activatedroute.snapshot.paramMap.get('id')) {
       //alert(this._Activatedroute.snapshot.paramMap.get('id'));
       let id = this._Activatedroute.snapshot.paramMap.get('id');
       this.myForm.get('id').setValue(id);
       if (id != 'new') {
-        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;;
+        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;
         this.getByID(id);
       } else {
-        this.formTitle = 'เพิ่มข้อมูล' +this.varmodelTable.Caption;;
+        this.formTitle = 'เพิ่มข้อมูล' + this.varmodelTable.Caption;
       }
     }
-
   }
 
   get f() {
@@ -101,13 +104,11 @@ id : ['',Validators.required],lcName : ['',Validators.required],lcDescription : 
   }
 
   setChecked(fname) {
-
     if (this.myForm.get(fname).value === 'y') {
-       this.myForm.get(fname).setValue('n')
+      this.myForm.get(fname).setValue('n');
     } else {
-      this.myForm.get(fname).setValue('y')
+      this.myForm.get(fname).setValue('y');
     }
-
   }
 
   setStageForm() {
@@ -120,7 +121,7 @@ id : ['',Validators.required],lcName : ['',Validators.required],lcDescription : 
     }
   }
 
-/**************   Submit ****************/
+  /**************   Submit ****************/
 
   onSubmit() {
     //this.registerForm.valid
@@ -136,9 +137,9 @@ id : ['',Validators.required],lcName : ['',Validators.required],lcDescription : 
       this.apiService.create(this.ModelName, PayLoad).subscribe({
         next: (result: any) => {
           if (result.resultstatus === 'success') {
-			//this.myForm.id = result.DataResult;
-			this.myForm.get('id').setValue(result.DataResult.id);
-			this.FormMode = 'put';
+            //this.myForm.id = result.DataResult;
+            this.myForm.get('id').setValue(result.DataResult.id);
+            this.FormMode = 'put';
             this.alertWithSuccess();
           } else {
             this.alertWithError(result.ErrorMsg);
@@ -149,8 +150,6 @@ id : ['',Validators.required],lcName : ['',Validators.required],lcDescription : 
           console.error('There was an error!', error);
         },
       });
-
-
     }
 
     if (this.FormMode === 'patch') {
@@ -158,23 +157,19 @@ id : ['',Validators.required],lcName : ['',Validators.required],lcDescription : 
         dataPayload: this.myForm.value,
       };
       // alert('Update')
-      this.apiService
-        .update999(this.ModelName, PayLoad)
-        .subscribe({
-          next: (result: any) => {
-            if (result.resultstatus === 'success') {
-              this.alertWithSuccess();
-            } else {
-              this.alertWithError(result.ErrorMsg);
-            }
-          },
-          error: (error) => {
-            this.alertWithError(error.message);
-            console.error('There was an error!', error);
-          },
-      }
-
-	     );
+      this.apiService.update999(this.ModelName, PayLoad).subscribe({
+        next: (result: any) => {
+          if (result.resultstatus === 'success') {
+            this.alertWithSuccess();
+          } else {
+            this.alertWithError(result.ErrorMsg);
+          }
+        },
+        error: (error) => {
+          this.alertWithError(error.message);
+          console.error('There was an error!', error);
+        },
+      });
     }
     //this.apiService.create(payload)
   }
@@ -188,26 +183,31 @@ id : ['',Validators.required],lcName : ['',Validators.required],lcDescription : 
     console.clear();
 
     this.myForm.get('id').setValue('');
-this.myForm.get('lcName').setValue('');
-this.myForm.get('lcDescription').setValue('');
-this.myForm.get('lcImage').setValue('');
-this.myForm.get('lcParent').setValue('');
-this.myForm.get('lcIsEnabled').setValue('');
-this.myForm.get('uxIsShowNewArrivalLabel').setValue('');
-
-
+    this.myForm.get('lcName').setValue('');
+    this.myForm.get('lcDescription').setValue('');
+    this.myForm.get('lcImage').setValue('');
+    this.myForm.get('lcParent').setValue('');
+    this.myForm.get('lcIsEnabled').setValue('');
+    this.myForm.get('uxIsShowNewArrivalLabel').setValue('');
   }
 
   getByID(id) {
     console.clear();
     this.apiService.getById(this.ModelName, id).subscribe((response: any) => {
       //this.departmentModel = response;
-	  this.FormMode = 'put';
-	  response = response.DataResult;
+      this.FormMode = 'put';
+      response = response.DataResult;
       console.log('res', response);
 
-      this.myForm.get('id').setValue(response.id);this.myForm.get('lcName').setValue(response.lcName);this.myForm.get('lcDescription').setValue(response.lcDescription);this.myForm.get('lcImage').setValue(response.lcImage);this.myForm.get('lcParent').setValue(response.lcParent);this.myForm.get('lcIsEnabled').setValue(response.lcIsEnabled);this.myForm.get('uxIsShowNewArrivalLabel').setValue(response.uxIsShowNewArrivalLabel);
-
+      this.myForm.get('id').setValue(response.id);
+      this.myForm.get('lcName').setValue(response.lcName);
+      this.myForm.get('lcDescription').setValue(response.lcDescription);
+      this.myForm.get('lcImage').setValue(response.lcImage);
+      this.myForm.get('lcParent').setValue(response.lcParent);
+      this.myForm.get('lcIsEnabled').setValue(response.lcIsEnabled);
+      this.myForm
+        .get('uxIsShowNewArrivalLabel')
+        .setValue(response.uxIsShowNewArrivalLabel);
 
       //this.myForm.get('Mode').setValue('patch');
     });
@@ -239,7 +239,7 @@ this.myForm.get('uxIsShowNewArrivalLabel').setValue('');
 
   searchDepartment() {}
 
-/******************* ALERT SECTION ************************/
+  /******************* ALERT SECTION ************************/
 
   alertWithError(errormsg) {
     //alert('Error');
@@ -276,25 +276,20 @@ this.myForm.get('uxIsShowNewArrivalLabel').setValue('');
     Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
   }
 
-  department_Emit(e:any) {
-     this.dataInit  = e ;
-
+  department_Emit(e: any) {
+    this.dataInit = e;
   }
 
   reciveOutSelect(e: any, varname) {
     this.myForm.get(varname).setValue(e);
   }
 
-  setYesNoValue(e:any,fname:string) {
-
-    this.myForm.get(fname).setValue(e)
-
+  setYesNoValue(e: any, fname: string) {
+    this.myForm.get(fname).setValue(e);
   }
 
-  setOutSelect(e:any,fname:string) {
-
-    this.myForm.get(fname).setValue(e)
-
+  setOutSelect(e: any, fname: string) {
+    this.myForm.get(fname).setValue(e);
   }
 
   // openFormModal() {

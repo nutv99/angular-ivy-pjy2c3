@@ -1,0 +1,9 @@
+<h2>แผนกสินค้า</h2>
+<button [routerLink]="['/department/new']">เพิ่มข้อมูล</button>
+<app-tabledata3
+  [varModelTable]="varmodelTable"
+  (MYIDOutDelete)="OnDeleteDepartment($event)"
+>
+</app-tabledata3>
+
+

@@ -48,6 +48,9 @@ import { CompanyComponent } from'./pages/company/company.component' ;
 import { PaymentchannelComponent } from'./pages/paymentchannel/paymentchannel.component';
 import { PaymentchannelListComponent } from './pages/paymentchannel/paymentchannelList.component';
 
+import { DepartmentFormComponent } from'./pages/departmentForm/departmentForm.component';
+import { DepartmentListComponent } from './pages/departmentForm/departmentList.component';
+
 
 // ใส่ใน Declaration
 
@@ -66,6 +69,8 @@ const appRoutes: Routes = [
   { path: 'company', component: CompanyComponent },
   { path: 'paymentchannelList', component: PaymentchannelListComponent },
   { path: 'paymentchannel/:id', component: PaymentchannelComponent },
+  { path: 'departmentList', component: DepartmentListComponent },
+  { path: 'departmentForm/:id', component: DepartmentFormComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 

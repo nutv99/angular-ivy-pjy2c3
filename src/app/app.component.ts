@@ -64,8 +64,21 @@ export class AppComponent {
           linkTo: 'companyoption/1',
           caption: 'ตั้งรายละเอียดร้านค้า',
         },
-        { name: 'company', linkTo: 'company', caption: 'ตั้งค่าร้านค้าเบื้องต้น' },
-        { name: 'paymentchannelList', linkTo: 'paymentchannelList', caption: 'ตั้งช่องทางการชำระเงิน' }
+        {
+          name: 'company',
+          linkTo: 'company',
+          caption: 'ตั้งค่าร้านค้าเบื้องต้น',
+        },
+        {
+          name: 'paymentchannelList',
+          linkTo: 'paymentchannelList',
+          caption: 'ตั้งช่องทางการชำระเงิน',
+        },
+        {
+          name: 'departmentList',
+          linkTo: 'departmentList',
+          caption: 'แผนกสินค้า999',
+        },
       ],
     },
     {

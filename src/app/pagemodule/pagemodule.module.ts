@@ -15,13 +15,14 @@ import { Tabledata3Component } from '../shared/components/tabledata3/tabledata3.
 import { PagetestComponent } from '../pages/pagetest/pagetest.component';
 import { CompanyOptionComponent } from '../pages/company-option/company-option.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-import { CompanyoptionComponent } from'../pages/companyoption/companyoption.component';
+import { CompanyoptionComponent } from '../pages/companyoption/companyoption.component';
 import { CompanyoptionListComponent } from '../pages/companyoption/companyoptionList.component';
 
-import { CompanyComponent } from'../pages/company/company.component';
-import { PaymentchannelComponent } from'../pages/paymentchannel/paymentchannel.component';
+import { CompanyComponent } from '../pages/company/company.component';
+import { PaymentchannelComponent } from '../pages/paymentchannel/paymentchannel.component';
 import { PaymentchannelListComponent } from '../pages/paymentchannel/paymentchannelList.component';
-
+import { DepartmentFormComponent } from '../pages/departmentForm/departmentForm.component';
+import { DepartmentListComponent } from '../pages/departmentForm/departmentList.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,7 @@ import { PaymentchannelListComponent } from '../pages/paymentchannel/paymentchan
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
   ],
   declarations: [
     BoutselectComponent,
@@ -41,9 +42,19 @@ import { PaymentchannelListComponent } from '../pages/paymentchannel/paymentchan
     CompanyOptionComponent,
     CompanyoptionComponent,
     CompanyoptionListComponent,
-    CompanyComponent,PaymentchannelComponent,PaymentchannelListComponent
+    CompanyComponent,
+    PaymentchannelComponent,
+    PaymentchannelListComponent,
+    DepartmentFormComponent,
+    DepartmentListComponent,
   ],
-  exports: [PagetestComponent, CompanyOptionComponent,CompanyoptionComponent,
-    CompanyoptionListComponent],
+  exports: [
+    PagetestComponent,
+    CompanyOptionComponent,
+    CompanyoptionComponent,
+    CompanyoptionListComponent,
+    DepartmentFormComponent,
+    DepartmentListComponent,
+  ],
 })
 export class PagemoduleModule {}
