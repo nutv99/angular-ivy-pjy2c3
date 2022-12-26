@@ -51,6 +51,8 @@ import { PaymentchannelListComponent } from './pages/paymentchannel/paymentchann
 import { DepartmentFormComponent } from'./pages/departmentForm/departmentForm.component';
 import { DepartmentListComponent } from './pages/departmentForm/departmentList.component';
 
+import { ItemmasterFormComponent } from'./pages/itemmasterForm/itemmasterForm.component';
+import { ItemmasterListComponent } from './pages/itemmasterForm/itemmasterList.component';
 
 // ใส่ใน Declaration
 
@@ -71,6 +73,8 @@ const appRoutes: Routes = [
   { path: 'paymentchannel/:id', component: PaymentchannelComponent },
   { path: 'departmentList', component: DepartmentListComponent },
   { path: 'departmentForm/:id', component: DepartmentFormComponent },
+  { path: 'itemmasterList', component: ItemmasterListComponent },
+  { path: 'itemmasterForm/:id', component: ItemmasterFormComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 

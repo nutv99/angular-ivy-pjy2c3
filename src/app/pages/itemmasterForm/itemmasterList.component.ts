@@ -15,7 +15,7 @@ export interface modelTable {
 @Component({
   selector: 'app-itemmasterList',
   templateUrl: './itemmasterList.component.html',
-  styleUrls: ['./itemmaster.component.css'],
+  styleUrls: ['./itemmasterForm.component.css'],
 })
 export class ItemmasterListComponent implements OnInit, OnChanges {
   formModal: any;

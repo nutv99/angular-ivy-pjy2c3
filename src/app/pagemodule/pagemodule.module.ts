@@ -24,6 +24,9 @@ import { PaymentchannelListComponent } from '../pages/paymentchannel/paymentchan
 import { DepartmentFormComponent } from '../pages/departmentForm/departmentForm.component';
 import { DepartmentListComponent } from '../pages/departmentForm/departmentList.component';
 
+import { ItemmasterFormComponent } from'../pages/itemmasterForm/itemmasterForm.component';
+import { ItemmasterListComponent } from '../pages/itemmasterForm/itemmasterList.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -47,6 +50,7 @@ import { DepartmentListComponent } from '../pages/departmentForm/departmentList.
     PaymentchannelListComponent,
     DepartmentFormComponent,
     DepartmentListComponent,
+    ItemmasterFormComponent,ItemmasterListComponent
   ],
   exports: [
     PagetestComponent,
@@ -55,6 +59,7 @@ import { DepartmentListComponent } from '../pages/departmentForm/departmentList.
     CompanyoptionListComponent,
     DepartmentFormComponent,
     DepartmentListComponent,
+    ItemmasterFormComponent,ItemmasterListComponent
   ],
 })
 export class PagemoduleModule {}

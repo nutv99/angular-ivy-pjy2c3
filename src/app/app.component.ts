@@ -79,6 +79,11 @@ export class AppComponent {
           linkTo: 'departmentList',
           caption: 'แผนกสินค้า999',
         },
+        {
+          name: 'itemMasterList',
+          linkTo: 'itemmasterList',
+          caption: 'สินค้า999',
+        },
       ],
     },
     {
