@@ -87,11 +87,11 @@ export class OutSelectSearchlocalComponent implements OnInit {
       // อ่านค่า result จาก JSON response ที่ส่งออกมา
       //console.table('Data9999 For Select List', data);
       //alert(data);
-      this.dataInit = data.DataResult[0];
+      this.dataInit = data.DataResult;
       this.results = this.dataInit;
       this.heroesA = this.dataInit;
 
-      this.heroesB = data.DataResult[0];
+      this.heroesB = data.DataResult;
 
       console.log('Data Init', this.dataInit);
       //dataDefault
