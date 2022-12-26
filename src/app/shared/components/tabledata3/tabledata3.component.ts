@@ -62,7 +62,7 @@ export class Tabledata3Component implements OnInit {
   headerTable = ['ชื่อ', 'นามสกุล', 'อีเมล์', 'เบอร์โทร', ''];
 
   nextPageNo: number = 0;
-  formName99 = 'ccop999';
+  formNameEdit :string = '' ; //this.varModelTable.formNameEdit ;
 
   Pagination = [2, 3, 4];
   faEdit = faEdit;
@@ -81,7 +81,10 @@ export class Tabledata3Component implements OnInit {
   ngOnInit(): void {
     //this.apiName = environment.apiHost + apiPath.departmentByPageNo;
     console.log('API URL ', this.varModelTable.apiTable);
-    this.headerTable = this.varModelTable.headerColTable;
+    this.headerTable = this.varModelTable.headerColTable; 
+    this.formNameEdit= this.varModelTable.formNameEdit ;
+
+
     // this.headerTable = this.varModelTable.headerTable;
     this.tableAPI = this.varModelTable.apiTable;
     

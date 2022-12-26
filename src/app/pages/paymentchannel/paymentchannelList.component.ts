@@ -7,6 +7,7 @@ declare var window: any;
 export interface modelTable {
   apiTable: string;
   Caption: string;
+  formNameEdit:string,
   pageno: number;
   headerColTable: string[];
   ParentTableList: string[];
@@ -25,6 +26,7 @@ export class PaymentchannelListComponent implements OnInit, OnChanges {
   varmodelTable: modelTable = {
     apiTable: 'A004',
     Caption: 'ddhousin_tshop',
+    formNameEdit: 'paymentchannel',
     pageno: 1,
     headerColTable: ['รหัสแผนก', 'ชื่อแผนก', 'รหัส-2', 'รูป'],
     ParentTableList: [],

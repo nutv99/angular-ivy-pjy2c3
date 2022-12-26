@@ -30,7 +30,7 @@
             <span style="color:blue"
               >{{ currentPageNo }}/ {{ totalPage }}
             </span>
-            รายการ : {{ ListRecnoCaption }}/{{ AllRec }}
+            แสดงรายการ : {{ ListRecnoCaption }}/{{ AllRec }}
           </h6>
         </div>
       </div>
@@ -49,21 +49,22 @@
               *ngFor="let result of results | filter: searchText"
               style="vertical-align: middle;"
             >
-              <td style="color:#63b1b1;font-weight:bold">{{ result[1] }}</td>
+              <td style="color:#63b1b1;font-weight:bold">{{ result[0] }}</td>
+              <td>{{ result[1] }}</td>
               <td>{{ result[2] }}</td>
-              <td>{{ result[3] }}</td>
-              <td>{{ result[4] }}</td>
+
               <td>
                 <img
-                  src="{{ result[6] }}"
+                  src="{{ result[3] }}"
                   width="50"
                   height="50"
                   style="margin:4px"
                 />
               </td>
+              <td>{{ result[4] }}</td>
               <td class="white-space-nowrap" style="text-align:center">
                 <a
-                  routerLink="/{{ formName99 }}/{{ result[0] }}"
+                  routerLink="/{{ formNameEdit }}/{{ result[0] }}"
                   routerLinkActive="active"
                   style="border:1px solid green;padding:10px;border-radius:6px;margin-right:10px"
                 >
