@@ -1,0 +1,485 @@
+<h2>itemmaster</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+
+<!-- id -->
+<div class="mt-3"> 
+     <input type="hidden" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
+</div>
+
+
+<!-- รหัสสินค้า -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสสินค้า<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="itemCode" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.itemCode.touched && f.itemCode.errors?.required"> กรุณาป้อนค่า รหัสสินค้า </span>
+
+<!-- ชื่อสินค้า -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อสินค้า<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="itemName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.itemName.touched && f.itemName.errors?.required"> กรุณาป้อนค่า ชื่อสินค้า </span>
+
+<!-- คำอธิบาย(สั้น) -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          คำอธิบาย(สั้น)<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="itemmasterDesc" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.itemmasterDesc.touched && f.itemmasterDesc.errors?.required"> กรุณาป้อนค่า คำอธิบาย(สั้น) </span>
+
+<!-- ต้นทุนสินค้า/หน่วย -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ต้นทุนสินค้า/หน่วย
+     </label>
+     <input type="number" class="form-control" formControlName="itemCost" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.itemCost.touched && f.itemCost.errors?.required"> กรุณาป้อนค่า ต้นทุนสินค้า/หน่วย </span>
+
+<!-- ราคาขาย -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ราคาขาย
+     </label>
+     <input type="number" class="form-control" formControlName="fullPrice" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.fullPrice.touched && f.fullPrice.errors?.required"> กรุณาป้อนค่า ราคาขาย </span>
+
+<!-- ราคาขายลดแล้ว -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ราคาขายลดแล้ว
+     </label>
+     <input type="number" class="form-control" formControlName="salePrice" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.salePrice.touched && f.salePrice.errors?.required"> กรุณาป้อนค่า ราคาขายลดแล้ว </span>
+
+<!-- คำอธิบาย(โดยละเอียด) -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          คำอธิบาย(โดยละเอียด)<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="itemmasterDescLong" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.itemmasterDescLong.touched && f.itemmasterDescLong.errors?.required"> กรุณาป้อนค่า คำอธิบาย(โดยละเอียด) </span>
+
+<!-- กว้าง -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          กว้าง
+     </label>
+     <input type="number" class="form-control" formControlName="item_width" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.item_width.touched && f.item_width.errors?.required"> กรุณาป้อนค่า กว้าง </span>
+
+<!-- ยาว -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ยาว
+     </label>
+     <input type="number" class="form-control" formControlName="item_height" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.item_height.touched && f.item_height.errors?.required"> กรุณาป้อนค่า ยาว </span>
+
+<!-- สูง -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          สูง
+     </label>
+     <input type="number" class="form-control" formControlName="item_long" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.item_long.touched && f.item_long.errors?.required"> กรุณาป้อนค่า สูง </span>
+
+<!-- นน. -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          นน.
+     </label>
+     <input type="number" class="form-control" formControlName="weight" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.weight.touched && f.weight.errors?.required"> กรุณาป้อนค่า นน. </span>
+
+<!-- รูปภาพหลัก -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปภาพหลัก<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="mainImage" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.mainImage.touched && f.mainImage.errors?.required"> กรุณาป้อนค่า รูปภาพหลัก </span>
+
+<!-- รูปภาพประกอป -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปภาพประกอป<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="imageList" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.imageList.touched && f.imageList.errors?.required"> กรุณาป้อนค่า รูปภาพประกอป </span>
+
+<!-- แผนกสินค้า -->
+
+<!-- หมวดสินค้า -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          หมวดสินค้า
+     </label>
+     <input type="number" class="form-control" formControlName="categoryID" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.categoryID.touched && f.categoryID.errors?.required"> กรุณาป้อนค่า หมวดสินค้า </span>
+
+<!-- กลุ่มสินค้า -->
+
+<!-- รหัสแบนรด์ -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">รหัสแบนรด์</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'รหัสแบนรด์'"
+        [apiPathInput]="'brand'"
+        [dataInit]="dataInit"
+        [ModelName]="'brand'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'รหัสแบนรด์'"
+        [apiPathInput]="'brand'"
+        [dataInit]="dataInit"
+        [modelname]="'brand'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'brandID')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+
+<!-- รหัสประเภทสต๊อคสินค้า -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสประเภทสต๊อคสินค้า
+     </label>
+     <input type="number" class="form-control" formControlName="stocktypeID" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.stocktypeID.touched && f.stocktypeID.errors?.required"> กรุณาป้อนค่า รหัสประเภทสต๊อคสินค้า </span>
+
+<!-- กำหนดราคาทันที -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="assignUnitPrice" formControlName="assignUnitPrice">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          กำหนดราคาทันที
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.assignUnitPrice.touched && f.assignUnitPrice.errors?.required"> กรุณาป้อนค่า กำหนดราคาทันที </span>
+
+<!-- สินค้าลดราคา ? -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="flashSale" formControlName="flashSale">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          สินค้าลดราคา ?
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.flashSale.touched && f.flashSale.errors?.required"> กรุณาป้อนค่า สินค้าลดราคา ? </span>
+
+<!-- รหัสผู้ผลิต -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสผู้ผลิต<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="manufactur" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.manufactur.touched && f.manufactur.errors?.required"> กรุณาป้อนค่า รหัสผู้ผลิต </span>
+
+<!-- โมเดล -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          โมเดล<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="model" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.model.touched && f.model.errors?.required"> กรุณาป้อนค่า โมเดล </span>
+
+<!-- PartNo -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          PartNo<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="partNo" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.partNo.touched && f.partNo.errors?.required"> กรุณาป้อนค่า PartNo </span>
+
+<!-- UPC -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          UPC<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="UPC" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.UPC.touched && f.UPC.errors?.required"> กรุณาป้อนค่า UPC </span>
+
+<!-- Meta Title -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Meta Title<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="metaTitle" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.metaTitle.touched && f.metaTitle.errors?.required"> กรุณาป้อนค่า Meta Title </span>
+
+<!-- Meta Desc -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Meta Desc<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="metaDesc" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.metaDesc.touched && f.metaDesc.errors?.required"> กรุณาป้อนค่า Meta Desc </span>
+
+<!-- Meta Keyword -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Meta Keyword<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="metaKeyword" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.metaKeyword.touched && f.metaKeyword.errors?.required"> กรุณาป้อนค่า Meta Keyword </span>
+
+<!-- รหัสส่วนลด -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">รหัสส่วนลด</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'รหัสส่วนลด'"
+        [apiPathInput]="'discount'"
+        [dataInit]="dataInit"
+        [ModelName]="'discountmaster'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'รหัสส่วนลด'"
+        [apiPathInput]="'discount'"
+        [dataInit]="dataInit"
+        [modelname]="'discountmaster'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'discountID')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+
+<!-- รหัสประเภทภาษี -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">รหัสประเภทภาษี</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'รหัสประเภทภาษี'"
+        [apiPathInput]="'vattype'"
+        [dataInit]="dataInit"
+        [ModelName]="'vattypemaster'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'รหัสประเภทภาษี'"
+        [apiPathInput]="'vattype'"
+        [dataInit]="dataInit"
+        [modelname]="'vattypemaster'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'vattypeID')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+
+<!-- Vat Rate -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Vat Rate
+     </label>
+     <input type="number" class="form-control" formControlName="vatRate" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.vatRate.touched && f.vatRate.errors?.required"> กรุณาป้อนค่า Vat Rate </span>
+
+<!-- กลุ่มสินค้าทดแทน -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">กลุ่มสินค้าทดแทน</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'กลุ่มสินค้าทดแทน'"
+        [apiPathInput]="'groupFriend'"
+        [dataInit]="dataInit"
+        [ModelName]="'groupitem'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'กลุ่มสินค้าทดแทน'"
+        [apiPathInput]="'groupFriend'"
+        [dataInit]="dataInit"
+        [modelname]="'groupitem'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'groupFriendID')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+
+<!-- Keyword ค้นหา -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          Keyword ค้นหา<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="searchKeyword" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.searchKeyword.touched && f.searchKeyword.errors?.required"> กรุณาป้อนค่า Keyword ค้นหา </span>
+
+<!-- รหัสสถานะสินค้า -->
+<div class="mb-3">
+   <label for="exampleFormControlInput1" class="form-label">รหัสสถานะสินค้า</label>
+   <div class="dropdown">
+      <!-- 
+	  <app-boutselect
+	    [Title]="'รหัสสถานะสินค้า'"
+        [apiPathInput]="'itemstatus'"
+        [dataInit]="dataInit"
+        [ModelName]="'itemstatus'"
+        [HaveChild]="'n'"
+		
+      >		
+      </app-boutselect>
+	   -->
+
+	  <app-out-select-searchlocal
+	    [Title]="'รหัสสถานะสินค้า'"
+        [apiPathInput]="'itemstatus'"
+        [dataInit]="dataInit"
+        [modelname]="'itemstatus'"
+        [HaveChild]="'n'"
+		(mylistchange)="reciveOutSelect($event, 'itemstatusID')"
+		
+      >		
+      </app-out-select-searchlocal>
+
+   </div>
+</div> 
+
+
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} 
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+routerLinkActive="active" -->
