@@ -34,6 +34,7 @@ import { CallAPIDirective } from './shared/directives/call-api.directive';
 import { TopheaderComponent } from './shared/components/topheader/topheader.component';
 import { HeaderformComponent } from './shared/components/headerform/headerform.component';
 import { Outselectv2Component } from './shared/components/outselectv2/outselectv2.component';
+import { UploadImagesComponent } from './shared/components/upload-images/upload-images.component';
 
 import { CrudComponent } from './pages/crud/crud.component';
 import { tttComponent } from './ttt/ttt.component';

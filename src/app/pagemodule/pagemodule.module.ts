@@ -9,6 +9,8 @@ import { BoutselectComponent } from '../shared/component2/boutselect/boutselect.
 import { OutSelectSearchlocalComponent } from '../shared/component2/out-select-searchlocal/out-select-searchlocal.component';
 
 import { FileUploadComponent } from '../shared/component2/file-upload/file-upload.component';
+import { UploadImagesComponent } from '../shared/components/upload-images/upload-images.component';
+
 
 import { RouterModule, Routes } from '@angular/router';
 
@@ -62,6 +64,7 @@ import { DropshipListComponent } from '../pages/dropship/dropshipList.component'
     OutSelectSearchlocalComponent,
     Tabledata3Component,
     FileUploadComponent,
+    UploadImagesComponent,
 
     PagetestComponent,
     CompanyOptionComponent,
@@ -86,6 +89,7 @@ import { DropshipListComponent } from '../pages/dropship/dropshipList.component'
     PagetestComponent,
     CompanyOptionComponent,
     CompanyoptionComponent,
+    UploadImagesComponent,
     CompanyoptionListComponent,
     DepartmentFormComponent,
     DepartmentListComponent,
