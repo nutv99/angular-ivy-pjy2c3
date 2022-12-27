@@ -23,7 +23,6 @@ export class DropshipListComponent implements OnInit, OnChanges {
   pageid: string = '';
   pageno: string = this._Activatedroute.snapshot.paramMap.get('pageno');
 
-  
   varmodelTable: modelTable = {
     formComponentName: 'dropshipForm',
     apiTable: 'undefined',
