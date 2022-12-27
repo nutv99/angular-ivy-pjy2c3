@@ -4,6 +4,7 @@ import {
   OnInit,
   Input,
   Output,
+  Pipe,
   AfterViewInit,
 } from '@angular/core';
 import { EmpService } from '../../../_services/emp.service';

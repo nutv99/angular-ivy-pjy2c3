@@ -23,7 +23,7 @@ export class AdsListComponent implements OnInit, OnChanges {
   pageno: string = this._Activatedroute.snapshot.paramMap.get('pageno');
 
   varmodelTable: modelTable = {
-    apiTable: 'new',
+    apiTable: 'Ads',
     Caption: 'Ads',
     pageno: 1,
     headerColTable: ['รหัสแผนก', 'ชื่อแผนก', 'รหัส-2', 'รูป'],
