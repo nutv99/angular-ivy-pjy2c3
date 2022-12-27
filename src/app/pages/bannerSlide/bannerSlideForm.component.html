@@ -10,7 +10,6 @@
       <button type="button" class="btn-close" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-      
       <!-- id -->
       <div class="mt-3">
         <input
@@ -66,14 +65,8 @@
         <label for="exampleFormControlInput1" class="form-label" style="">
           รูปสำหรับMobile<span class="text-danger">***</span>
         </label>
-        <input
-          type="file"
-          accept="image/*"
-          class="form-control"
-          formControlName="bannerImageM"
-          id="exampleFormControlInput1"
-          placeholder=""
-        />
+
+        <app-file-upload></app-file-upload>
       </div>
       <span
         class="text-danger"

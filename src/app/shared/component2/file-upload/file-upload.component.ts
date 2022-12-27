@@ -1,13 +1,17 @@
-import { Component, VERSION, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  VERSION,
+  OnInit,
+  ViewChild,
+  ElementRef,
+} from '@angular/core';
 
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
-  styleUrls: ['./file-upload.component.css']
+  styleUrls: ['./file-upload.component.css'],
 })
-export class FileUploadComponent implements OnInit {
-
-  
+export class FileUploadComponent {
   url?: Blob;
   url2: string | ArrayBuffer;
   showFileSelect: boolean = false;
@@ -33,7 +37,9 @@ export class FileUploadComponent implements OnInit {
         console.log(this.url2);
         this.myNameElem.nativeElement.arrayBuffer = this.url2;
         this.imgContainer99.nativeElement.innerHTML +=
-          '<img src="' + this.url2 + '" width=100>';
+          '<img src="' +
+          this.url2 +
+          '" height=70 style="margin:5px;border:2px solid whitesmoke">';
         //console.log(img.width);
       };
       // } // for

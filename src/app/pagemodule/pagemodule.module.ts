@@ -8,6 +8,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BoutselectComponent } from '../shared/component2/boutselect/boutselect.component';
 import { OutSelectSearchlocalComponent } from '../shared/component2/out-select-searchlocal/out-select-searchlocal.component';
 
+import { FileUploadComponent } from '../shared/component2/file-upload/file-upload.component';
+
 import { RouterModule, Routes } from '@angular/router';
 
 import { Tabledata3Component } from '../shared/components/tabledata3/tabledata3.component';
@@ -31,6 +33,7 @@ import { BannerSlideFormComponent } from'../pages/bannerSlide/bannerSlideForm.co
 import { BannerSlideListComponent } from '../pages/bannerSlide/bannerSlideList.component';
 
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -44,6 +47,7 @@ import { BannerSlideListComponent } from '../pages/bannerSlide/bannerSlideList.c
     BoutselectComponent,
     OutSelectSearchlocalComponent,
     Tabledata3Component,
+    FileUploadComponent,
 
     PagetestComponent,
     CompanyOptionComponent,

@@ -1,20 +1,38 @@
-<img #fileImg [src]="url2" height="200" /> <br />
+<img #fileImg [src]="url2" height="200" style="display:none" /> <br />
 
-<img
-  src="https://cdn-icons-png.flaticon.com/128/7605/7605250.png"
-  (click)="AddSelectFile()"
-  width="50"
-/>
+<div
+  style="margin-bottom:30px;border:2px solid gray;padding:10px;border-radius:6px"
+>
+  <div style="display:flex ; flex-direction:row">
+    <div style="width:30%">
+      <img
+        src="https://cdn-icons-png.flaticon.com/128/7605/7605250.png"
+        (click)="AddSelectFile()"
+        width="50"
+      />
+      <span style="border-right;1px solid lightgray">คลิกเพื่อ เพิ่มรูป</span>
+    </div>
 
-<input
-  type="file"
-  #fileSelect
-  (change)="onSelectFile($event)"
-  accept="image/*"
-  multiple
-  style="position:absolute;left:-300px"
-/>
+    <div
+      #imgContainner
+      id="imgContainner"
+      style="width:100%;border:1px solid whitesmoke;padding:10px"
+    ></div>
+  </div>
+</div>
 
-<p>Start editing to see some magic happen :)</p>
-Container
-<div #imgContainner id="imgContainner"></div>
+<table>
+  <tr>
+    <td>
+      <input
+        type="file"
+        #fileSelect
+        (change)="onSelectFile($event)"
+        accept="image/*"
+        multiple
+        style="position:absolute;left:-3000px"
+      />
+    </td>
+    <td></td>
+  </tr>
+</table>
