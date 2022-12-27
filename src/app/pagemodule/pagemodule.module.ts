@@ -39,6 +39,10 @@ import { AdsListComponent } from '../pages/Ads/AdsList.component';
 import { MainmenuFormComponent } from'../pages/mainmenu/mainmenuForm.component';
 import { MainmenuListComponent } from '../pages/mainmenu/mainmenuList.component';
 
+import { CustomerFormComponent } from'../pages/customer/customerForm.component';
+import { CustomerListComponent } from '../pages/customer/customerList.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -68,6 +72,7 @@ import { MainmenuListComponent } from '../pages/mainmenu/mainmenuList.component'
     ,DesignFormComponent,DesignListComponent
     ,AdsFormComponent,AdsListComponent
     ,MainmenuFormComponent,MainmenuListComponent
+    ,CustomerFormComponent,CustomerListComponent
   ],
   exports: [
     PagetestComponent,
@@ -81,6 +86,7 @@ import { MainmenuListComponent } from '../pages/mainmenu/mainmenuList.component'
     ,DesignFormComponent,DesignListComponent
     ,AdsFormComponent,AdsListComponent
     ,MainmenuFormComponent,MainmenuListComponent
+    ,CustomerFormComponent,CustomerListComponent
   ],
 })
 export class PagemoduleModule {}

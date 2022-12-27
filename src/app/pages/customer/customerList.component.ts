@@ -13,20 +13,18 @@ export interface modelTable {
 }
 
 @Component({
-  selector: 'app-mainmenuList',
-  templateUrl: './mainmenuList.component.html',
-  styleUrls: ['./mainmenuForm.component.scss'],
+  selector: 'app-customerList',
+  templateUrl: './customerList.component.html',
+  styleUrls: ['./customerForm.component.scss'],
 })
-
-             
-export class MainmenuListComponent implements OnInit, OnChanges {
+export class CustomerListComponent implements OnInit, OnChanges {
   formModal: any;
   pageid: string = '';
   pageno: string = this._Activatedroute.snapshot.paramMap.get('pageno');
 
   varmodelTable: modelTable = {
-    apiTable: 'A009',
-    Caption: 'mainmenu',
+    apiTable: 'new',
+    Caption: 'customer',
     pageno: 1,
     headerColTable: ['รหัสแผนก', 'ชื่อแผนก', 'รหัส-2', 'รูป'],
     ParentTableList: [],
@@ -37,14 +35,14 @@ export class MainmenuListComponent implements OnInit, OnChanges {
   ngOnInit() {
 
     if (this._Activatedroute.snapshot.paramMap.get('pageid')) {
-      this.pageid = this.pageid = 'Mainmenu';
+      this.pageid = this.pageid = 'Customer';
       console.log('PageID', this.pageid);
       // this.pageno = this._Activatedroute.snapshot.paramMap.get('pageno');
     } else {
       // this.pageno = '1';
     }
 
-    this.pageid = 'Mainmenu';
+    this.pageid = 'Customer';
     this.pageno = this._Activatedroute.snapshot.paramMap.get('pageno');
 
     //this.varmodelTable.apiTable = this.pageid;
@@ -60,7 +58,7 @@ export class MainmenuListComponent implements OnInit, OnChanges {
     this.varmodelTable.pageno = parseInt(this.pageid);
   }
 
-  OnDeleteMainmenu(e: any) {
+  OnDeleteCustomer(e: any) {
     alert(e);
     /*let id = e;
     this.apiService.delete999(this.ModelName, id).subscribe((response: any) => {

@@ -87,7 +87,8 @@ export class AppComponent {
         { name: 'bannerSlideList', linkTo: 'bannerSlideList', caption: 'bannerSlide' },
         { name: 'designList', linkTo: 'designList', caption: 'ปรับแต่งดีไซน์' },
         { name: 'AdsList', linkTo: 'AdsList', caption: 'Ads' },
-        { name: 'mainmenuList', linkTo: 'mainmenuList', caption: 'ตั้งค่าเมนู' },
+        { name: 'mainmenuList999', linkTo: 'mainmenuList', caption: 'ตั้งค่าเมนู' },
+        { name: 'customerList', linkTo: 'customerList', caption: 'customer' },
       ],
     },
     {

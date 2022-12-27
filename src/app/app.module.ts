@@ -63,7 +63,8 @@ import { AdsFormComponent } from'./pages/Ads/AdsForm.component';
 import { AdsListComponent } from './pages/Ads/AdsList.component';
 import { MainmenuFormComponent } from'./pages/mainmenu/mainmenuForm.component';
 import { MainmenuListComponent } from './pages/mainmenu/mainmenuList.component';
-
+import { CustomerFormComponent } from'./pages/customer/customerForm.component';
+import { CustomerListComponent } from './pages/customer/customerList.component';
 
 // ใส่ใน Declaration
 
@@ -95,6 +96,9 @@ const appRoutes: Routes = [
   { path: '**', redirectTo: '/', pathMatch: 'full' },
   { path: 'mainmenuList', component: MainmenuListComponent },
   { path: 'mainmenuForm/:id', component: MainmenuFormComponent },
+  { path: 'customerList', component: CustomerListComponent },
+  { path: 'customerForm/:id', component: CustomerFormComponent },
+
 ];
 
 
