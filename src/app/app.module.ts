@@ -66,6 +66,8 @@ import { MainmenuListComponent } from './pages/mainmenu/mainmenuList.component';
 import { CustomerFormComponent } from'./pages/customer/customerForm.component';
 import { CustomerListComponent } from './pages/customer/customerList.component';
 
+import {List99Component} from './pages/list99/list99.component';
+
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -98,6 +100,7 @@ const appRoutes: Routes = [
   { path: 'mainmenuForm/:id', component: MainmenuFormComponent },
   { path: 'customerList', component: CustomerListComponent },
   { path: 'customerForm/:id', component: CustomerFormComponent },
+  { path: 'List99', component: List99Component },
 
 ];
 

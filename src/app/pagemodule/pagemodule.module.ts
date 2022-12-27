@@ -42,6 +42,7 @@ import { MainmenuListComponent } from '../pages/mainmenu/mainmenuList.component'
 import { CustomerFormComponent } from'../pages/customer/customerForm.component';
 import { CustomerListComponent } from '../pages/customer/customerList.component';
 
+import {List99Component} from '../pages/list99/list99.component';
 
 @NgModule({
   imports: [
@@ -72,7 +73,8 @@ import { CustomerListComponent } from '../pages/customer/customerList.component'
     ,DesignFormComponent,DesignListComponent
     ,AdsFormComponent,AdsListComponent
     ,MainmenuFormComponent,MainmenuListComponent
-    ,CustomerFormComponent,CustomerListComponent
+    ,CustomerFormComponent,CustomerListComponent,
+    List99Component
   ],
   exports: [
     PagetestComponent,
@@ -86,7 +88,8 @@ import { CustomerListComponent } from '../pages/customer/customerList.component'
     ,DesignFormComponent,DesignListComponent
     ,AdsFormComponent,AdsListComponent
     ,MainmenuFormComponent,MainmenuListComponent
-    ,CustomerFormComponent,CustomerListComponent
+    ,CustomerFormComponent,CustomerListComponent,
+    List99Component
   ],
 })
 export class PagemoduleModule {}
