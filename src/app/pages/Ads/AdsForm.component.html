@@ -1,0 +1,145 @@
+<h2>Ads</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+
+<!-- id -->
+<div class="mt-3"> 
+     <input type="hidden" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
+</div>
+
+
+<!-- ชื่อ Ads โฆษณา * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อ Ads โฆษณา *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxNameLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxNameLabel.touched && f.uxNameLabel.errors?.required"> กรุณาป้อนค่า ชื่อ Ads โฆษณา * </span>
+
+<!-- รูปภาพ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปภาพ *<span class="text-danger">***</span>
+     </label>
+     <input type="file" accept="image/*" class="form-control" formControlName="uxImageLabel" id="exampleFormControlInput1" placeholder="">
+<app-file-upload></app-file-upload></div>
+<span class="text-danger" 
+*ngIf="f.uxImageLabel.touched && f.uxImageLabel.errors?.required"> กรุณาป้อนค่า รูปภาพ * </span>
+
+<!-- ลิงก์ไปยัง -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ลิงก์ไปยัง<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxLinkURLLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLinkURLLabel.touched && f.uxLinkURLLabel.errors?.required"> กรุณาป้อนค่า ลิงก์ไปยัง </span>
+
+<!-- ถ้าหากต้องการที่จะลิงก์ออกไปนอกเว็บไซต์นี้ กรุณาใส่ http:// หน้าลิงก์ เช่น http://www.takraonline.com -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ถ้าหากต้องการที่จะลิงก์ออกไปนอกเว็บไซต์นี้ กรุณาใส่ http:// หน้าลิงก์ เช่น http://www.takraonline.com<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxLinkMessageText" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxLinkMessageText.touched && f.uxLinkMessageText.errors?.required"> กรุณาป้อนค่า ถ้าหากต้องการที่จะลิงก์ออกไปนอกเว็บไซต์นี้ กรุณาใส่ http:// หน้าลิงก์ เช่น http://www.takraonline.com </span>
+
+<!-- เปิดในหน้าต่างใหม่ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxTargetDropLabel" formControlName="uxTargetDropLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดในหน้าต่างใหม่
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxTargetDropLabel.touched && f.uxTargetDropLabel.errors?.required"> กรุณาป้อนค่า เปิดในหน้าต่างใหม่ </span>
+
+<!-- เลือกตำแหน่งที่แสดงบนเว็บไซต์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เลือกตำแหน่งที่แสดงบนเว็บไซต์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxGroupsLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxGroupsLabel.touched && f.uxGroupsLabel.errors?.required"> กรุณาป้อนค่า เลือกตำแหน่งที่แสดงบนเว็บไซต์ </span>
+
+<!-- ตำแหน่งซ้าย / ขวา จะแสดงในหน้ารายละเอียดสินค้า (การแสดงผลจะขึ้นอยู่กับรูปแบบร้านค้าที่เลือก) -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ตำแหน่งซ้าย / ขวา จะแสดงในหน้ารายละเอียดสินค้า (การแสดงผลจะขึ้นอยู่กับรูปแบบร้านค้าที่เลือก)<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxGroupsMessage" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxGroupsMessage.touched && f.uxGroupsMessage.errors?.required"> กรุณาป้อนค่า ตำแหน่งซ้าย / ขวา จะแสดงในหน้ารายละเอียดสินค้า (การแสดงผลจะขึ้นอยู่กับรูปแบบร้านค้าที่เลือก) </span>
+
+<!-- วันที่เริ่มต้น -->
+
+<!-- วันที่สิ้นสุด -->
+
+<!-- เปิดใช้งาน -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxIsEnabledLabel" formControlName="uxIsEnabledLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxIsEnabledLabel.touched && f.uxIsEnabledLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} 
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+routerLinkActive="active" -->

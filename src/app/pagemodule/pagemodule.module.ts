@@ -31,8 +31,13 @@ import { ItemmasterListComponent } from '../pages/itemmasterForm/itemmasterList.
 
 import { BannerSlideFormComponent } from'../pages/bannerSlide/bannerSlideForm.component';
 import { BannerSlideListComponent } from '../pages/bannerSlide/bannerSlideList.component';
+import { DesignFormComponent } from'../pages/design/designForm.component';
+import { DesignListComponent } from '../pages/design/designList.component';
+import { AdsFormComponent } from'../pages/Ads/AdsForm.component';
+import { AdsListComponent } from '../pages/Ads/AdsList.component';
 
-
+import { MainmenuFormComponent } from'../pages/mainmenu/mainmenuForm.component';
+import { MainmenuListComponent } from '../pages/mainmenu/mainmenuList.component';
 
 @NgModule({
   imports: [
@@ -60,6 +65,9 @@ import { BannerSlideListComponent } from '../pages/bannerSlide/bannerSlideList.c
     DepartmentListComponent,
     ItemmasterFormComponent,ItemmasterListComponent
     ,BannerSlideFormComponent,BannerSlideListComponent
+    ,DesignFormComponent,DesignListComponent
+    ,AdsFormComponent,AdsListComponent
+    ,MainmenuFormComponent,MainmenuListComponent
   ],
   exports: [
     PagetestComponent,
@@ -70,6 +78,9 @@ import { BannerSlideListComponent } from '../pages/bannerSlide/bannerSlideList.c
     DepartmentListComponent,
     ItemmasterFormComponent,ItemmasterListComponent
     ,BannerSlideFormComponent,BannerSlideListComponent
+    ,DesignFormComponent,DesignListComponent
+    ,AdsFormComponent,AdsListComponent
+    ,MainmenuFormComponent,MainmenuListComponent
   ],
 })
 export class PagemoduleModule {}

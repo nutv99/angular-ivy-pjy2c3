@@ -1,0 +1,381 @@
+<h2>design</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+
+<!-- id -->
+<div class="mt-3"> 
+     <input type="hidden" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
+</div>
+
+
+<!-- แสดงปุ่ม ไปด้านบน (Go to Top) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxDisplayGoToTopLabel" formControlName="uxDisplayGoToTopLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แสดงปุ่ม ไปด้านบน (Go to Top)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxDisplayGoToTopLabel.touched && f.uxDisplayGoToTopLabel.errors?.required"> กรุณาป้อนค่า แสดงปุ่ม ไปด้านบน (Go to Top) </span>
+
+<!-- แสดงปุ่มโทรสำหรับหน้าจอมือถือ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxDisplayCallLabel" formControlName="uxDisplayCallLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แสดงปุ่มโทรสำหรับหน้าจอมือถือ
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxDisplayCallLabel.touched && f.uxDisplayCallLabel.errors?.required"> กรุณาป้อนค่า แสดงปุ่มโทรสำหรับหน้าจอมือถือ </span>
+
+<!-- แสดงปุ่ม LINE สำหรับหน้าจอมือถือ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxDisplayLineLabel" formControlName="uxDisplayLineLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แสดงปุ่ม LINE สำหรับหน้าจอมือถือ
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxDisplayLineLabel.touched && f.uxDisplayLineLabel.errors?.required"> กรุณาป้อนค่า แสดงปุ่ม LINE สำหรับหน้าจอมือถือ </span>
+
+<!-- แสดงตัวเลือกขอใบกำกับภาษี -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxDisplayTaxInvoiceRequestLabel" formControlName="uxDisplayTaxInvoiceRequestLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แสดงตัวเลือกขอใบกำกับภาษี
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxDisplayTaxInvoiceRequestLabel.touched && f.uxDisplayTaxInvoiceRequestLabel.errors?.required"> กรุณาป้อนค่า แสดงตัวเลือกขอใบกำกับภาษี </span>
+
+<!-- ตะกร้าสินค้าแบบย่อ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxMiniCartModuleDisplay" formControlName="uxMiniCartModuleDisplay">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ตะกร้าสินค้าแบบย่อ
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxMiniCartModuleDisplay.touched && f.uxMiniCartModuleDisplay.errors?.required"> กรุณาป้อนค่า ตะกร้าสินค้าแบบย่อ </span>
+
+<!-- สินค้าที่สนใจ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxWishListDisplayLabel" formControlName="uxWishListDisplayLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          สินค้าที่สนใจ
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxWishListDisplayLabel.touched && f.uxWishListDisplayLabel.errors?.required"> กรุณาป้อนค่า สินค้าที่สนใจ </span>
+
+<!-- สกุลเงิน -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxCurrencyModuleDisplayLabel" formControlName="uxCurrencyModuleDisplayLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          สกุลเงิน
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxCurrencyModuleDisplayLabel.touched && f.uxCurrencyModuleDisplayLabel.errors?.required"> กรุณาป้อนค่า สกุลเงิน </span>
+
+<!-- ค่าเริ่มต้นของสกุลเงิน -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ค่าเริ่มต้นของสกุลเงิน<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxDisplayCurrencyCodeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxDisplayCurrencyCodeLabel.touched && f.uxDisplayCurrencyCodeLabel.errors?.required"> กรุณาป้อนค่า ค่าเริ่มต้นของสกุลเงิน </span>
+
+<!-- สินค้ามาใหม่ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxEnableNewArrivalProductLabel" formControlName="uxEnableNewArrivalProductLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          สินค้ามาใหม่
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEnableNewArrivalProductLabel.touched && f.uxEnableNewArrivalProductLabel.errors?.required"> กรุณาป้อนค่า สินค้ามาใหม่ </span>
+
+<!-- เลือกรูปแบบการแสดงผล -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เลือกรูปแบบการแสดงผล<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxNewArrivalTypeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxNewArrivalTypeLabel.touched && f.uxNewArrivalTypeLabel.errors?.required"> กรุณาป้อนค่า เลือกรูปแบบการแสดงผล </span>
+
+<!-- จำนวนสินค้าที่แสดง (สำหรับรูปแบบหลายแถว) * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          จำนวนสินค้าที่แสดง (สำหรับรูปแบบหลายแถว) *
+     </label>
+     <input type="number" class="form-control" formControlName="uxNewArrivalMultiRowProductLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxNewArrivalMultiRowProductLabel.touched && f.uxNewArrivalMultiRowProductLabel.errors?.required"> กรุณาป้อนค่า จำนวนสินค้าที่แสดง (สำหรับรูปแบบหลายแถว) * </span>
+
+<!-- จำนวนที่มากที่สุดของสินค้ามาใหม่ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          จำนวนที่มากที่สุดของสินค้ามาใหม่ *
+     </label>
+     <input type="number" class="form-control" formControlName="uxMaximumDisplayProductNewArrivalLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxMaximumDisplayProductNewArrivalLabel.touched && f.uxMaximumDisplayProductNewArrivalLabel.errors?.required"> กรุณาป้อนค่า จำนวนที่มากที่สุดของสินค้ามาใหม่ * </span>
+
+<!-- โปรโมชั่น -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          โปรโมชั่น<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxBundlePromotionDisplay" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxBundlePromotionDisplay.touched && f.uxBundlePromotionDisplay.errors?.required"> กรุณาป้อนค่า โปรโมชั่น </span>
+
+<!-- รูปภาพโปรโมชั่น -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปภาพโปรโมชั่น<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxBundlePromotionModuleImage" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxBundlePromotionModuleImage.touched && f.uxBundlePromotionModuleImage.errors?.required"> กรุณาป้อนค่า รูปภาพโปรโมชั่น </span>
+
+<!-- สินค้าแนะนำ (แบบสุ่ม) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxFeaturedProductModuleDisplayLabel" formControlName="uxFeaturedProductModuleDisplayLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          สินค้าแนะนำ (แบบสุ่ม)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFeaturedProductModuleDisplayLabel.touched && f.uxFeaturedProductModuleDisplayLabel.errors?.required"> กรุณาป้อนค่า สินค้าแนะนำ (แบบสุ่ม) </span>
+
+<!-- สินค้าขายดี -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxBestsellersModuleDisplayLabel" formControlName="uxBestsellersModuleDisplayLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          สินค้าขายดี
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxBestsellersModuleDisplayLabel.touched && f.uxBestsellersModuleDisplayLabel.errors?.required"> กรุณาป้อนค่า สินค้าขายดี </span>
+
+<!-- ข่าวและประกาศ -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxNewsModuleDisplayLabel" formControlName="uxNewsModuleDisplayLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ข่าวและประกาศ
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxNewsModuleDisplayLabel.touched && f.uxNewsModuleDisplayLabel.errors?.required"> กรุณาป้อนค่า ข่าวและประกาศ </span>
+
+<!-- FLASH SALE -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxHotDealDisplayLabel" formControlName="uxHotDealDisplayLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          FLASH SALE
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxHotDealDisplayLabel.touched && f.uxHotDealDisplayLabel.errors?.required"> กรุณาป้อนค่า FLASH SALE </span>
+
+<!-- จำนวน FLASH SALE สูงสุดที่แสดงในหน้าแรก * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          จำนวน FLASH SALE สูงสุดที่แสดงในหน้าแรก *
+     </label>
+     <input type="number" class="form-control" formControlName="uxMaximumDisplayProductHotDealLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxMaximumDisplayProductHotDealLabel.touched && f.uxMaximumDisplayProductHotDealLabel.errors?.required"> กรุณาป้อนค่า จำนวน FLASH SALE สูงสุดที่แสดงในหน้าแรก * </span>
+
+<!-- แบรนด์ (แบบหมุน) -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="uxBrandsCarouselLabel" formControlName="uxBrandsCarouselLabel">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แบรนด์ (แบบหมุน)
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.uxBrandsCarouselLabel.touched && f.uxBrandsCarouselLabel.errors?.required"> กรุณาป้อนค่า แบรนด์ (แบบหมุน) </span>
+
+<!-- เปิดใช้งาน Faceted Search -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน Faceted Search<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxFacetedSearchEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxFacetedSearchEnabledLabel.touched && f.uxFacetedSearchEnabledLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน Faceted Search </span>
+
+<!-- ราคาในแต่ละลำดับขั้น * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ราคาในแต่ละลำดับขั้น *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxPriceNavigationStepLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxPriceNavigationStepLabel.touched && f.uxPriceNavigationStepLabel.errors?.required"> กรุณาป้อนค่า ราคาในแต่ละลำดับขั้น * </span>
+
+<!-- จำนวนลำดับขั้น * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          จำนวนลำดับขั้น *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxMaximunIntervalLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxMaximunIntervalLabel.touched && f.uxMaximunIntervalLabel.errors?.required"> กรุณาป้อนค่า จำนวนลำดับขั้น * </span>
+
+<!-- เปิดใช้งาน คูปอง -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน คูปอง<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxCouponModuleDisplayLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxCouponModuleDisplayLabel.touched && f.uxCouponModuleDisplayLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน คูปอง </span>
+
+<!-- เปิดใช้งาน สินค้าที่ดูล่าสุด -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน สินค้าที่ดูล่าสุด<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxRecentlyViewedProductLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxRecentlyViewedProductLabel.touched && f.uxRecentlyViewedProductLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน สินค้าที่ดูล่าสุด </span>
+
+<!-- เปิดใช้งาน แผนกสินค้า -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน แผนกสินค้า<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxEnableDepartmentLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEnableDepartmentLabel.touched && f.uxEnableDepartmentLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน แผนกสินค้า </span>
+
+<!-- เปิดใช้งาน แบรนด์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน แบรนด์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxEnableManufacturerLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxEnableManufacturerLabel.touched && f.uxEnableManufacturerLabel.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน แบรนด์ </span>
+
+<!-- แสดงแผนผังเว็บไซต์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แสดงแผนผังเว็บไซต์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxSiteMapEnabledLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxSiteMapEnabledLabel.touched && f.uxSiteMapEnabledLabel.errors?.required"> กรุณาป้อนค่า แสดงแผนผังเว็บไซต์ </span>
+
+<!-- รูปแบบแผนผังเว็บไซต์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปแบบแผนผังเว็บไซต์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxSiteMapTypeLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxSiteMapTypeLabel.touched && f.uxSiteMapTypeLabel.errors?.required"> กรุณาป้อนค่า รูปแบบแผนผังเว็บไซต์ </span>
+
+<!-- จดหมายข่าว -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          จดหมายข่าว<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxNewsletterModuleDisplayLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxNewsletterModuleDisplayLabel.touched && f.uxNewsletterModuleDisplayLabel.errors?.required"> กรุณาป้อนค่า จดหมายข่าว </span>
+
+<!-- โลโก้ช่องทางชำระเงิน -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          โลโก้ช่องทางชำระเงิน<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxPaymentLogoModuleDisplayLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxPaymentLogoModuleDisplayLabel.touched && f.uxPaymentLogoModuleDisplayLabel.errors?.required"> กรุณาป้อนค่า โลโก้ช่องทางชำระเงิน </span>
+
+<!-- รูปภาพโลโก้ช่องทางชำระเงิน -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปภาพโลโก้ช่องทางชำระเงิน<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxPaymentLogoModuleImageLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxPaymentLogoModuleImageLabel.touched && f.uxPaymentLogoModuleImageLabel.errors?.required"> กรุณาป้อนค่า รูปภาพโลโก้ช่องทางชำระเงิน </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} 
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+routerLinkActive="active" -->

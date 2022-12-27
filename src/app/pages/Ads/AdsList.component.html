@@ -1,0 +1,9 @@
+<h2>Ads</h2>
+<button [routerLink]="['/AdsForm/new']">เพิ่มข้อมูล</button>
+<app-tabledata3
+  [varModelTable]="varmodelTable"
+  (MYIDOutDelete)="OnDeleteAds($event)"
+>
+</app-tabledata3>
+
+

@@ -57,6 +57,14 @@ import { ItemmasterListComponent } from './pages/itemmasterForm/itemmasterList.c
 import { BannerSlideFormComponent } from'./pages/bannerSlide/bannerSlideForm.component';
 import { BannerSlideListComponent } from './pages/bannerSlide/bannerSlideList.component';
 
+import { DesignFormComponent } from'./pages/design/designForm.component';
+import { DesignListComponent } from './pages/design/designList.component';
+import { AdsFormComponent } from'./pages/Ads/AdsForm.component';
+import { AdsListComponent } from './pages/Ads/AdsList.component';
+import { MainmenuFormComponent } from'./pages/mainmenu/mainmenuForm.component';
+import { MainmenuListComponent } from './pages/mainmenu/mainmenuList.component';
+
+
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -80,7 +88,13 @@ const appRoutes: Routes = [
   { path: 'itemmasterForm/:id', component: ItemmasterFormComponent },
   { path: 'bannerSlideList', component: BannerSlideListComponent },
   { path: 'bannerSlideForm/:id', component: BannerSlideFormComponent },
+  { path: 'designList', component: DesignListComponent },
+  { path: 'designForm/:id', component: DesignFormComponent },
+  { path: 'AdsList', component: AdsListComponent },
+  { path: 'AdsForm/:id', component: AdsFormComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
+  { path: 'mainmenuList', component: MainmenuListComponent },
+  { path: 'mainmenuForm/:id', component: MainmenuFormComponent },
 ];
 
 
