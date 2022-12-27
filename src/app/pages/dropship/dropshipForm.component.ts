@@ -118,10 +118,10 @@ export class DropshipFormComponent implements OnInit {
       let id = this._Activatedroute.snapshot.paramMap.get('id');
       this.myForm.get('id').setValue(id);
       if (id != 'new') {
-        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;
+        this.formTitle = 'แก้ไขข้อมูล-' + this.varmodelTable.Caption;
         this.getByID(id);
       } else {
-        this.formTitle = 'เพิ่มข้อมูล' + this.varmodelTable.Caption;
+        this.formTitle = 'เพิ่มข้อมูล-' + this.varmodelTable.Caption;
       }
     }
   }
@@ -179,7 +179,7 @@ export class DropshipFormComponent implements OnInit {
       });
     }
 
-    if (this.FormMode === 'patch') {
+    if (this.FormMode === 'patch' || this.FormMode === 'put') {
       let PayLoad = {
         dataPayload: this.myForm.value,
       };
@@ -284,6 +284,7 @@ export class DropshipFormComponent implements OnInit {
 
   getByID(id) {
     console.clear();
+    //alert(id);
     this.apiService.getById(this.ModelName, id).subscribe((response: any) => {
       //this.dropshipModel = response;
       this.FormMode = 'put';
