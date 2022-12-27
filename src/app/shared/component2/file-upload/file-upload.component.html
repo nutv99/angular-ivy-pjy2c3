@@ -1,0 +1,20 @@
+<img #fileImg [src]="url2" height="200" /> <br />
+
+<img
+  src="https://cdn-icons-png.flaticon.com/128/7605/7605250.png"
+  (click)="AddSelectFile()"
+  width="50"
+/>
+
+<input
+  type="file"
+  #fileSelect
+  (change)="onSelectFile($event)"
+  accept="image/*"
+  multiple
+  style="position:absolute;left:-300px"
+/>
+
+<p>Start editing to see some magic happen :)</p>
+Container
+<div #imgContainner id="imgContainner"></div>
