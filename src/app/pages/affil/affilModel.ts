@@ -1,0 +1,106 @@
+
+export interface full_affilModel {
+  id? : number ;
+  lcUserName? : string ;
+  lcPassword? : string ;
+  lcConfirm? : string ;
+  lcRegisterDate? : Date ;
+  lcIsEnabled? : string ;
+  lcFirstName? : string ;
+  lcLastName? : string ;
+  lcWebSite? : string ;
+  lcCompany? : string ;
+  lcAddress? : string ;
+  lcDistrict? : string ;
+  lcCity? : string ;
+  lcCountry? : string ;
+  lcState? : string ;
+  lcZip? : string ;
+  lcPhone? : string ;
+  lcEmail? : string ;
+  lcCommission? : string ;
+}
+export interface crud_affilModel {
+  id? : number ;
+  lcUserName? : string ;
+  lcPassword? : string ;
+  lcConfirm? : string ;
+  lcRegisterDate? : Date ;
+  lcIsEnabled? : string ;
+  lcFirstName? : string ;
+  lcLastName? : string ;
+  lcWebSite? : string ;
+  lcCompany? : string ;
+  lcAddress? : string ;
+  lcDistrict? : string ;
+  lcCity? : string ;
+  lcCountry? : string ;
+  lcState? : string ;
+  lcZip? : string ;
+  lcPhone? : string ;
+  lcEmail? : string ;
+  lcCommission? : string ;
+}
+export interface form_affilModel {
+  id? : number ;
+  lcUserName? : string ;
+  lcPassword? : string ;
+  lcConfirm? : string ;
+  lcRegisterDate? : Date ;
+  lcIsEnabled? : string ;
+  lcFirstName? : string ;
+  lcLastName? : string ;
+  lcWebSite? : string ;
+  lcCompany? : string ;
+  lcAddress? : string ;
+  lcDistrict? : string ;
+  lcCity? : string ;
+  lcCountry? : string ;
+  lcState? : string ;
+  lcZip? : string ;
+  lcPhone? : string ;
+  lcEmail? : string ;
+  lcCommission? : string ;
+}
+export interface post_affilModel {
+  id? : number ;
+  lcUserName? : string ;
+  lcPassword? : string ;
+  lcConfirm? : string ;
+  lcRegisterDate? : Date ;
+  lcIsEnabled? : string ;
+  lcFirstName? : string ;
+  lcLastName? : string ;
+  lcWebSite? : string ;
+  lcCompany? : string ;
+  lcAddress? : string ;
+  lcDistrict? : string ;
+  lcCity? : string ;
+  lcCountry? : string ;
+  lcState? : string ;
+  lcZip? : string ;
+  lcPhone? : string ;
+  lcEmail? : string ;
+  lcCommission? : string ;
+}
+export interface put_affilModel {
+  id? : number ;
+  lcUserName? : string ;
+  lcPassword? : string ;
+  lcConfirm? : string ;
+  lcRegisterDate? : Date ;
+  lcIsEnabled? : string ;
+  lcFirstName? : string ;
+  lcLastName? : string ;
+  lcWebSite? : string ;
+  lcCompany? : string ;
+  lcAddress? : string ;
+  lcDistrict? : string ;
+  lcCity? : string ;
+  lcCountry? : string ;
+  lcState? : string ;
+  lcZip? : string ;
+  lcPhone? : string ;
+  lcEmail? : string ;
+  lcCommission? : string ;
+}

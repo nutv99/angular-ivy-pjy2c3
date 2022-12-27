@@ -3,8 +3,8 @@ import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { Tabledata2Component } from '../../shared/components/tabledata2/tabledata2.component';
 import { SearchselectComponent } from '../../shared/components/searchselect/searchselect.component';
 
-//import { full_customerModel } from '../../_models/customer';
-import { full_customerModel } from './customerModel';
+//import { full_affilModel } from '../../_models/affil';
+import { full_affilModel } from './affilModel';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 //import { CustomvalidationService } from '../services/customvalidation.service';
 import { APIService } from '../../_services/api.service';
@@ -29,14 +29,14 @@ export interface modelTable {
 }
 
 @Component({
-  selector: 'app-customerForm',
-  templateUrl: './customerForm.component.html',
-  styleUrls: ['./customerForm.component.scss'],
+  selector: 'app-affilForm',
+  templateUrl: './affilForm.component.html',
+  styleUrls: ['./affilForm.component.scss'],
 })
 
 
 
-export class CustomerFormComponent implements OnInit {
+export class AffilFormComponent implements OnInit {
 
   formCode : string = 'new' ;
   formModal: any;
@@ -44,14 +44,14 @@ export class CustomerFormComponent implements OnInit {
   // Table Crud
   varmodelTable: modelTable = {
     formCode: 'new',
-    apiTable: 'customer',
-	formNameEdit : 'customerForm',
-    Caption: 'customer',
+    apiTable: 'affil',
+	formNameEdit : 'affilForm',
+    Caption: 'affil',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
   // Initial Form Model VAR & Value
-  customerModel: full_customerModel = {
+  affilModel: full_affilModel = {
     id: 2
   };
 
@@ -66,9 +66,9 @@ export class CustomerFormComponent implements OnInit {
   ];
 
   id: number = 1;
-  ModelName: string = 'customer';
+  ModelName: string = 'affil';
   FormMode: string = 'post';
-  formTitle: string = 'เพิ่มข้อมูล-customer ';
+  formTitle: string = 'เพิ่มข้อมูล-affil ';
 
   stageCrud: boolean = true;
   stageForm: boolean = true;
@@ -80,7 +80,7 @@ export class CustomerFormComponent implements OnInit {
 
 	
 this.myForm = this.fb.group({
-id : ['',Validators.required],lcFirstName : ['',Validators.required],lcLastName : ['',Validators.required],lcCompany : ['',Validators.required],lcAddress : ['',Validators.required],uxDistrictLabel : ['',Validators.required],lcCity : ['',Validators.required],lcCountry : ['',Validators.required],lcState : ['',Validators.required],lcZip : ['',Validators.required],lcPhone : ['',Validators.required],lcEmail : ['',Validators.required],uxLineIDLabel : ['',Validators.required],uxUseBillingAsShippingLabel : ['',Validators.required],lcShippingFirstName : ['',Validators.required],lcShippingLastName : ['',Validators.required],lcShippingCompany : ['',Validators.required],lcShippingAddress : ['',Validators.required],uxShippingDistrictLabel : ['',Validators.required],lcShippingCity : ['',Validators.required],lcShippingCountry : ['',Validators.required],lcShippingState : ['',Validators.required],lcShippingZip : ['',Validators.required],lcShippingPhone : ['',Validators.required],lcShippingFax : ['',Validators.required],lcMerchantNotes : ['',Validators.required]});
+id : ['',Validators.required],lcUserName : ['',Validators.required],lcPassword : ['',Validators.required],lcConfirm : ['',Validators.required],lcRegisterDate : ['',Validators.required],lcIsEnabled : ['',Validators.required],lcFirstName : ['',Validators.required],lcLastName : ['',Validators.required],lcWebSite : ['',Validators.required],lcCompany : ['',Validators.required],lcAddress : ['',Validators.required],lcDistrict : ['',Validators.required],lcCity : ['',Validators.required],lcCountry : ['',Validators.required],lcState : ['',Validators.required],lcZip : ['',Validators.required],lcPhone : ['',Validators.required],lcEmail : ['',Validators.required],lcCommission : ['',Validators.required]});
 
 	if (this._Activatedroute.snapshot.paramMap.get('id')) {
       //alert(this._Activatedroute.snapshot.paramMap.get('id'));
@@ -187,32 +187,25 @@ id : ['',Validators.required],lcFirstName : ['',Validators.required],lcLastName 
   newForm() {
     console.clear();
 
-    this.myForm.get('id').setValue('new');
+    this.myForm.get('id').setValue('');
+this.myForm.get('lcUserName').setValue('');
+this.myForm.get('lcPassword').setValue('');
+this.myForm.get('lcConfirm').setValue('');
+this.myForm.get('lcRegisterDate').setValue('');
+this.myForm.get('lcIsEnabled').setValue('');
 this.myForm.get('lcFirstName').setValue('');
 this.myForm.get('lcLastName').setValue('');
+this.myForm.get('lcWebSite').setValue('');
 this.myForm.get('lcCompany').setValue('');
 this.myForm.get('lcAddress').setValue('');
-this.myForm.get('uxDistrictLabel').setValue('');
+this.myForm.get('lcDistrict').setValue('');
 this.myForm.get('lcCity').setValue('');
 this.myForm.get('lcCountry').setValue('');
 this.myForm.get('lcState').setValue('');
 this.myForm.get('lcZip').setValue('');
 this.myForm.get('lcPhone').setValue('');
 this.myForm.get('lcEmail').setValue('');
-this.myForm.get('uxLineIDLabel').setValue('');
-this.myForm.get('uxUseBillingAsShippingLabel').setValue('');
-this.myForm.get('lcShippingFirstName').setValue('');
-this.myForm.get('lcShippingLastName').setValue('');
-this.myForm.get('lcShippingCompany').setValue('');
-this.myForm.get('lcShippingAddress').setValue('');
-this.myForm.get('uxShippingDistrictLabel').setValue('');
-this.myForm.get('lcShippingCity').setValue('');
-this.myForm.get('lcShippingCountry').setValue('');
-this.myForm.get('lcShippingState').setValue('');
-this.myForm.get('lcShippingZip').setValue('');
-this.myForm.get('lcShippingPhone').setValue('');
-this.myForm.get('lcShippingFax').setValue('');
-this.myForm.get('lcMerchantNotes').setValue('');
+this.myForm.get('lcCommission').setValue('');
 
 
   }
@@ -220,12 +213,12 @@ this.myForm.get('lcMerchantNotes').setValue('');
   getByID(id) {
     console.clear();
     this.apiService.getById(this.ModelName, id).subscribe((response: any) => {
-      //this.customerModel = response;
+      //this.affilModel = response;
 	  this.FormMode = 'put';
 	  response = response.DataResult;
       console.log('res', response);
 
-      this.myForm.get('id').setValue(response.id);this.myForm.get('lcFirstName').setValue(response.lcFirstName);this.myForm.get('lcLastName').setValue(response.lcLastName);this.myForm.get('lcCompany').setValue(response.lcCompany);this.myForm.get('lcAddress').setValue(response.lcAddress);this.myForm.get('uxDistrictLabel').setValue(response.uxDistrictLabel);this.myForm.get('lcCity').setValue(response.lcCity);this.myForm.get('lcCountry').setValue(response.lcCountry);this.myForm.get('lcState').setValue(response.lcState);this.myForm.get('lcZip').setValue(response.lcZip);this.myForm.get('lcPhone').setValue(response.lcPhone);this.myForm.get('lcEmail').setValue(response.lcEmail);this.myForm.get('uxLineIDLabel').setValue(response.uxLineIDLabel);this.myForm.get('uxUseBillingAsShippingLabel').setValue(response.uxUseBillingAsShippingLabel);this.myForm.get('lcShippingFirstName').setValue(response.lcShippingFirstName);this.myForm.get('lcShippingLastName').setValue(response.lcShippingLastName);this.myForm.get('lcShippingCompany').setValue(response.lcShippingCompany);this.myForm.get('lcShippingAddress').setValue(response.lcShippingAddress);this.myForm.get('uxShippingDistrictLabel').setValue(response.uxShippingDistrictLabel);this.myForm.get('lcShippingCity').setValue(response.lcShippingCity);this.myForm.get('lcShippingCountry').setValue(response.lcShippingCountry);this.myForm.get('lcShippingState').setValue(response.lcShippingState);this.myForm.get('lcShippingZip').setValue(response.lcShippingZip);this.myForm.get('lcShippingPhone').setValue(response.lcShippingPhone);this.myForm.get('lcShippingFax').setValue(response.lcShippingFax);this.myForm.get('lcMerchantNotes').setValue(response.lcMerchantNotes);
+      this.myForm.get('id').setValue(response.id);this.myForm.get('lcUserName').setValue(response.lcUserName);this.myForm.get('lcPassword').setValue(response.lcPassword);this.myForm.get('lcConfirm').setValue(response.lcConfirm);this.myForm.get('lcRegisterDate').setValue(response.lcRegisterDate);this.myForm.get('lcIsEnabled').setValue(response.lcIsEnabled);this.myForm.get('lcFirstName').setValue(response.lcFirstName);this.myForm.get('lcLastName').setValue(response.lcLastName);this.myForm.get('lcWebSite').setValue(response.lcWebSite);this.myForm.get('lcCompany').setValue(response.lcCompany);this.myForm.get('lcAddress').setValue(response.lcAddress);this.myForm.get('lcDistrict').setValue(response.lcDistrict);this.myForm.get('lcCity').setValue(response.lcCity);this.myForm.get('lcCountry').setValue(response.lcCountry);this.myForm.get('lcState').setValue(response.lcState);this.myForm.get('lcZip').setValue(response.lcZip);this.myForm.get('lcPhone').setValue(response.lcPhone);this.myForm.get('lcEmail').setValue(response.lcEmail);this.myForm.get('lcCommission').setValue(response.lcCommission);
 
 
       //this.myForm.get('Mode').setValue('patch');
@@ -254,9 +247,9 @@ this.myForm.get('lcMerchantNotes').setValue('');
     this.getByID(e);
   }
 
-  saveCustomer() {}
+  saveAffil() {}
 
-  searchCustomer() {}
+  searchAffil() {}
 
 /******************* ALERT SECTION ************************/
 
@@ -295,7 +288,7 @@ this.myForm.get('lcMerchantNotes').setValue('');
     Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
   }
 
-  customer_Emit(e:any) {
+  affil_Emit(e:any) {
      this.dataInit  = e ;
 
   }

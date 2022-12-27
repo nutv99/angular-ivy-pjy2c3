@@ -132,7 +132,7 @@ export class Tabledata3Component implements OnInit {
       this.totalPage = data.totalPage;
       this.results = data.DataResult;
       this.headerTable = data.headerAr;
-      console.table(data.DataResult);
+      //console.table(data.DataResult);
       this.AllRec = data.totalRec;
       this.currentPageNo = parseInt(wantpageno);
       // this.nextPageNo = parseInt(wantpageno) + 1;

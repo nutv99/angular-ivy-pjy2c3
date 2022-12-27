@@ -66,6 +66,11 @@ import { CustomerFormComponent } from './pages/customer/customerForm.component';
 import { CustomerListComponent } from './pages/customer/customerList.component';
 
 import { List99Component } from './pages/list99/list99.component';
+import { AffilFormComponent } from'./pages/affil/affilForm.component';
+import { AffilListComponent } from './pages/affil/affilList.component';
+
+import { DropshipFormComponent } from'./pages/dropship/dropshipForm.component';
+import { DropshipListComponent } from './pages/dropship/dropshipList.component';
 
 // ใส่ใน Declaration
 
@@ -98,6 +103,10 @@ const appRoutes: Routes = [
   { path: 'list99', component: List99Component },
   { path: 'customerList', component: CustomerListComponent },
   { path: 'customerForm/:id', component: CustomerFormComponent },
+  { path: 'affilList', component: AffilListComponent },
+  { path: 'affilForm/:id', component: AffilFormComponent },
+  { path: 'dropshipList', component: DropshipListComponent },
+  { path: 'dropshipForm/:id', component: DropshipFormComponent },
   
 
 

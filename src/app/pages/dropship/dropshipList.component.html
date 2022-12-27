@@ -1,0 +1,9 @@
+<h2>dropship</h2>
+<button [routerLink]="['/dropshipForm/new']">เพิ่มข้อมูล</button>
+<app-tabledata3
+  [varModelTable]="varmodelTable"
+  (MYIDOutDelete)="OnDeleteDropship($event)"
+>
+</app-tabledata3>
+
+

@@ -42,6 +42,11 @@ import { CustomerFormComponent } from'../pages/customer/customerForm.component';
 import { CustomerListComponent } from '../pages/customer/customerList.component';
 
 import {List99Component} from '../pages/list99/list99.component';
+import { AffilFormComponent } from'../pages/affil/affilForm.component';
+import { AffilListComponent } from '../pages/affil/affilList.component';
+
+import { DropshipFormComponent } from'../pages/dropship/dropshipForm.component';
+import { DropshipListComponent } from '../pages/dropship/dropshipList.component';
 
 @NgModule({
   imports: [
@@ -73,7 +78,8 @@ import {List99Component} from '../pages/list99/list99.component';
     ,AdsFormComponent,AdsListComponent
     
     ,CustomerFormComponent,CustomerListComponent,
-    List99Component,
+    List99Component,AffilFormComponent,AffilListComponent
+    ,DropshipFormComponent,DropshipListComponent
    
   ],
   exports: [
@@ -88,7 +94,9 @@ import {List99Component} from '../pages/list99/list99.component';
     ,DesignFormComponent,DesignListComponent
     ,AdsFormComponent,AdsListComponent
     ,CustomerFormComponent,CustomerListComponent,
-    List99Component
+    List99Component,
+    AffilFormComponent,AffilListComponent,
+    DropshipFormComponent,DropshipListComponent
     
   ],
 })

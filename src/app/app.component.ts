@@ -93,7 +93,9 @@ export class AppComponent {
         { name: 'designList', linkTo: 'designList', caption: 'ปรับแต่งดีไซน์' },
         { name: 'AdsList', linkTo: 'AdsList', caption: 'Ads' },
         { name: 'customerList', linkTo: 'customerList', caption: 'ลูกค้า' },
-        { name: 'AffiliateList', linkTo: 'AffiliateList', caption: 'Affiliate' }
+
+        { name: 'affilList', linkTo: 'affilList', caption: 'รายการ Affiliate' },
+        { name: 'dropshipList', linkTo: 'dropshipList', caption: 'dropship' },
       ],
     },
     {
