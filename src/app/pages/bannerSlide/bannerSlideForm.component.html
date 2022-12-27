@@ -1,0 +1,95 @@
+<h2>bannerSlide</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       <br/><br><!-- id -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          id
+     </label>
+     <input type="number" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.id.touched && f.id.errors?.required"> กรุณาป้อนค่า id </span><br/><br><!-- ชื่อแบนเนอร์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อแบนเนอร์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="bannerName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.bannerName.touched && f.bannerName.errors?.required"> กรุณาป้อนค่า ชื่อแบนเนอร์ </span><br/><br><!-- คำอธิบายภาพ --><br/><br><!-- รูปสำหรับMobile -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปสำหรับMobile<span class="text-danger">***</span>
+     </label>
+     <input type="file" accept="image/*" class="form-control" formControlName="bannerImageM" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.bannerImageM.touched && f.bannerImageM.errors?.required"> กรุณาป้อนค่า รูปสำหรับMobile </span><br/><br><!-- รูปสำหรับ Desktop -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รูปสำหรับ Desktop<span class="text-danger">***</span>
+     </label>
+     <input type="file" accept="image/*" class="form-control" formControlName="bannerImageD" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.bannerImageD.touched && f.bannerImageD.errors?.required"> กรุณาป้อนค่า รูปสำหรับ Desktop </span><br/><br><!-- ลิงค์ไปยัง URL -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ลิงค์ไปยัง URL<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="linkTo" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.linkTo.touched && f.linkTo.errors?.required"> กรุณาป้อนค่า ลิงค์ไปยัง URL </span><br/><br><!-- เปิดลิงค์ไปยังหน้าต่างใหม่ ? --><br/><br><!-- เปิดใช้งาน -->
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} 
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+routerLinkActive="active" -->
