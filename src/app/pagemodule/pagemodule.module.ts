@@ -42,6 +42,8 @@ import { CustomerFormComponent } from'../pages/customer/customerForm.component';
 import { CustomerListComponent } from '../pages/customer/customerList.component';
 
 import {List99Component} from '../pages/list99/list99.component';
+import { AffiliateFormComponent } from'../pages/affiliate/AffiliateForm.component';
+import { AffiliateListComponent } from '../pages/affiliate/AffiliateList.component';
 
 @NgModule({
   imports: [
@@ -73,7 +75,8 @@ import {List99Component} from '../pages/list99/list99.component';
     ,AdsFormComponent,AdsListComponent
     
     ,CustomerFormComponent,CustomerListComponent,
-    List99Component
+    List99Component,
+    AffiliateFormComponent,AffiliateListComponent
   ],
   exports: [
     PagetestComponent,
@@ -89,6 +92,7 @@ import {List99Component} from '../pages/list99/list99.component';
   
     ,CustomerFormComponent,CustomerListComponent,
     List99Component
+    ,AffiliateFormComponent,AffiliateListComponent
   ],
 })
 export class PagemoduleModule {}

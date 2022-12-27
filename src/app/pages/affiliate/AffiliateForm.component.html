@@ -1,0 +1,233 @@
+<h2>Affiliate</h2>
+
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
+  Value: {{ myForm.value | json }}
+  <!-- <button (click)="getByID()">Get ByID</button> -->
+  Mode: {{ FormMode }}
+  <div class="modal-content" id="myModal" *ngIf="stageForm">
+    <div class="modal-header" style="background-color:lightgrey">
+      <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>
+      <button type="button" class="btn-close" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      ...
+       
+
+<!-- id -->
+<div class="mt-3"> 
+     <input type="hidden" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
+</div>
+
+
+<!-- ชื่อผู้ใช้ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อผู้ใช้ *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcUserName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcUserName.touched && f.lcUserName.errors?.required"> กรุณาป้อนค่า ชื่อผู้ใช้ * </span>
+
+<!-- รหัสผ่าน * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสผ่าน *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcPassword" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcPassword.touched && f.lcPassword.errors?.required"> กรุณาป้อนค่า รหัสผ่าน * </span>
+
+<!-- ยืนยันรหัสผ่าน * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ยืนยันรหัสผ่าน *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcConfirm" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcConfirm.touched && f.lcConfirm.errors?.required"> กรุณาป้อนค่า ยืนยันรหัสผ่าน * </span>
+
+<!-- วันที่ลงทะเบียน -->
+
+<!-- เปิดใช้งาน -->
+<div class="mt-3 form-check form-switch"> 
+     <input class="form-check-input" type="checkbox" role="switch"  id="lcIsEnabled" formControlName="lcIsEnabled">
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน
+     </label>
+</div>
+<span class="text-danger" 
+*ngIf="f.lcIsEnabled.touched && f.lcIsEnabled.errors?.required"> กรุณาป้อนค่า เปิดใช้งาน </span>
+
+<!-- ชื่อ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อ *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcFirstName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcFirstName.touched && f.lcFirstName.errors?.required"> กรุณาป้อนค่า ชื่อ * </span>
+
+<!-- นามสกุล * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          นามสกุล *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcLastName" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcLastName.touched && f.lcLastName.errors?.required"> กรุณาป้อนค่า นามสกุล * </span>
+
+<!-- เว็บไซต์ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เว็บไซต์<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcWebSite" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcWebSite.touched && f.lcWebSite.errors?.required"> กรุณาป้อนค่า เว็บไซต์ </span>
+
+<!-- ชื่อบริษัท -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ชื่อบริษัท<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcCompany" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcCompany.touched && f.lcCompany.errors?.required"> กรุณาป้อนค่า ชื่อบริษัท </span>
+
+<!-- ที่อยู่ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ที่อยู่ *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcAddress" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcAddress.touched && f.lcAddress.errors?.required"> กรุณาป้อนค่า ที่อยู่ * </span>
+
+<!-- แขวง/ตำบล * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          แขวง/ตำบล *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcDistrict" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcDistrict.touched && f.lcDistrict.errors?.required"> กรุณาป้อนค่า แขวง/ตำบล * </span>
+
+<!-- เขต/อำเภอ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          เขต/อำเภอ *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcCity" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcCity.touched && f.lcCity.errors?.required"> กรุณาป้อนค่า เขต/อำเภอ * </span>
+
+<!-- ประเทศ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ประเทศ<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcCountry" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcCountry.touched && f.lcCountry.errors?.required"> กรุณาป้อนค่า ประเทศ </span>
+
+<!-- จังหวัด -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          จังหวัด<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcState" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcState.touched && f.lcState.errors?.required"> กรุณาป้อนค่า จังหวัด </span>
+
+<!-- รหัสไปรษณีย์ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          รหัสไปรษณีย์ *
+     </label>
+     <input type="number" class="form-control" formControlName="lcZip" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcZip.touched && f.lcZip.errors?.required"> กรุณาป้อนค่า รหัสไปรษณีย์ * </span>
+
+<!-- โทรศัพท์ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          โทรศัพท์ *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcPhone" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcPhone.touched && f.lcPhone.errors?.required"> กรุณาป้อนค่า โทรศัพท์ * </span>
+
+<!-- อีเมล * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          อีเมล *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcEmail" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcEmail.touched && f.lcEmail.errors?.required"> กรุณาป้อนค่า อีเมล * </span>
+
+<!-- อัตราค่าคอมมิชชั่น  -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          อัตราค่าคอมมิชชั่น<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="lcCommission" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.lcCommission.touched && f.lcCommission.errors?.required"> กรุณาป้อนค่า อัตราค่าคอมมิชชั่น </span>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="closeForm()">
+        ออก
+      </button>
+      <button type="submit" class="btn btn-primary">บันทึก</button>
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <button type="submit" class="btn btn-success" [disabled]="myForm.invalid">
+      Register  
+    </button>
+    
+    
+  </div> -->
+</form>
+<!-- <app-searchselect></app-searchselect> -->
+<hr />
+<div class="flex" style="display:flex" *ngIf="stageCrud">
+  <button
+    class="btn btn-primary"
+    placement="bottom"
+    ngbTooltip="Delete"
+    (click)="setStageForm();newForm()"
+    style="margin-left:auto;margin-right:10px"
+  >
+    เพิ่มข้อมูล
+  </button>
+</div>
+
+<!-- สถานะ :: {{ stageCrud }} 
+<div style="padding:20px">
+  <app-tabledata2
+    [varModelTable]="varmodelTable"
+    (MYIDOut)="setIDOnForm($event)"
+    (MYIDOutDelete)="OnDelete($event)"
+    *ngIf="stageCrud"
+  ></app-tabledata2>
+</div>
+
+routerLinkActive="active" -->

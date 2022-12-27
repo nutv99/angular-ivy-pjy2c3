@@ -91,9 +91,9 @@ export class AppComponent {
           caption: 'bannerSlide',
         },
         { name: 'designList', linkTo: 'designList', caption: 'ปรับแต่งดีไซน์' },
-        { name: 'AdsList', linkTo: 'AdsList', caption: 'Ads' }
-        
-
+        { name: 'AdsList', linkTo: 'AdsList', caption: 'Ads' },
+        { name: 'customerList', linkTo: 'customerList', caption: 'ลูกค้า' },
+        { name: 'AffiliateList', linkTo: 'AffiliateList', caption: 'Affiliate' }
       ],
     },
     {

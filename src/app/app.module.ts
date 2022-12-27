@@ -66,7 +66,8 @@ import { CustomerFormComponent } from './pages/customer/customerForm.component';
 import { CustomerListComponent } from './pages/customer/customerList.component';
 
 import { List99Component } from './pages/list99/list99.component';
-
+import { AffiliateFormComponent } from'./pages/affiliate/AffiliateForm.component';
+import { AffiliateListComponent } from './pages/affiliate/AffiliateList.component';
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -98,6 +99,11 @@ const appRoutes: Routes = [
   { path: 'list99', component: List99Component },
   { path: 'customerList', component: CustomerListComponent },
   { path: 'customerForm/:id', component: CustomerFormComponent },
+  { path: 'AffiliateList', component: AffiliateListComponent },
+  { path: 'AffiliateForm/:id', component: AffiliateFormComponent },
+
+
+
   { path: '**', redirectTo: '/', pathMatch: 'full' },
   
 ];
