@@ -94,10 +94,12 @@ const appRoutes: Routes = [
   { path: 'designForm/:id', component: DesignFormComponent },
   { path: 'AdsList', component: AdsListComponent },
   { path: 'AdsForm/:id', component: AdsFormComponent },
-  { path: '**', redirectTo: '/', pathMatch: 'full' },
+  
+  { path: 'list99', component: List99Component },
   { path: 'customerList', component: CustomerListComponent },
   { path: 'customerForm/:id', component: CustomerFormComponent },
-  { path: 'List99', component: List99Component },
+  { path: '**', redirectTo: '/', pathMatch: 'full' },
+  
 ];
 
 // {

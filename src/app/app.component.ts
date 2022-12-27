@@ -84,20 +84,16 @@ export class AppComponent {
           linkTo: 'itemmasterList',
           caption: 'สินค้า999',
         },
-        { name: 'List99', linkTo: 'List99', caption: 'aaaList99' },
+        { name: 'List99', linkTo: 'list99', caption: 'aaaList99' },
         {
           name: 'bannerSlideList',
           linkTo: 'bannerSlideList',
           caption: 'bannerSlide',
         },
         { name: 'designList', linkTo: 'designList', caption: 'ปรับแต่งดีไซน์' },
-        { name: 'AdsList', linkTo: 'AdsList', caption: 'Ads' },
-        {
-          name: 'mainmenuList999',
-          linkTo: 'mainmenuList',
-          caption: 'ตั้งค่าเมนู',
-        },
-        { name: 'customerList', linkTo: 'customerList', caption: 'customer' },
+        { name: 'AdsList', linkTo: 'AdsList', caption: 'Ads' }
+        
+
       ],
     },
     {
