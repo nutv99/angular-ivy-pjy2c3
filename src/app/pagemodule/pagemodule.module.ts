@@ -36,8 +36,7 @@ import { DesignListComponent } from '../pages/design/designList.component';
 import { AdsFormComponent } from'../pages/Ads/AdsForm.component';
 import { AdsListComponent } from '../pages/Ads/AdsList.component';
 
-import { MainmenuFormComponent } from'../pages/mainmenu/mainmenuForm.component';
-import { MainmenuListComponent } from '../pages/mainmenu/mainmenuList.component';
+
 
 import { CustomerFormComponent } from'../pages/customer/customerForm.component';
 import { CustomerListComponent } from '../pages/customer/customerList.component';
@@ -72,7 +71,7 @@ import {List99Component} from '../pages/list99/list99.component';
     ,BannerSlideFormComponent,BannerSlideListComponent
     ,DesignFormComponent,DesignListComponent
     ,AdsFormComponent,AdsListComponent
-    ,MainmenuFormComponent,MainmenuListComponent
+    
     ,CustomerFormComponent,CustomerListComponent,
     List99Component
   ],
@@ -87,7 +86,7 @@ import {List99Component} from '../pages/list99/list99.component';
     ,BannerSlideFormComponent,BannerSlideListComponent
     ,DesignFormComponent,DesignListComponent
     ,AdsFormComponent,AdsListComponent
-    ,MainmenuFormComponent,MainmenuListComponent
+  
     ,CustomerFormComponent,CustomerListComponent,
     List99Component
   ],

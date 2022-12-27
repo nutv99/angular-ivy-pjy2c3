@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';  
-import { PagemoduleModule } from './pagemodule/pagemodule.module' ;
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PagemoduleModule } from './pagemodule/pagemodule.module';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -40,33 +40,32 @@ import { tttComponent } from './ttt/ttt.component';
 import { PagetestComponent } from './pages/pagetest/pagetest.component';
 import { CompanyOptionComponent } from './pages/company-option/company-option.component';
 
-import { CompanyoptionComponent } from'./pages/companyoption/companyoption.component';
+import { CompanyoptionComponent } from './pages/companyoption/companyoption.component';
 import { CompanyoptionListComponent } from './pages/companyoption/companyoptionList.component';
 
-import { CompanyComponent } from'./pages/company/company.component' ;
+import { CompanyComponent } from './pages/company/company.component';
 
-import { PaymentchannelComponent } from'./pages/paymentchannel/paymentchannel.component';
+import { PaymentchannelComponent } from './pages/paymentchannel/paymentchannel.component';
 import { PaymentchannelListComponent } from './pages/paymentchannel/paymentchannelList.component';
 
-import { DepartmentFormComponent } from'./pages/departmentForm/departmentForm.component';
+import { DepartmentFormComponent } from './pages/departmentForm/departmentForm.component';
 import { DepartmentListComponent } from './pages/departmentForm/departmentList.component';
 
-import { ItemmasterFormComponent } from'./pages/itemmasterForm/itemmasterForm.component';
+import { ItemmasterFormComponent } from './pages/itemmasterForm/itemmasterForm.component';
 import { ItemmasterListComponent } from './pages/itemmasterForm/itemmasterList.component';
 
-import { BannerSlideFormComponent } from'./pages/bannerSlide/bannerSlideForm.component';
+import { BannerSlideFormComponent } from './pages/bannerSlide/bannerSlideForm.component';
 import { BannerSlideListComponent } from './pages/bannerSlide/bannerSlideList.component';
 
-import { DesignFormComponent } from'./pages/design/designForm.component';
+import { DesignFormComponent } from './pages/design/designForm.component';
 import { DesignListComponent } from './pages/design/designList.component';
-import { AdsFormComponent } from'./pages/Ads/AdsForm.component';
+import { AdsFormComponent } from './pages/Ads/AdsForm.component';
 import { AdsListComponent } from './pages/Ads/AdsList.component';
-import { MainmenuFormComponent } from'./pages/mainmenu/mainmenuForm.component';
-import { MainmenuListComponent } from './pages/mainmenu/mainmenuList.component';
-import { CustomerFormComponent } from'./pages/customer/customerForm.component';
+
+import { CustomerFormComponent } from './pages/customer/customerForm.component';
 import { CustomerListComponent } from './pages/customer/customerList.component';
 
-import {List99Component} from './pages/list99/list99.component';
+import { List99Component } from './pages/list99/list99.component';
 
 // ใส่ใน Declaration
 
@@ -77,7 +76,7 @@ const appRoutes: Routes = [
   { path: 'categoryForm/:id', component: CategoryComponent },
   { path: 'group/1', component: GroupItemComponent },
   { path: 'tbldocument', component: TableDocumentComponent },
-   { path: 'test', component:PagetestComponent },
+  { path: 'test', component: PagetestComponent },
   { path: 'tbldocument/:id', component: TableDocumentComponent },
   { path: 'ccoption', component: CompanyOptionComponent },
   { path: 'companyoptionList', component: CompanyoptionListComponent },
@@ -96,14 +95,10 @@ const appRoutes: Routes = [
   { path: 'AdsList', component: AdsListComponent },
   { path: 'AdsForm/:id', component: AdsFormComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
-  { path: 'mainmenuList', component: MainmenuListComponent },
-  { path: 'mainmenuForm/:id', component: MainmenuFormComponent },
   { path: 'customerList', component: CustomerListComponent },
   { path: 'customerForm/:id', component: CustomerFormComponent },
   { path: 'List99', component: List99Component },
-
 ];
-
 
 // {
 //   path: 'contact',
@@ -144,7 +139,7 @@ const appRoutes: Routes = [
     categoryListComponent,
     TopheaderComponent,
     HeaderformComponent,
-    Outselectv2Component,    
+    Outselectv2Component,
   ],
   bootstrap: [AppComponent],
 })

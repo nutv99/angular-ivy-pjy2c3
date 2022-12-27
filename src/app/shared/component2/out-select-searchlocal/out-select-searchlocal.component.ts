@@ -143,6 +143,9 @@ export class OutSelectSearchlocalComponent implements OnInit {
   }
 
   setToList2(e: any) {
+    if (this.dataInit.length === 0) {
+      return;
+    }
     for (let i = 0; i <= this.dataInit.length - 1; i++) {
       //console.log('222 Data Init-'+i, this.dataInit[i][0], ' VS ' , this.dataDefault) ;
       if (parseInt(this.dataInit[i][0]) === parseInt(this.dataDefault)) {
