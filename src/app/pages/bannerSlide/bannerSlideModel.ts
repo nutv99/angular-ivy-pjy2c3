@@ -1,1 +1,51 @@
-<br>export interface full_bannerSlideModel {<br>&nbsp;&nbsp;&nbsp;&nbsp;id? : number ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerName? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerDesc? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageM? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageD? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;linkTo? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;openLinkinNewWindow? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;isActive? : string ;<br/>}<br>export interface crud_bannerSlideModel {<br>&nbsp;&nbsp;&nbsp;&nbsp;id? : number ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerName? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerDesc? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageM? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageD? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;linkTo? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;openLinkinNewWindow? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;isActive? : string ;<br/>}<br>export interface form_bannerSlideModel {<br>&nbsp;&nbsp;&nbsp;&nbsp;id? : number ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerName? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerDesc? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageM? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageD? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;linkTo? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;openLinkinNewWindow? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;isActive? : string ;<br/>}<br>export interface post_bannerSlideModel {<br>&nbsp;&nbsp;&nbsp;&nbsp;id? : number ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerName? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerDesc? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageM? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageD? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;linkTo? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;openLinkinNewWindow? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;isActive? : string ;<br/>}<br>export interface put_bannerSlideModel {<br>&nbsp;&nbsp;&nbsp;&nbsp;id? : number ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerName? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerDesc? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageM? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;bannerImageD? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;linkTo? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;openLinkinNewWindow? : string ;<br/>&nbsp;&nbsp;&nbsp;&nbsp;isActive? : string ;<br/>}
+
+export interface full_bannerSlideModel {
+  id? : number ;
+  bannerName? : string ;
+  bannerDesc? : string ;
+  bannerImageM? : string ;
+  bannerImageD? : string ;
+  linkTo? : string ;
+  openLinkinNewWindow? : string ;
+  isActive? : string ;
+}
+export interface crud_bannerSlideModel {
+  id? : number ;
+  bannerName? : string ;
+  bannerDesc? : string ;
+  bannerImageM? : string ;
+  bannerImageD? : string ;
+  linkTo? : string ;
+  openLinkinNewWindow? : string ;
+  isActive? : string ;
+}
+export interface form_bannerSlideModel {
+  id? : number ;
+  bannerName? : string ;
+  bannerDesc? : string ;
+  bannerImageM? : string ;
+  bannerImageD? : string ;
+  linkTo? : string ;
+  openLinkinNewWindow? : string ;
+  isActive? : string ;
+}
+export interface post_bannerSlideModel {
+  id? : number ;
+  bannerName? : string ;
+  bannerDesc? : string ;
+  bannerImageM? : string ;
+  bannerImageD? : string ;
+  linkTo? : string ;
+  openLinkinNewWindow? : string ;
+  isActive? : string ;
+}
+export interface put_bannerSlideModel {
+  id? : number ;
+  bannerName? : string ;
+  bannerDesc? : string ;
+  bannerImageM? : string ;
+  bannerImageD? : string ;
+  linkTo? : string ;
+  openLinkinNewWindow? : string ;
+  isActive? : string ;
+}

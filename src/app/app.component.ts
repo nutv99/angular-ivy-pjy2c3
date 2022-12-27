@@ -84,6 +84,7 @@ export class AppComponent {
           linkTo: 'itemmasterList',
           caption: 'สินค้า999',
         },
+        { name: 'bannerSlideList', linkTo: 'bannerSlideList', caption: 'bannerSlide' },
       ],
     },
     {

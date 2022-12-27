@@ -54,6 +54,9 @@ import { DepartmentListComponent } from './pages/departmentForm/departmentList.c
 import { ItemmasterFormComponent } from'./pages/itemmasterForm/itemmasterForm.component';
 import { ItemmasterListComponent } from './pages/itemmasterForm/itemmasterList.component';
 
+import { BannerSlideFormComponent } from'./pages/bannerSlide/bannerSlideForm.component';
+import { BannerSlideListComponent } from './pages/bannerSlide/bannerSlideList.component';
+
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -75,6 +78,8 @@ const appRoutes: Routes = [
   { path: 'departmentForm/:id', component: DepartmentFormComponent },
   { path: 'itemmasterList', component: ItemmasterListComponent },
   { path: 'itemmasterForm/:id', component: ItemmasterFormComponent },
+  { path: 'bannerSlideList', component: BannerSlideListComponent },
+  { path: 'bannerSlideForm/:id', component: BannerSlideFormComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 

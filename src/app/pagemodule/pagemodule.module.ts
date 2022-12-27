@@ -27,6 +27,10 @@ import { DepartmentListComponent } from '../pages/departmentForm/departmentList.
 import { ItemmasterFormComponent } from'../pages/itemmasterForm/itemmasterForm.component';
 import { ItemmasterListComponent } from '../pages/itemmasterForm/itemmasterList.component';
 
+import { BannerSlideFormComponent } from'../pages/bannerSlide/bannerSlideForm.component';
+import { BannerSlideListComponent } from '../pages/bannerSlide/bannerSlideList.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -51,6 +55,7 @@ import { ItemmasterListComponent } from '../pages/itemmasterForm/itemmasterList.
     DepartmentFormComponent,
     DepartmentListComponent,
     ItemmasterFormComponent,ItemmasterListComponent
+    ,BannerSlideFormComponent,BannerSlideListComponent
   ],
   exports: [
     PagetestComponent,
@@ -60,6 +65,7 @@ import { ItemmasterListComponent } from '../pages/itemmasterForm/itemmasterList.
     DepartmentFormComponent,
     DepartmentListComponent,
     ItemmasterFormComponent,ItemmasterListComponent
+    ,BannerSlideFormComponent,BannerSlideListComponent
   ],
 })
 export class PagemoduleModule {}

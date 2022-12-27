@@ -15,7 +15,7 @@ export interface modelTable {
 @Component({
   selector: 'app-bannerSlideList',
   templateUrl: './bannerSlideList.component.html',
-  styleUrls: ['./bannerSlide.component.css'],
+  styleUrls: ['./bannerSlideForm.component.scss'],
 })
 export class BannerSlideListComponent implements OnInit, OnChanges {
   formModal: any;

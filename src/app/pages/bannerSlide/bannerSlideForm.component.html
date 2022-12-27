@@ -11,47 +11,161 @@
     </div>
     <div class="modal-body">
       ...
-       <br/><br><!-- id -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          id
-     </label>
-     <input type="number" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.id.touched && f.id.errors?.required"> กรุณาป้อนค่า id </span><br/><br><!-- ชื่อแบนเนอร์ -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
+
+      <!-- id -->
+      <div class="mt-3">
+        <input
+          type="hidden"
+          class="form-control"
+          formControlName="id"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+
+      <!-- ชื่อแบนเนอร์ -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
           ชื่อแบนเนอร์<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="bannerName" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.bannerName.touched && f.bannerName.errors?.required"> กรุณาป้อนค่า ชื่อแบนเนอร์ </span><br/><br><!-- คำอธิบายภาพ --><br/><br><!-- รูปสำหรับMobile -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="bannerName"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.bannerName.touched && f.bannerName.errors?.required"
+      >
+        กรุณาป้อนค่า ชื่อแบนเนอร์
+      </span>
+
+      <!-- คำอธิบายภาพ -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          คำอธิบายภาพ<span class="text-danger">***</span>
+        </label>
+        <textarea
+          class="form-control"
+          formControlName="bannerDesc"
+          rows=""
+          cols=""
+        ></textarea>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.bannerDesc.touched && f.bannerDesc.errors?.required"
+      >
+        กรุณาป้อนค่า คำอธิบายภาพ
+      </span>
+
+      <!-- รูปสำหรับMobile -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
           รูปสำหรับMobile<span class="text-danger">***</span>
-     </label>
-     <input type="file" accept="image/*" class="form-control" formControlName="bannerImageM" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.bannerImageM.touched && f.bannerImageM.errors?.required"> กรุณาป้อนค่า รูปสำหรับMobile </span><br/><br><!-- รูปสำหรับ Desktop -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
+        </label>
+        <input
+          type="file"
+          accept="image/*"
+          class="form-control"
+          formControlName="bannerImageM"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.bannerImageM.touched && f.bannerImageM.errors?.required"
+      >
+        กรุณาป้อนค่า รูปสำหรับMobile
+      </span>
+
+      <!-- รูปสำหรับ Desktop -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
           รูปสำหรับ Desktop<span class="text-danger">***</span>
-     </label>
-     <input type="file" accept="image/*" class="form-control" formControlName="bannerImageD" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.bannerImageD.touched && f.bannerImageD.errors?.required"> กรุณาป้อนค่า รูปสำหรับ Desktop </span><br/><br><!-- ลิงค์ไปยัง URL -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
+        </label>
+        <input
+          type="file"
+          accept="image/*"
+          class="form-control"
+          formControlName="bannerImageD"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.bannerImageD.touched && f.bannerImageD.errors?.required"
+      >
+        กรุณาป้อนค่า รูปสำหรับ Desktop
+      </span>
+
+      <!-- ลิงค์ไปยัง URL -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
           ลิงค์ไปยัง URL<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="linkTo" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.linkTo.touched && f.linkTo.errors?.required"> กรุณาป้อนค่า ลิงค์ไปยัง URL </span><br/><br><!-- เปิดลิงค์ไปยังหน้าต่างใหม่ ? --><br/><br><!-- เปิดใช้งาน -->
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="linkTo"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.linkTo.touched && f.linkTo.errors?.required"
+      >
+        กรุณาป้อนค่า ลิงค์ไปยัง URL
+      </span>
+
+      <!-- เปิดลิงค์ไปยังหน้าต่างใหม่ ? -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="openLinkinNewWindow"
+          formControlName="openLinkinNewWindow"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดลิงค์ไปยังหน้าต่างใหม่ ?
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="
+          f.openLinkinNewWindow.touched &&
+          f.openLinkinNewWindow.errors?.required
+        "
+      >
+        กรุณาป้อนค่า เปิดลิงค์ไปยังหน้าต่างใหม่ ?
+      </span>
+
+      <!-- เปิดใช้งาน -->
+      <div class="mt-3 form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="isActive"
+          formControlName="isActive"
+        />
+        <label for="exampleFormControlInput1" class="form-label" style="">
+          เปิดใช้งาน
+        </label>
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.isActive.touched && f.isActive.errors?.required"
+      >
+        กรุณาป้อนค่า เปิดใช้งาน
+      </span>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" (click)="closeForm()">
@@ -75,7 +189,7 @@
     class="btn btn-primary"
     placement="bottom"
     ngbTooltip="Delete"
-    (click)="setStageForm();newForm()"
+    (click)="setStageForm(); newForm()"
     style="margin-left:auto;margin-right:10px"
   >
     เพิ่มข้อมูล

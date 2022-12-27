@@ -20,10 +20,10 @@ import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 declare var window: any;
 export interface modelTable {
-  formCode:string;
+  formCode: string;
   apiTable: string;
   Caption: string;
-  formNameEdit:string;
+  formNameEdit: string;
   headerColTable: string[];
   ParentTableList: string[];
 }
@@ -31,36 +31,32 @@ export interface modelTable {
 @Component({
   selector: 'app-bannerSlideForm',
   templateUrl: './bannerSlideForm.component.html',
-  styleUrls: ['./bannerSlideForm.component.css'],
+  styleUrls: ['./bannerSlideForm.component.scss'],
 })
 
-
-
-export class BannerslideFormComponent implements OnInit {
-
-  formCode : string = 'A006' ;
+export class BannerSlideFormComponent implements OnInit {
+  formCode: string = 'A006';
   formModal: any;
 
   // Table Crud
   varmodelTable: modelTable = {
     formCode: 'A006',
     apiTable: 'bannerSlide',
-	formNameEdit : 'bannerSlideForm',
+    formNameEdit: 'bannerSlideForm',
     Caption: 'bannerSlide',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
   // Initial Form Model VAR & Value
   bannerSlideModel: full_bannerSlideModel = {
-    id: 2
+    id: 2,
   };
 
   dataInit = [
     {
       ID: 1,
       '0': 1,
-      categoryDesc:
-        'เลือก...',
+      categoryDesc: 'เลือก...',
       '1': 'เลือก...',
     },
   ];
@@ -74,26 +70,35 @@ export class BannerslideFormComponent implements OnInit {
   stageForm: boolean = true;
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private apiService: APIService,private _Activatedroute: ActivatedRoute) {}
+  constructor(
+    private fb: FormBuilder,
+    private apiService: APIService,
+    private _Activatedroute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.myForm = this.fb.group({
+      id: ['', Validators.required],
+      bannerName: ['', Validators.required],
+      bannerDesc: ['', Validators.required],
+      bannerImageM: ['', Validators.required],
+      bannerImageD: ['', Validators.required],
+      linkTo: ['', Validators.required],
+      openLinkinNewWindow: ['', Validators.required],
+      isActive: ['', Validators.required],
+    });
 
-	
-this.myForm = this.fb.group({
-id : ['',Validators.required],bannerName : ['',Validators.required],bannerDesc : ['',Validators.required],bannerImageM : ['',Validators.required],bannerImageD : ['',Validators.required],linkTo : ['',Validators.required],openLinkinNewWindow : ['',Validators.required],isActive : ['',Validators.required]});
-
-	if (this._Activatedroute.snapshot.paramMap.get('id')) {
+    if (this._Activatedroute.snapshot.paramMap.get('id')) {
       //alert(this._Activatedroute.snapshot.paramMap.get('id'));
       let id = this._Activatedroute.snapshot.paramMap.get('id');
       this.myForm.get('id').setValue(id);
       if (id != 'new') {
-        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;;
+        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;
         this.getByID(id);
       } else {
-        this.formTitle = 'เพิ่มข้อมูล' +this.varmodelTable.Caption;;
+        this.formTitle = 'เพิ่มข้อมูล' + this.varmodelTable.Caption;
       }
     }
-
   }
 
   get f() {
@@ -101,13 +106,11 @@ id : ['',Validators.required],bannerName : ['',Validators.required],bannerDesc :
   }
 
   setChecked(fname) {
-
     if (this.myForm.get(fname).value === 'y') {
-       this.myForm.get(fname).setValue('n')
+      this.myForm.get(fname).setValue('n');
     } else {
-      this.myForm.get(fname).setValue('y')
+      this.myForm.get(fname).setValue('y');
     }
-
   }
 
   setStageForm() {
@@ -120,7 +123,7 @@ id : ['',Validators.required],bannerName : ['',Validators.required],bannerDesc :
     }
   }
 
-/**************   Submit ****************/
+  /**************   Submit ****************/
 
   onSubmit() {
     //this.registerForm.valid
@@ -136,9 +139,9 @@ id : ['',Validators.required],bannerName : ['',Validators.required],bannerDesc :
       this.apiService.create(this.ModelName, PayLoad).subscribe({
         next: (result: any) => {
           if (result.resultstatus === 'success') {
-			//this.myForm.id = result.DataResult;
-			this.myForm.get('id').setValue(result.DataResult.id);
-			this.FormMode = 'put';
+            //this.myForm.id = result.DataResult;
+            this.myForm.get('id').setValue(result.DataResult.id);
+            this.FormMode = 'put';
             this.alertWithSuccess();
           } else {
             this.alertWithError(result.ErrorMsg);
@@ -149,8 +152,6 @@ id : ['',Validators.required],bannerName : ['',Validators.required],bannerDesc :
           console.error('There was an error!', error);
         },
       });
-
-
     }
 
     if (this.FormMode === 'patch') {
@@ -158,23 +159,19 @@ id : ['',Validators.required],bannerName : ['',Validators.required],bannerDesc :
         dataPayload: this.myForm.value,
       };
       // alert('Update')
-      this.apiService
-        .update999(this.ModelName, PayLoad)
-        .subscribe({
-          next: (result: any) => {
-            if (result.resultstatus === 'success') {
-              this.alertWithSuccess();
-            } else {
-              this.alertWithError(result.ErrorMsg);
-            }
-          },
-          error: (error) => {
-            this.alertWithError(error.message);
-            console.error('There was an error!', error);
-          },
-      }
-
-	     );
+      this.apiService.update999(this.ModelName, PayLoad).subscribe({
+        next: (result: any) => {
+          if (result.resultstatus === 'success') {
+            this.alertWithSuccess();
+          } else {
+            this.alertWithError(result.ErrorMsg);
+          }
+        },
+        error: (error) => {
+          this.alertWithError(error.message);
+          console.error('There was an error!', error);
+        },
+      });
     }
     //this.apiService.create(payload)
   }
@@ -188,27 +185,33 @@ id : ['',Validators.required],bannerName : ['',Validators.required],bannerDesc :
     console.clear();
 
     this.myForm.get('id').setValue('');
-this.myForm.get('bannerName').setValue('');
-this.myForm.get('bannerDesc').setValue('');
-this.myForm.get('bannerImageM').setValue('');
-this.myForm.get('bannerImageD').setValue('');
-this.myForm.get('linkTo').setValue('');
-this.myForm.get('openLinkinNewWindow').setValue('');
-this.myForm.get('isActive').setValue('');
-
-
+    this.myForm.get('bannerName').setValue('');
+    this.myForm.get('bannerDesc').setValue('');
+    this.myForm.get('bannerImageM').setValue('');
+    this.myForm.get('bannerImageD').setValue('');
+    this.myForm.get('linkTo').setValue('');
+    this.myForm.get('openLinkinNewWindow').setValue('');
+    this.myForm.get('isActive').setValue('');
   }
 
   getByID(id) {
     console.clear();
     this.apiService.getById(this.ModelName, id).subscribe((response: any) => {
       //this.bannerSlideModel = response;
-	  this.FormMode = 'put';
-	  response = response.DataResult;
+      this.FormMode = 'put';
+      response = response.DataResult;
       console.log('res', response);
 
-      this.myForm.get('id').setValue(response.id);this.myForm.get('bannerName').setValue(response.bannerName);this.myForm.get('bannerDesc').setValue(response.bannerDesc);this.myForm.get('bannerImageM').setValue(response.bannerImageM);this.myForm.get('bannerImageD').setValue(response.bannerImageD);this.myForm.get('linkTo').setValue(response.linkTo);this.myForm.get('openLinkinNewWindow').setValue(response.openLinkinNewWindow);this.myForm.get('isActive').setValue(response.isActive);
-
+      this.myForm.get('id').setValue(response.id);
+      this.myForm.get('bannerName').setValue(response.bannerName);
+      this.myForm.get('bannerDesc').setValue(response.bannerDesc);
+      this.myForm.get('bannerImageM').setValue(response.bannerImageM);
+      this.myForm.get('bannerImageD').setValue(response.bannerImageD);
+      this.myForm.get('linkTo').setValue(response.linkTo);
+      this.myForm
+        .get('openLinkinNewWindow')
+        .setValue(response.openLinkinNewWindow);
+      this.myForm.get('isActive').setValue(response.isActive);
 
       //this.myForm.get('Mode').setValue('patch');
     });
@@ -236,11 +239,11 @@ this.myForm.get('isActive').setValue('');
     this.getByID(e);
   }
 
-  saveBannerslide() {}
+  saveBannerSlide() {}
 
-  searchBannerslide() {}
+  searchBannerSlide() {}
 
-/******************* ALERT SECTION ************************/
+  /******************* ALERT SECTION ************************/
 
   alertWithError(errormsg) {
     //alert('Error');
@@ -277,25 +280,20 @@ this.myForm.get('isActive').setValue('');
     Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
   }
 
-  bannerSlide_Emit(e:any) {
-     this.dataInit  = e ;
-
+  bannerSlide_Emit(e: any) {
+    this.dataInit = e;
   }
 
   reciveOutSelect(e: any, varname) {
     this.myForm.get(varname).setValue(e);
   }
 
-  setYesNoValue(e:any,fname:string) {
-
-    this.myForm.get(fname).setValue(e)
-
+  setYesNoValue(e: any, fname: string) {
+    this.myForm.get(fname).setValue(e);
   }
 
-  setOutSelect(e:any,fname:string) {
-
-    this.myForm.get(fname).setValue(e)
-
+  setOutSelect(e: any, fname: string) {
+    this.myForm.get(fname).setValue(e);
   }
 
   // openFormModal() {
