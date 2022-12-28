@@ -30,10 +30,8 @@ p {
 
   min-height: 200px;
   height: auto;
-  border-radius: 6px; 
+  border-radius: 6px;
   border: none;
-    
- 
 }
 .boxshadow {
   box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 1px 2px rgb(0 0 0 / 23%);
@@ -61,10 +59,12 @@ p {
 }
 
 .sidemenuCaption {
-  display:flex;
+  display: flex;
   margin-top: 10px;
-  align-items:center;background:lightgray;padding:5px;border-radius:4px 4px 0px 0px;
-
+  align-items: center;
+  background: lightgray;
+  padding: 5px;
+  border-radius: 4px 4px 0px 0px;
 }
 .collapsedHeight {
   transition: transform 0.5s ease-out;
@@ -117,12 +117,79 @@ p {
 }
 
 .ulmenu {
+  position: relative;
+  /* left:-30px; */
   font-size: 16px;
   border: 1px solid lightgray;
   padding-bottom: 15px;
   padding-top: 15px;
+  padding-left: 5px;
   border-radius: 0px 0px 6px 6px;
 }
 .text-danger {
   font-size: 12px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0px;
+}
+label {
+  background-color: #aaafab;
+  border-radius: 5px;
+  padding: 3px;
+  padding-left: 25px;
+  color: white;
+}
+li {
+  margin: 10px;
+  margin-left: 2px;
+  padding: 5px;
+  padding-left: 2px;
+
+  border: 1px solid #abc;
+  border-radius: 5px;
+}
+input[type='checkbox'] {
+  display: none;
+}
+input[type='checkbox'] ~ ul {
+  max-height: 0;
+  max-width: 0;
+  opacity: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+input[type='checkbox']:checked ~ ul {
+  max-height: 100%;
+  max-width: 100%;
+  opacity: 1;
+}
+input[type='checkbox'] + label:before {
+  transform-origin: 25% 50%;
+  border: 8px solid transparent;
+  border-width: 8px 12px;
+  border-left-color: white;
+  margin-left: -20px;
+  width: 0;
+  height: 0;
+  display: inline-block;
+  text-align: center;
+  content: '';
+  color: #aaafab;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  position: absolute;
+  margin-top: 1px;
+}
+input[type='checkbox']:checked + label:before {
+  transform: rotate(90deg);
+  /*margin-top: 6px;
+  margin-left: -25px;*/
 }

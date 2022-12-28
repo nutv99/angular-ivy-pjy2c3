@@ -29,7 +29,7 @@
       <div
         id="testdiv"
         class="myBorder collapsible boxshadow"
-        style="padding:20px"
+        style="padding:10px"
       >
         <div style="display:flex;flex-direction:column;justify-content:center">
           <div style="position:relative;margin:15px auto">
@@ -81,6 +81,74 @@
         <ul id="A3" class="ulmenu">
           <li *ngFor="let hero of menu[2].Child">
             {{ hero.caption }}
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <input type="checkbox" id="cb1" /><label
+              for="cb1"
+              style="width:100%"
+              >Oak Company</label
+            >
+            <ul>
+              <li>
+                <input type="checkbox" id="cb2" /><label
+                  style="width:100%;background-color:lightgray"
+                  for="cb2"
+                  >ตั้งค่า-ระบบ</label
+                >
+                <ul>
+                  <li style="margin-left:10px">ตั้งค่าเบื้องต้น</li>
+                  <li style="margin-left:10px">ตั้งค่าร้านค้า</li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" id="cb3" /><label for="cb3"
+                  >Level 2-B</label
+                >
+                <ul>
+                  <li>
+                    <input type="checkbox" id="cb5" /><label for="cb5"
+                      >Level 3-A</label
+                    >
+                    <ul>
+                      <li><label>Level 4-A</label> Content</li>
+                      <li><label>Level 4-B</label> Content</li>
+                      <li><label>Level 4-C</label> Content</li>
+                      <li><label>Level 4-D</label> Content</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="cb6" /><label for="cb6"
+                      >Level 3-B</label
+                    >
+                    <ul>
+                      <li><label>Level 4-A</label> Content</li>
+                      <li><label>Level 4-B</label> Content</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <input type="checkbox" id="cb7" /><label for="cb7"
+                      >Level 3-C</label
+                    >
+                    <ul>
+                      <li><label>Level 4-A</label> Content</li>
+                      <li><label>Level 4-B</label> Content</li>
+                      <li><label>Level 4-C</label> Content</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" id="cb4" /><label for="cb4"
+                  >Level 2-C</label
+                >
+                <ul>
+                  <li><label>Level 3-A</label> Content</li>
+                </ul>
+              </li>
+            </ul>
           </li>
         </ul>
       </div>
