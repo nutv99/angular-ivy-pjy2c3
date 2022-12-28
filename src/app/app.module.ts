@@ -11,6 +11,7 @@ import {
   NgbDateParserFormatter,
 } from '@ng-bootstrap/ng-bootstrap';
 
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule, Routes } from '@angular/router';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
@@ -73,6 +74,10 @@ import { AffilListComponent } from './pages/affil/affilList.component';
 import { DropshipFormComponent } from'./pages/dropship/dropshipForm.component';
 import { DropshipListComponent } from './pages/dropship/dropshipList.component';
 
+import { CouponFormComponent } from'./pages/coupon/couponForm.component';
+import { CouponListComponent } from './pages/coupon/couponList.component';
+
+
 // ใส่ใน Declaration
 
 const appRoutes: Routes = [
@@ -108,6 +113,8 @@ const appRoutes: Routes = [
   { path: 'affilForm/:id', component: AffilFormComponent },
   { path: 'dropshipList', component: DropshipListComponent },
   { path: 'dropshipForm/:id', component: DropshipFormComponent },
+  { path: 'couponList', component: CouponListComponent },
+  { path: 'couponForm/:id', component: CouponFormComponent },
   
 
 

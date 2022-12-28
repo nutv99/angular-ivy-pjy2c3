@@ -1,0 +1,106 @@
+
+export interface full_couponModel {
+  id? : number ;
+  uxCouponIDLabel? : string ;
+  uxDiscountTypeLabel? : string ;
+  uxDiscountAmountLabel? : string ;
+  uxExpirationTypeLabel? : string ;
+  uxExpirationDateLabel? : string ;
+  uxCurrentQuantityLabel? : string ;
+  uxMinimumSubtotalLabel? : string ;
+  uxDiscountByLabel? : string ;
+  uxMerchantNotesLabel? : string ;
+  uxAllProductRadio? : string ;
+  uxProductIDRadio? : string ;
+  uxCategoryIDRadio? : string ;
+  uxProductExamLabel? : string ;
+  uxCustomerIDRadio? : string ;
+  uxCustomerExamLabel? : string ;
+  uxAllCustomerOnceOnlyRadio? : string ;
+  uxCustomerOnceOnly? : string ;
+  uxCustomerOneTimeExamLabel? : string ;
+}
+export interface crud_couponModel {
+  id? : number ;
+  uxCouponIDLabel? : string ;
+  uxDiscountTypeLabel? : string ;
+  uxDiscountAmountLabel? : string ;
+  uxExpirationTypeLabel? : string ;
+  uxExpirationDateLabel? : string ;
+  uxCurrentQuantityLabel? : string ;
+  uxMinimumSubtotalLabel? : string ;
+  uxDiscountByLabel? : string ;
+  uxMerchantNotesLabel? : string ;
+  uxAllProductRadio? : string ;
+  uxProductIDRadio? : string ;
+  uxCategoryIDRadio? : string ;
+  uxProductExamLabel? : string ;
+  uxCustomerIDRadio? : string ;
+  uxCustomerExamLabel? : string ;
+  uxAllCustomerOnceOnlyRadio? : string ;
+  uxCustomerOnceOnly? : string ;
+  uxCustomerOneTimeExamLabel? : string ;
+}
+export interface form_couponModel {
+  id? : number ;
+  uxCouponIDLabel? : string ;
+  uxDiscountTypeLabel? : string ;
+  uxDiscountAmountLabel? : string ;
+  uxExpirationTypeLabel? : string ;
+  uxExpirationDateLabel? : string ;
+  uxCurrentQuantityLabel? : string ;
+  uxMinimumSubtotalLabel? : string ;
+  uxDiscountByLabel? : string ;
+  uxMerchantNotesLabel? : string ;
+  uxAllProductRadio? : string ;
+  uxProductIDRadio? : string ;
+  uxCategoryIDRadio? : string ;
+  uxProductExamLabel? : string ;
+  uxCustomerIDRadio? : string ;
+  uxCustomerExamLabel? : string ;
+  uxAllCustomerOnceOnlyRadio? : string ;
+  uxCustomerOnceOnly? : string ;
+  uxCustomerOneTimeExamLabel? : string ;
+}
+export interface post_couponModel {
+  id? : number ;
+  uxCouponIDLabel? : string ;
+  uxDiscountTypeLabel? : string ;
+  uxDiscountAmountLabel? : string ;
+  uxExpirationTypeLabel? : string ;
+  uxExpirationDateLabel? : string ;
+  uxCurrentQuantityLabel? : string ;
+  uxMinimumSubtotalLabel? : string ;
+  uxDiscountByLabel? : string ;
+  uxMerchantNotesLabel? : string ;
+  uxAllProductRadio? : string ;
+  uxProductIDRadio? : string ;
+  uxCategoryIDRadio? : string ;
+  uxProductExamLabel? : string ;
+  uxCustomerIDRadio? : string ;
+  uxCustomerExamLabel? : string ;
+  uxAllCustomerOnceOnlyRadio? : string ;
+  uxCustomerOnceOnly? : string ;
+  uxCustomerOneTimeExamLabel? : string ;
+}
+export interface put_couponModel {
+  id? : number ;
+  uxCouponIDLabel? : string ;
+  uxDiscountTypeLabel? : string ;
+  uxDiscountAmountLabel? : string ;
+  uxExpirationTypeLabel? : string ;
+  uxExpirationDateLabel? : string ;
+  uxCurrentQuantityLabel? : string ;
+  uxMinimumSubtotalLabel? : string ;
+  uxDiscountByLabel? : string ;
+  uxMerchantNotesLabel? : string ;
+  uxAllProductRadio? : string ;
+  uxProductIDRadio? : string ;
+  uxCategoryIDRadio? : string ;
+  uxProductExamLabel? : string ;
+  uxCustomerIDRadio? : string ;
+  uxCustomerExamLabel? : string ;
+  uxAllCustomerOnceOnlyRadio? : string ;
+  uxCustomerOnceOnly? : string ;
+  uxCustomerOneTimeExamLabel? : string ;
+}

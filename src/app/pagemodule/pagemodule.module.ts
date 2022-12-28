@@ -4,6 +4,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
 
+import {
+  NgbDatepickerConfig,
+  NgbDateParserFormatter,
+} from '@ng-bootstrap/ng-bootstrap';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BoutselectComponent } from '../shared/component2/boutselect/boutselect.component';
 import { OutSelectSearchlocalComponent } from '../shared/component2/out-select-searchlocal/out-select-searchlocal.component';
@@ -50,6 +55,10 @@ import { AffilListComponent } from '../pages/affil/affilList.component';
 import { DropshipFormComponent } from'../pages/dropship/dropshipForm.component';
 import { DropshipListComponent } from '../pages/dropship/dropshipList.component';
 
+import { CouponFormComponent } from'../pages/coupon/couponForm.component';
+import { CouponListComponent } from '../pages/coupon/couponList.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -82,7 +91,7 @@ import { DropshipListComponent } from '../pages/dropship/dropshipList.component'
     
     ,CustomerFormComponent,CustomerListComponent,
     List99Component,AffilFormComponent,AffilListComponent
-    ,DropshipFormComponent,DropshipListComponent
+    ,DropshipFormComponent,DropshipListComponent,CouponFormComponent,CouponListComponent
    
   ],
   exports: [
@@ -100,7 +109,7 @@ import { DropshipListComponent } from '../pages/dropship/dropshipList.component'
     ,CustomerFormComponent,CustomerListComponent,
     List99Component,
     AffilFormComponent,AffilListComponent,
-    DropshipFormComponent,DropshipListComponent
+    DropshipFormComponent,DropshipListComponent,CouponFormComponent,CouponListComponent
     
   ],
 })
