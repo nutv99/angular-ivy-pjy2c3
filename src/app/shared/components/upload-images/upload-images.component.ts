@@ -9,7 +9,7 @@ import { EmpService } from '../../../_services/emp.service';
   styleUrls: ['./upload-images.component.css'],
 })
 export class UploadImagesComponent implements OnInit {
-  @Output() mylistchange: EventEmitter<string> = new EventEmitter();
+  @Output() mylistchange: EventEmitter<any> = new EventEmitter();
 
   selectedFiles?: FileList;
   progressInfos: any[] = [];
@@ -44,10 +44,14 @@ export class UploadImagesComponent implements OnInit {
 
         reader.readAsDataURL(this.selectedFiles[i]);
       }
-    
     }
 
-    this.mylistchange.emit(this.previews2);
+    //this.mylistchange.emit(file);
+    if (this.selectedFiles) {
+      for (let i = 0; i < this.selectedFiles.length; i++) {
+        this.mylistchange.emit(this.selectedFiles[i]);
+      }
+    }
   }
 
   upload(idx: number, file: File): void {
