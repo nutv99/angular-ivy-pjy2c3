@@ -9,7 +9,8 @@ import { EmpService } from '../../../_services/emp.service';
   styleUrls: ['./upload-images.component.css'],
 })
 export class UploadImagesComponent implements OnInit {
-  @Output() mylistchange: EventEmitter<any> = new EventEmitter();
+  @Output() mylistchange  : EventEmitter<any> = new EventEmitter();
+  @Output() InitDataImage : EventEmitter<any> = new EventEmitter();
 
   selectedFiles?: FileList;
   progressInfos: any[] = [];
@@ -27,10 +28,10 @@ export class UploadImagesComponent implements OnInit {
   }
 
   selectFiles(event: any): void {
+    this.InitDataImage.emit('');
     this.message = [];
     this.progressInfos = [];
     this.selectedFiles = event.target.files;
-
     this.previews = [];
 
     if (this.selectedFiles && this.selectedFiles[0]) {
@@ -42,7 +43,6 @@ export class UploadImagesComponent implements OnInit {
           this.previews.push(e.target.result);
           this.mylistchange.emit(e.target.result);
         };
-
         reader.readAsDataURL(this.selectedFiles[i]);
       }
     }

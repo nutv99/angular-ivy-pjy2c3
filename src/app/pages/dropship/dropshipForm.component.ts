@@ -424,7 +424,7 @@ export class DropshipFormComponent implements OnInit {
     this.myForm.get(fname).setValue(e);
   }
 
-  clearImage() {
+  clearImage(e:any) {
     this.st = '';
   }
   setImageData(e: any) {
