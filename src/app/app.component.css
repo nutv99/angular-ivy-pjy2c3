@@ -186,10 +186,21 @@ input[type='checkbox'] + label:before {
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease;
   position: absolute;
-  margin-top: 1px;
+  margin-top: 3px;
+  padding-left: 1px;
 }
 input[type='checkbox']:checked + label:before {
   transform: rotate(90deg);
   /*margin-top: 6px;
   margin-left: -25px;*/
+}
+
+.subli {
+  margin-left: 20px;
+  border: none;
+  cursor: pointer;
+}
+.subli:hover {
+  border: none;
+  color: blue;
 }
