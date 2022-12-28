@@ -17,6 +17,7 @@ export interface modelTable {
   templateUrl: './affilList.component.html',
   styleUrls: ['./affilForm.component.scss'],
 })
+
 export class AffilListComponent implements OnInit, OnChanges {
   formModal: any;
   pageid: string = '';

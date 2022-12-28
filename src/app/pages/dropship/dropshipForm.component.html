@@ -5,7 +5,7 @@
   <!-- <button (click)="getByID()">Get ByID</button> -->
   Mode: {{ FormMode }}
 
-  <app-upload-images></app-upload-images>
+  <app-upload-images (mylistchange)="setImageData($event)" ></app-upload-images>
   <div class="modal-content" id="myModal" *ngIf="stageForm">
     <div class="modal-header" style="background-color:lightgrey">
       <h5 class="modal-title" id="exampleModalLabel">{{ formTitle }}</h5>

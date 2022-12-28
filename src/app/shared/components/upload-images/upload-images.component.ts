@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FileUploadService } from '../../../_services/file-upload.service';
-import { EmpService }        from '../../../_services/emp.service';
+import { EmpService } from '../../../_services/emp.service';
 @Component({
   selector: 'app-upload-images',
   templateUrl: './upload-images.component.html',
-  styleUrls: ['./upload-images.component.css']
+  styleUrls: ['./upload-images.component.css'],
 })
 export class UploadImagesComponent implements OnInit {
+  @Output() mylistchange: EventEmitter<string> = new EventEmitter();
+
   selectedFiles?: FileList;
   progressInfos: any[] = [];
   message: string[] = [];
+  readerAll: string[];
 
   previews: string[] = [];
+  previews2: string = '';
   imageInfos?: Observable<any>;
 
   constructor(private uploadService: FileUploadService) {}
@@ -28,6 +32,7 @@ export class UploadImagesComponent implements OnInit {
     this.selectedFiles = event.target.files;
 
     this.previews = [];
+
     if (this.selectedFiles && this.selectedFiles[0]) {
       const numberOfFiles = this.selectedFiles.length;
       for (let i = 0; i < numberOfFiles; i++) {
@@ -39,7 +44,10 @@ export class UploadImagesComponent implements OnInit {
 
         reader.readAsDataURL(this.selectedFiles[i]);
       }
+    
     }
+
+    this.mylistchange.emit(this.previews2);
   }
 
   upload(idx: number, file: File): void {

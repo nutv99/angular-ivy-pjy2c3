@@ -37,6 +37,8 @@ export class DropshipFormComponent implements OnInit {
   formCode: string = 'undefined';
   formModal: any;
 
+  st: string = '';
+
   // Table Crud
   varmodelTable: modelTable = {
     formCode: 'undefined',
@@ -46,6 +48,9 @@ export class DropshipFormComponent implements OnInit {
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
+
+  imgBlob: Blob[];
+
   // Initial Form Model VAR & Value
   dropshipModel: full_dropshipModel = {
     id: 2,
@@ -111,6 +116,7 @@ export class DropshipFormComponent implements OnInit {
       lcShippingPhone: ['', Validators.required],
       lcShippingFax: ['', Validators.required],
       lcMerchantNotes: ['', Validators.required],
+      allImageData: [''],
     });
 
     if (this._Activatedroute.snapshot.paramMap.get('id')) {
@@ -416,6 +422,16 @@ export class DropshipFormComponent implements OnInit {
 
   setOutSelect(e: any, fname: string) {
     this.myForm.get(fname).setValue(e);
+  }
+
+  setImageData(e: string) {
+   // console.clear();
+    console.log('Recive',e);
+    this.st = e;
+
+    console.log('stData', this.st);
+
+    //this.myForm.allImageData.push(e[0]) ;
   }
 
   // openFormModal() {
