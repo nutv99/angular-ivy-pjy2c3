@@ -424,12 +424,16 @@ export class DropshipFormComponent implements OnInit {
     this.myForm.get(fname).setValue(e);
   }
 
+  clearImage() {
+    this.st = '';
+  }
   setImageData(e: any) {
-   // console.clear();
-    console.log('Recive',e);
-    this.st = e;
+    // console.clear();
+    console.log('Recive', e);
+    this.st += e + '@#';
 
     console.log('stData', this.st);
+    this.myForm.get('allImageData').setValue(this.st);
 
     //this.myForm.allImageData.push(e[0]) ;
   }

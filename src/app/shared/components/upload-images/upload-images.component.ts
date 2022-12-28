@@ -40,6 +40,7 @@ export class UploadImagesComponent implements OnInit {
 
         reader.onload = (e: any) => {
           this.previews.push(e.target.result);
+          this.mylistchange.emit(e.target.result);
         };
 
         reader.readAsDataURL(this.selectedFiles[i]);
@@ -49,7 +50,7 @@ export class UploadImagesComponent implements OnInit {
     //this.mylistchange.emit(file);
     if (this.selectedFiles) {
       for (let i = 0; i < this.selectedFiles.length; i++) {
-        this.mylistchange.emit(this.selectedFiles[i]);
+        //this.mylistchange.emit(this.selectedFiles[i]);
       }
     }
   }
