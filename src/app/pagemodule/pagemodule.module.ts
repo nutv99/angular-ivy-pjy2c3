@@ -59,6 +59,9 @@ import { DropshipListComponent } from '../pages/dropship/dropshipList.component'
 import { CouponFormComponent } from'../pages/coupon/couponForm.component';
 import { CouponListComponent } from '../pages/coupon/couponList.component';
 
+import { UniversalMasterFormComponent } from'../pages/universalMaster/universalMasterForm.component';
+import { UniversalMasterListComponent } from '../pages/universalMaster/universalMasterList.component';
+
 
 @NgModule({
   imports: [
@@ -94,6 +97,7 @@ import { CouponListComponent } from '../pages/coupon/couponList.component';
     ,CustomerFormComponent,CustomerListComponent,
     List99Component,AffilFormComponent,AffilListComponent
     ,DropshipFormComponent,DropshipListComponent,CouponFormComponent,CouponListComponent
+    ,UniversalMasterFormComponent,UniversalMasterListComponent
    
   ],
   exports: [
@@ -112,6 +116,7 @@ import { CouponListComponent } from '../pages/coupon/couponList.component';
     List99Component,
     AffilFormComponent,AffilListComponent,
     DropshipFormComponent,DropshipListComponent,CouponFormComponent,CouponListComponent
+    ,UniversalMasterFormComponent,UniversalMasterListComponent
     
   ],
 })

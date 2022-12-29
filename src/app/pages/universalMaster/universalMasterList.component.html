@@ -1,0 +1,9 @@
+<h2>universalMaster</h2>
+<button [routerLink]="['/universalMasterForm/new']">เพิ่มข้อมูล</button>
+<app-tabledata3
+  [varModelTable]="varmodelTable"
+  (MYIDOutDelete)="OnDeleteUniversalMaster($event)"
+>
+</app-tabledata3>
+
+

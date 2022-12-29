@@ -77,6 +77,9 @@ import { DropshipListComponent } from './pages/dropship/dropshipList.component';
 import { CouponFormComponent } from'./pages/coupon/couponForm.component';
 import { CouponListComponent } from './pages/coupon/couponList.component';
 
+import { UniversalMasterFormComponent } from'./pages/universalMaster/universalMasterForm.component';
+import { UniversalMasterListComponent } from './pages/universalMaster/universalMasterList.component';
+
 
 // ใส่ใน Declaration
 
@@ -115,7 +118,8 @@ const appRoutes: Routes = [
   { path: 'dropshipForm/:id', component: DropshipFormComponent },
   { path: 'couponList', component: CouponListComponent },
   { path: 'couponForm/:id', component: CouponFormComponent },
-  
+  { path: 'universalMasterList', component: UniversalMasterListComponent },
+{ path: 'universalMasterForm/:id', component: UniversalMasterFormComponent },
 
 
   { path: '**', redirectTo: '/', pathMatch: 'full' },
