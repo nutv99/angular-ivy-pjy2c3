@@ -210,6 +210,10 @@ export class UniversalMasterFormComponent implements OnInit {
     });
   }
 
+  searchTextOnSelect() {
+    
+  }
+
   setIDOnForm(e: any) {
     console.log('On Form ' + e);
     this.myForm.get('id').setValue(e);
