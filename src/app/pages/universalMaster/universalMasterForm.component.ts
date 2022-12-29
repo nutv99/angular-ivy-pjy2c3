@@ -20,10 +20,10 @@ import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
 
 declare var window: any;
 export interface modelTable {
-  formCode:string;
+  formCode: string;
   apiTable: string;
   Caption: string;
-  formNameEdit:string;
+  formNameEdit: string;
   headerColTable: string[];
   ParentTableList: string[];
 }
@@ -33,35 +33,29 @@ export interface modelTable {
   templateUrl: './universalMasterForm.component.html',
   styleUrls: ['./universalMasterForm.component.scss'],
 })
-
-
-
 export class UniversalMasterFormComponent implements OnInit {
-
-  formCode : string = 'new' ;
+  formCode: string = 'A011';
   formModal: any;
-  model:string ;
 
   // Table Crud
   varmodelTable: modelTable = {
-    formCode: 'new',
+    formCode: 'A011',
     apiTable: 'universalMaster',
-	  formNameEdit : 'universalMasterForm',
+    formNameEdit: 'universalMasterForm',
     Caption: 'universalMaster',
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
   // Initial Form Model VAR & Value
   universalMasterModel: full_universalMasterModel = {
-    id: 2
+    id: 2,
   };
 
   dataInit = [
     {
       ID: 1,
       '0': 1,
-      categoryDesc:
-        'เลือก...',
+      categoryDesc: 'เลือก...',
       '1': 'เลือก...',
     },
   ];
@@ -75,26 +69,31 @@ export class UniversalMasterFormComponent implements OnInit {
   stageForm: boolean = true;
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private apiService: APIService,private _Activatedroute: ActivatedRoute) {}
+  constructor(
+    private fb: FormBuilder,
+    private apiService: APIService,
+    private _Activatedroute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
+    this.myForm = this.fb.group({
+      id: ['', Validators.required],
+      universalListID: ['', Validators.required],
+      code: ['', Validators.required],
+      fieldDESC: ['', Validators.required],
+    });
 
-	
-this.myForm = this.fb.group({
-id : ['',Validators.required],universalListID : ['',Validators.required],code : ['',Validators.required],fieldDESC : ['',Validators.required],createdAT : ['',Validators.required],lastupdated : ['',Validators.required],updatedBy : ['',Validators.required]});
-
-	if (this._Activatedroute.snapshot.paramMap.get('id')) {
+    if (this._Activatedroute.snapshot.paramMap.get('id')) {
       //alert(this._Activatedroute.snapshot.paramMap.get('id'));
       let id = this._Activatedroute.snapshot.paramMap.get('id');
       this.myForm.get('id').setValue(id);
       if (id != 'new') {
-        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;;
+        this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;
         this.getByID(id);
       } else {
-        this.formTitle = 'เพิ่มข้อมูล' +this.varmodelTable.Caption;;
+        this.formTitle = 'เพิ่มข้อมูล' + this.varmodelTable.Caption;
       }
     }
-
   }
 
   get f() {
@@ -102,13 +101,11 @@ id : ['',Validators.required],universalListID : ['',Validators.required],code : 
   }
 
   setChecked(fname) {
-
     if (this.myForm.get(fname).value === 'y') {
-       this.myForm.get(fname).setValue('n')
+      this.myForm.get(fname).setValue('n');
     } else {
-      this.myForm.get(fname).setValue('y')
+      this.myForm.get(fname).setValue('y');
     }
-
   }
 
   setStageForm() {
@@ -121,7 +118,7 @@ id : ['',Validators.required],universalListID : ['',Validators.required],code : 
     }
   }
 
-/**************   Submit ****************/
+  /**************   Submit ****************/
 
   onSubmit() {
     //this.registerForm.valid
@@ -137,9 +134,9 @@ id : ['',Validators.required],universalListID : ['',Validators.required],code : 
       this.apiService.create(this.ModelName, PayLoad).subscribe({
         next: (result: any) => {
           if (result.resultstatus === 'success') {
-			//this.myForm.id = result.DataResult;
-			this.myForm.get('id').setValue(result.DataResult.id);
-			this.FormMode = 'put';
+            //this.myForm.id = result.DataResult;
+            this.myForm.get('id').setValue(result.DataResult.id);
+            this.FormMode = 'put';
             this.alertWithSuccess();
           } else {
             this.alertWithError(result.ErrorMsg);
@@ -150,32 +147,26 @@ id : ['',Validators.required],universalListID : ['',Validators.required],code : 
           console.error('There was an error!', error);
         },
       });
-
-
     }
 
-    if (this.FormMode === 'patch') {
+    if (this.FormMode === 'put') {
       let PayLoad = {
         dataPayload: this.myForm.value,
       };
       // alert('Update')
-      this.apiService
-        .update999(this.ModelName, PayLoad)
-        .subscribe({
-          next: (result: any) => {
-            if (result.resultstatus === 'success') {
-              this.alertWithSuccess();
-            } else {
-              this.alertWithError(result.ErrorMsg);
-            }
-          },
-          error: (error) => {
-            this.alertWithError(error.message);
-            console.error('There was an error!', error);
-          },
-      }
-
-	     );
+      this.apiService.update999(this.ModelName, PayLoad).subscribe({
+        next: (result: any) => {
+          if (result.resultstatus === 'success') {
+            this.alertWithSuccess();
+          } else {
+            this.alertWithError(result.ErrorMsg);
+          }
+        },
+        error: (error) => {
+          this.alertWithError(error.message);
+          console.error('There was an error!', error);
+        },
+      });
     }
     //this.apiService.create(payload)
   }
@@ -187,48 +178,42 @@ id : ['',Validators.required],universalListID : ['',Validators.required],code : 
 
   newForm() {
     console.clear();
+    this.FormMode = 'post';
     this.myForm.get('id').setValue('new');
-this.myForm.get('universalListID').setValue('');
-this.myForm.get('code').setValue('');
-this.myForm.get('fieldDESC').setValue('');
-this.myForm.get('createdAT').setValue('');
-this.myForm.get('lastupdated').setValue('');
-this.myForm.get('updatedBy').setValue('');
-
-
+    //this.myForm.get('universalListID').setValue('');
+    this.myForm.get('code').setValue('');
+    this.myForm.get('fieldDESC').setValue('');
   }
 
   setFormDataTest() {
-	let r = (Math.random() + 1).toString(36).substring(7);
+    let r = (Math.random() + 1).toString(36).substring(7);
     this.myForm.get('id').setValue('new' + r);
-this.myForm.get('universalListID').setValue('universalListID' + r);
-this.myForm.get('code').setValue('รหัส' + r);
-this.myForm.get('fieldDESC').setValue('ชื่อ' + r);
-this.myForm.get('createdAT').setValue('createdAT' + r);
-this.myForm.get('lastupdated').setValue('lastupdated' + r);
-this.myForm.get('updatedBy').setValue('updatedBy' + r);
-
+    this.myForm.get('universalListID').setValue('universalListID' + r);
+    this.myForm.get('code').setValue('รหัส' + r);
+    this.myForm.get('fieldDESC').setValue('ชื่อ' + r);
   }
 
   getByID(id) {
     console.clear();
     this.apiService.getById(this.ModelName, id).subscribe((response: any) => {
       //this.universalMasterModel = response;
-	  this.FormMode = 'put';
-	  response = response.DataResult;
+      this.FormMode = 'put';
+      response = response.DataResult;
       console.log('res', response);
 
-      this.myForm.get('id').setValue(response.id);this.myForm.get('universalListID').setValue(response.universalListID);this.myForm.get('code').setValue(response.code);this.myForm.get('fieldDESC').setValue(response.fieldDESC);this.myForm.get('createdAT').setValue(response.createdAT);this.myForm.get('lastupdated').setValue(response.lastupdated);this.myForm.get('updatedBy').setValue(response.updatedBy);
+      this.myForm.get('id').setValue(response.id);
+      this.myForm.get('universalListID').setValue(response.universalListID);
+      this.myForm.get('code').setValue(response.code);
+      this.myForm.get('fieldDESC').setValue(response.fieldDESC);
 
-
-      //this.myForm.get('Mode').setValue('patch');
+      //this.myForm.get('Mode').setValue('put');
     });
   }
 
   setIDOnForm(e: any) {
     console.log('On Form ' + e);
     this.myForm.get('id').setValue(e);
-    this.FormMode = 'patch';
+    this.FormMode = 'put';
     this.getByID(e);
     this.setStageForm();
   }
@@ -251,7 +236,7 @@ this.myForm.get('updatedBy').setValue('updatedBy' + r);
 
   searchUniversalMaster() {}
 
-/******************* ALERT SECTION ************************/
+  /******************* ALERT SECTION ************************/
 
   alertWithError(errormsg) {
     //alert('Error');
@@ -288,25 +273,20 @@ this.myForm.get('updatedBy').setValue('updatedBy' + r);
     Swal.fire('Thank you...', 'You submitted succesfully!', 'success');
   }
 
-  universalMaster_Emit(e:any) {
-     this.dataInit  = e ;
-
+  universalMaster_Emit(e: any) {
+    this.dataInit = e;
   }
 
   reciveOutSelect(e: any, varname) {
     this.myForm.get(varname).setValue(e);
   }
 
-  setYesNoValue(e:any,fname:string) {
-
-    this.myForm.get(fname).setValue(e)
-
+  setYesNoValue(e: any, fname: string) {
+    this.myForm.get(fname).setValue(e);
   }
 
-  setOutSelect(e:any,fname:string) {
-
-    this.myForm.get(fname).setValue(e)
-
+  setOutSelect(e: any, fname: string) {
+    this.myForm.get(fname).setValue(e);
   }
 
   // openFormModal() {
