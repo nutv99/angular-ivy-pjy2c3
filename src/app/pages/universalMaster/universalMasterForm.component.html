@@ -11,19 +11,25 @@
     </div>
     <div class="modal-body">
       ...
-       
 
-<!-- รหัสส่วนลด -->
-<div class="mt-3"> 
-     <input type="hidden" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
-</div>
+      <!-- รหัสส่วนลด -->
+      <div class="mt-3">
+        <input
+          type="hidden"
+          class="form-control"
+          formControlName="id"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
 
-
-<!-- universalListID -->
-<div class="mb-3">
-   <label for="exampleFormControlInput1" class="form-label">universalListID</label>
-   <div class="dropdown">
-      <!-- 
+      <!-- universalListID -->
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >universalListID</label
+        >
+        <div class="dropdown">
+          <!-- 
 	  <app-boutselect
 	    [Title]="'universalListID'"
         [apiPathInput]="'universalList'"
@@ -35,52 +41,73 @@
       </app-boutselect>
 	   -->
 
-	  <app-out-select-searchlocal
-	    [Title]="'universalListID'"
-        [apiPathInput]="'universalList'"
-        [dataInit]="dataInit"
-        [modelname]="'universalList'"
-        [HaveChild]="'n'"
-		(mylistchange)="reciveOutSelect($event, 'universalListID')"
-		
-      >		
-      </app-out-select-searchlocal>
+          <app-out-select-searchlocal
+            [Title]="'universalListID'"
+            [apiPathInput]="'universalList'"
+            [dataInit]="dataInit"
+            [dataDefault]="dataDefault"
+            [modelname]="'universalList'"
+            [HaveChild]="'n'"
+            (mylistchange)="reciveOutSelect($event, 'universalListID')"
+          >
+          </app-out-select-searchlocal>
+        </div>
+      </div>
 
-   </div>
-</div> 
-
-
-
-<!-- รหัส -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
+      <!-- รหัส -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
           รหัส<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="code" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.code.touched && f.code.errors?.required"> กรุณาป้อนค่า รหัส </span>
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="code"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.code.touched && f.code.errors?.required"
+      >
+        กรุณาป้อนค่า รหัส
+      </span>
 
-<!-- ชื่อ -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
+      <!-- ชื่อ -->
+      <div class="mt-3">
+        <label for="exampleFormControlInput1" class="form-label" style="">
           ชื่อ<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="fieldDESC" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.fieldDESC.touched && f.fieldDESC.errors?.required"> กรุณาป้อนค่า ชื่อ </span>
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="fieldDESC"
+          id="exampleFormControlInput1"
+          placeholder=""
+        />
+      </div>
+      <span
+        class="text-danger"
+        *ngIf="f.fieldDESC.touched && f.fieldDESC.errors?.required"
+      >
+        กรุณาป้อนค่า ชื่อ
+      </span>
     </div>
     <div class="modal-footer">
-	   <button type="button" class="btn btn-secondary" (click)="newForm()">
-           เริ่มใหม่ 
-      </button>   
-	   <button type="button" class="btn btn-secondary" (click)="setFormDataTest()">
-         สร้างข้อมูลทดสอบ 
-      </button>   
+      <button type="button" class="btn btn-secondary" (click)="newForm()">
+        เริ่มใหม่
+      </button>
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="setFormDataTest()"
+      >
+        สร้างข้อมูลทดสอบ
+      </button>
       <button type="button" class="btn btn-secondary" (click)="closeForm()">
         ออก
-      </button>  
+      </button>
       <button type="submit" class="btn btn-primary">บันทึก</button>
     </div>
   </div>
@@ -99,7 +126,7 @@
     class="btn btn-primary"
     placement="bottom"
     ngbTooltip="Delete"
-    (click)="setStageForm();newForm()"
+    (click)="setStageForm(); newForm()"
     style="margin-left:auto;margin-right:10px"
   >
     เพิ่มข้อมูล

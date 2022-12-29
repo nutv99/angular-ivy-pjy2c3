@@ -36,6 +36,7 @@ export interface modelTable {
 export class UniversalMasterFormComponent implements OnInit {
   formCode: string = 'A011';
   formModal: any;
+  dataDefault = -1;
 
   // Table Crud
   varmodelTable: modelTable = {
@@ -203,6 +204,8 @@ export class UniversalMasterFormComponent implements OnInit {
 
       this.myForm.get('id').setValue(response.id);
       this.myForm.get('universalListID').setValue(response.universalListID);
+      this.dataDefault = response.universalListID;
+
       this.myForm.get('code').setValue(response.code);
       this.myForm.get('fieldDESC').setValue(response.fieldDESC);
 
@@ -210,9 +213,7 @@ export class UniversalMasterFormComponent implements OnInit {
     });
   }
 
-  searchTextOnSelect() {
-    
-  }
+  searchTextOnSelect() {}
 
   setIDOnForm(e: any) {
     console.log('On Form ' + e);

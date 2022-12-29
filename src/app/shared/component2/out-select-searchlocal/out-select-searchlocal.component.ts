@@ -69,7 +69,7 @@ export class OutSelectSearchlocalComponent implements OnInit {
   }
 
   ngOnChanges() {
-    // alert('Change-'+ this.dataDefault) ;
+    //alert('Change-'+ this.dataDefault) ;
     this.setToList2(this.dataDefault);
   }
 
