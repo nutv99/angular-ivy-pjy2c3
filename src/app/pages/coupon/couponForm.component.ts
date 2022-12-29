@@ -3,7 +3,6 @@ import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { Tabledata2Component } from '../../shared/components/tabledata2/tabledata2.component';
 import { SearchselectComponent } from '../../shared/components/searchselect/searchselect.component';
 
-import { NgbDateStruct, NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 //import { full_couponModel } from '../../_models/coupon';
 import { full_couponModel } from './couponModel';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -39,13 +38,13 @@ export interface modelTable {
 
 export class CouponFormComponent implements OnInit {
 
-  formCode : string = 'A011' ;
+  formCode : string = 'A012' ;
   formModal: any;
-  model: string;
+  model:string = '';
 
   // Table Crud
   varmodelTable: modelTable = {
-    formCode: 'A011',
+    formCode: 'A012',
     apiTable: 'coupon',
 	formNameEdit : 'couponForm',
     Caption: 'coupon',
@@ -82,7 +81,7 @@ export class CouponFormComponent implements OnInit {
 
 	
 this.myForm = this.fb.group({
-id : ['',Validators.required],uxCouponIDLabel : ['',Validators.required],uxDiscountTypeLabel : ['',Validators.required],uxDiscountAmountLabel : ['',Validators.required],uxExpirationTypeLabel : ['',Validators.required],uxExpirationDateLabel : ['',Validators.required],uxCurrentQuantityLabel : ['',Validators.required],uxMinimumSubtotalLabel : ['',Validators.required],uxDiscountByLabel : ['',Validators.required],uxMerchantNotesLabel : ['',Validators.required],uxAllProductRadio : ['',Validators.required],uxProductIDRadio : ['',Validators.required],uxCategoryIDRadio : ['',Validators.required],uxProductExamLabel : ['',Validators.required],uxCustomerIDRadio : ['',Validators.required],uxCustomerExamLabel : ['',Validators.required],uxAllCustomerOnceOnlyRadio : ['',Validators.required],uxCustomerOnceOnly : ['',Validators.required],uxCustomerOneTimeExamLabel : ['',Validators.required]});
+id : ['',Validators.required],uxCouponIDLabel : ['',Validators.required],discountTypeID : ['',Validators.required],uxDiscountAmountLabel : ['',Validators.required],expirationTypeID : ['',Validators.required],uxExpirationDateLabel : ['',Validators.required],uxCurrentQuantityLabel : ['',Validators.required],uxMinimumSubtotalLabel : ['',Validators.required],uxDiscountByLabel : ['',Validators.required],uxMerchantNotesLabel : ['',Validators.required],uxAllProductRadio : ['',Validators.required],productID : ['',Validators.required],categoryID : ['',Validators.required],uxProductExamLabel : ['',Validators.required],uxCustomerIDRadio : ['',Validators.required],uxCustomerExamLabel : ['',Validators.required],uxAllCustomerOnceOnlyRadio : ['',Validators.required],uxCustomerOnceOnly : ['',Validators.required],uxCustomerOneTimeExamLabel : ['',Validators.required]});
 
 	if (this._Activatedroute.snapshot.paramMap.get('id')) {
       //alert(this._Activatedroute.snapshot.paramMap.get('id'));
@@ -155,7 +154,7 @@ id : ['',Validators.required],uxCouponIDLabel : ['',Validators.required],uxDisco
 
     }
 
-    if (this.FormMode === 'patch') {
+    if (this.FormMode === 'put') {
       let PayLoad = {
         dataPayload: this.myForm.value,
       };
@@ -188,19 +187,20 @@ id : ['',Validators.required],uxCouponIDLabel : ['',Validators.required],uxDisco
 
   newForm() {
     console.clear();
+    this.FormMode === 'post';
     this.myForm.get('id').setValue('new');
 this.myForm.get('uxCouponIDLabel').setValue('');
-this.myForm.get('uxDiscountTypeLabel').setValue('');
+this.myForm.get('discountTypeID').setValue('');
 this.myForm.get('uxDiscountAmountLabel').setValue('');
-this.myForm.get('uxExpirationTypeLabel').setValue('');
+this.myForm.get('expirationTypeID').setValue('');
 this.myForm.get('uxExpirationDateLabel').setValue('');
 this.myForm.get('uxCurrentQuantityLabel').setValue('');
 this.myForm.get('uxMinimumSubtotalLabel').setValue('');
 this.myForm.get('uxDiscountByLabel').setValue('');
 this.myForm.get('uxMerchantNotesLabel').setValue('');
 this.myForm.get('uxAllProductRadio').setValue('');
-this.myForm.get('uxProductIDRadio').setValue('');
-this.myForm.get('uxCategoryIDRadio').setValue('');
+this.myForm.get('productID').setValue('');
+this.myForm.get('categoryID').setValue('');
 this.myForm.get('uxProductExamLabel').setValue('');
 this.myForm.get('uxCustomerIDRadio').setValue('');
 this.myForm.get('uxCustomerExamLabel').setValue('');
@@ -215,17 +215,17 @@ this.myForm.get('uxCustomerOneTimeExamLabel').setValue('');
 	let r = (Math.random() + 1).toString(36).substring(7);
     this.myForm.get('id').setValue('new' + r);
 this.myForm.get('uxCouponIDLabel').setValue('รหัสคูปอง *' + r);
-this.myForm.get('uxDiscountTypeLabel').setValue('ประเภทของการลดราคา' + r);
+this.myForm.get('discountTypeID').setValue('รหัสส่วนลด' + r);
 this.myForm.get('uxDiscountAmountLabel').setValue('จำนวนส่วนลด *' + r);
-this.myForm.get('uxExpirationTypeLabel').setValue('ประเภทของการหมดอายุ' + r);
+this.myForm.get('expirationTypeID').setValue('expirationTypeID' + r);
 this.myForm.get('uxExpirationDateLabel').setValue('วันหมดอายุ *' + r);
 this.myForm.get('uxCurrentQuantityLabel').setValue('จำนวนที่ถูกใช้ไปแล้ว' + r);
 this.myForm.get('uxMinimumSubtotalLabel').setValue('ยอดรวมขั้นต่ำที่ต้องการสำหรับการใช้คูปองนี้' + r);
 this.myForm.get('uxDiscountByLabel').setValue('รวมราคาสินค้าจาก' + r);
 this.myForm.get('uxMerchantNotesLabel').setValue('โน๊ต (สำหรับพ่อค้า)' + r);
 this.myForm.get('uxAllProductRadio').setValue('สินค้าทุกตัว' + r);
-this.myForm.get('uxProductIDRadio').setValue('รหัสสินค้า' + r);
-this.myForm.get('uxCategoryIDRadio').setValue('รหัสหมวดสินค้า' + r);
+this.myForm.get('productID').setValue('รหัสสินค้า' + r);
+this.myForm.get('categoryID').setValue('รหัสกลุ่มสินค้า' + r);
 this.myForm.get('uxProductExamLabel').setValue('(เช่น : 1,2,3,...)' + r);
 this.myForm.get('uxCustomerIDRadio').setValue('บัญชีผู้ใช้' + r);
 this.myForm.get('uxCustomerExamLabel').setValue('(เช่น : User1,User2,User3,...)' + r);
@@ -243,9 +243,9 @@ this.myForm.get('uxCustomerOneTimeExamLabel').setValue('(เช่น : User1,Us
 	  response = response.DataResult;
       console.log('res', response);
 
-      this.myForm.get('id').setValue(response.id);this.myForm.get('uxCouponIDLabel').setValue(response.uxCouponIDLabel);this.myForm.get('uxDiscountTypeLabel').setValue(response.uxDiscountTypeLabel);this.myForm.get('uxDiscountAmountLabel').setValue(response.uxDiscountAmountLabel);this.myForm.get('uxExpirationTypeLabel').setValue(response.uxExpirationTypeLabel);this.myForm.get('uxExpirationDateLabel').setValue(response.uxExpirationDateLabel);this.myForm.get('uxCurrentQuantityLabel').setValue(response.uxCurrentQuantityLabel);this.myForm.get('uxMinimumSubtotalLabel').setValue(response.uxMinimumSubtotalLabel);this.myForm.get('uxDiscountByLabel').setValue(response.uxDiscountByLabel);this.myForm.get('uxMerchantNotesLabel').setValue(response.uxMerchantNotesLabel);this.myForm.get('uxAllProductRadio').setValue(response.uxAllProductRadio);this.myForm.get('uxProductIDRadio').setValue(response.uxProductIDRadio);this.myForm.get('uxCategoryIDRadio').setValue(response.uxCategoryIDRadio);this.myForm.get('uxProductExamLabel').setValue(response.uxProductExamLabel);this.myForm.get('uxCustomerIDRadio').setValue(response.uxCustomerIDRadio);this.myForm.get('uxCustomerExamLabel').setValue(response.uxCustomerExamLabel);this.myForm.get('uxAllCustomerOnceOnlyRadio').setValue(response.uxAllCustomerOnceOnlyRadio);this.myForm.get('uxCustomerOnceOnly').setValue(response.uxCustomerOnceOnly);this.myForm.get('uxCustomerOneTimeExamLabel').setValue(response.uxCustomerOneTimeExamLabel);
+      this.myForm.get('id').setValue(response.id);this.myForm.get('uxCouponIDLabel').setValue(response.uxCouponIDLabel);this.myForm.get('discountTypeID').setValue(response.discountTypeID);this.myForm.get('uxDiscountAmountLabel').setValue(response.uxDiscountAmountLabel);this.myForm.get('expirationTypeID').setValue(response.expirationTypeID);this.myForm.get('uxExpirationDateLabel').setValue(response.uxExpirationDateLabel);this.myForm.get('uxCurrentQuantityLabel').setValue(response.uxCurrentQuantityLabel);this.myForm.get('uxMinimumSubtotalLabel').setValue(response.uxMinimumSubtotalLabel);this.myForm.get('uxDiscountByLabel').setValue(response.uxDiscountByLabel);this.myForm.get('uxMerchantNotesLabel').setValue(response.uxMerchantNotesLabel);this.myForm.get('uxAllProductRadio').setValue(response.uxAllProductRadio);this.myForm.get('productID').setValue(response.productID);this.myForm.get('categoryID').setValue(response.categoryID);this.myForm.get('uxProductExamLabel').setValue(response.uxProductExamLabel);this.myForm.get('uxCustomerIDRadio').setValue(response.uxCustomerIDRadio);this.myForm.get('uxCustomerExamLabel').setValue(response.uxCustomerExamLabel);this.myForm.get('uxAllCustomerOnceOnlyRadio').setValue(response.uxAllCustomerOnceOnlyRadio);this.myForm.get('uxCustomerOnceOnly').setValue(response.uxCustomerOnceOnly);this.myForm.get('uxCustomerOneTimeExamLabel').setValue(response.uxCustomerOneTimeExamLabel);
 
-
+     
       //this.myForm.get('Mode').setValue('patch');
     });
   }
@@ -253,7 +253,7 @@ this.myForm.get('uxCustomerOneTimeExamLabel').setValue('(เช่น : User1,Us
   setIDOnForm(e: any) {
     console.log('On Form ' + e);
     this.myForm.get('id').setValue(e);
-    this.FormMode = 'patch';
+    this.FormMode = 'put';
     this.getByID(e);
     this.setStageForm();
   }
