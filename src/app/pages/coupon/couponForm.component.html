@@ -108,19 +108,22 @@
      <label for="exampleFormControlInput1" class="form-label" style="">
           วันหมดอายุ *<span class="text-danger">***</span>
      </label>
-<input class="form-control date"
+     <div  class='flex'>
+<input class="form-control date inputDate"
         placeholder="dd-mm-yyyy"
-		formControlName="uxExpirationDateLabel" 
+	   formControlName="uxExpirationDateLabel" 
         name="dp"
         [(ngModel)]="model"
         ngbDatepicker
         #d="ngbDatepicker"
         id="pdate"
       /> <button
-        class="btn btn-outline-secondary bi bi-calendar3"
+        class="btn btn-outline-secondary bi bi-calendar3 btnDate"
         (click)="d.toggle()"
         type="button"
-      >D</button></div>
+      >D</button>
+     </div>
+     </div>
 <span class="text-danger" 
 *ngIf="f.uxExpirationDateLabel.touched && f.uxExpirationDateLabel.errors?.required"> กรุณาป้อนค่า วันหมดอายุ * </span>
 
