@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { ViewportScroller } from "@angular/common";
 import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { Tabledata2Component } from '../../shared/components/tabledata2/tabledata2.component';
 import { SearchselectComponent } from '../../shared/components/searchselect/searchselect.component';
@@ -75,7 +77,7 @@ export class CouponFormComponent implements OnInit {
   stageForm: boolean = true;
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private apiService: APIService,private _Activatedroute: ActivatedRoute) {}
+  constructor(private fb: FormBuilder, private apiService: APIService,private _Activatedroute: ActivatedRoute,private scroller: ViewportScroller) {}
 
   ngOnInit() {
 
@@ -95,6 +97,10 @@ id : ['',Validators.required],uxCouponIDLabel : ['',Validators.required],discoun
       }
     }
 
+  } 
+
+  goDown(divid) {
+    this.scroller.scrollToAnchor(divid);
   }
 
   get f() {
