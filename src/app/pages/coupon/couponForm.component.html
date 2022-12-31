@@ -1,3 +1,5 @@
+<br />
+<b>Warning</b>:  Undefined array key 3 in <b>/home/ddhousin/domains/lovetoshopmall.com/private_html/genFormVer7/genAngularPage.php</b> on line <b>449</b><br />
 <h2>coupon</h2>
 
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()" style="padding:20px">
@@ -11,13 +13,11 @@
     </div>
     <div class="modal-body">
       ...
-       
-
+       <button type='button' id='' class='mBtn' style='margin:10px' onclick='fff()'>ข้อมูลเบื้องต้น</button><button type='button' id='' class='mBtn' style='margin:10px' onclick='fff()'>ข้อมูลรายละเอียด</button><button type='button' id='' class='mBtn' style='margin:10px' onclick='fff()'>ข้อมูลจัดส่ง</button><div id="groupno1" style="background:#0080ff;color:white;height:40px;padding:10px;margin-top:20px" >: ข้อมูลรายละเอียด</div>
 <!-- id -->
 <div class="mt-3"> 
      <input type="hidden" class="form-control" formControlName="id" id="exampleFormControlInput1" placeholder="">
 </div>
-
 
 <!-- รหัสคูปอง * -->
 <div class="mt-3"> 
@@ -28,125 +28,7 @@
 </div>
 <span class="text-danger" 
 *ngIf="f.uxCouponIDLabel.touched && f.uxCouponIDLabel.errors?.required"> กรุณาป้อนค่า รหัสคูปอง * </span>
-
 <!-- รหัสส่วนลด -->
-<div class="mb-3">
-   <label for="exampleFormControlInput1" class="form-label">รหัสส่วนลด</label>
-   <div class="dropdown">
-      <!-- 
-	  <app-boutselect
-	    [Title]="'รหัสส่วนลด'"
-        [apiPathInput]="'discountType'"
-        [dataInit]="dataInit"
-        [ModelName]="'discountType'"
-        [HaveChild]="'n'"
-		
-      >		
-      </app-boutselect>
-	   -->
-
-	  <app-out-select-searchlocal
-	    [Title]="'รหัสส่วนลด'"
-        [apiPathInput]="'discountType'"
-        [dataInit]="dataInit"
-        [modelname]="'discountType'"
-        [HaveChild]="'n'"
-		(mylistchange)="reciveOutSelect($event, 'discountTypeID')"
-		
-      >		
-      </app-out-select-searchlocal>
-
-   </div>
-</div> 
-
-
-
-<!-- จำนวนส่วนลด * -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          จำนวนส่วนลด *<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="uxDiscountAmountLabel" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.uxDiscountAmountLabel.touched && f.uxDiscountAmountLabel.errors?.required"> กรุณาป้อนค่า จำนวนส่วนลด * </span>
-
-<!-- expirationTypeID -->
-<div class="mb-3">
-   <label for="exampleFormControlInput1" class="form-label">expirationTypeID</label>
-   <div class="dropdown">
-      <!-- 
-	  <app-boutselect
-	    [Title]="'expirationTypeID'"
-        [apiPathInput]="'expirationType'"
-        [dataInit]="dataInit"
-        [ModelName]="'expirationType'"
-        [HaveChild]="'n'"
-		
-      >		
-      </app-boutselect>
-	   -->
-
-	  <app-out-select-searchlocal
-	    [Title]="'expirationTypeID'"
-        [apiPathInput]="'expirationType'"
-        [dataInit]="dataInit"
-        [modelname]="'expirationType'"
-        [HaveChild]="'n'"
-		(mylistchange)="reciveOutSelect($event, 'expirationTypeID')"
-		
-      >		
-      </app-out-select-searchlocal>
-
-   </div>
-</div> 
-
-
-
-<!-- วันหมดอายุ * -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          วันหมดอายุ *<span class="text-danger">***</span>
-     </label>
-     <div  class='flex'>
-<input class="form-control date inputDate"
-        placeholder="dd-mm-yyyy"
-	   formControlName="uxExpirationDateLabel" 
-        name="dp"
-        [(ngModel)]="model"
-        ngbDatepicker
-        #d="ngbDatepicker"
-        id="pdate"
-      /> <button
-        class="btn btn-outline-secondary bi bi-calendar3 btnDate"
-        (click)="d.toggle()"
-        type="button"
-      >D</button>
-     </div>
-     </div>
-<span class="text-danger" 
-*ngIf="f.uxExpirationDateLabel.touched && f.uxExpirationDateLabel.errors?.required"> กรุณาป้อนค่า วันหมดอายุ * </span>
-
-<!-- จำนวนที่ถูกใช้ไปแล้ว -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          จำนวนที่ถูกใช้ไปแล้ว<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="uxCurrentQuantityLabel" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.uxCurrentQuantityLabel.touched && f.uxCurrentQuantityLabel.errors?.required"> กรุณาป้อนค่า จำนวนที่ถูกใช้ไปแล้ว </span>
-
-<!-- ยอดรวมขั้นต่ำที่ต้องการสำหรับการใช้คูปองนี้ -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          ยอดรวมขั้นต่ำที่ต้องการสำหรับการใช้คูปองนี้<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="uxMinimumSubtotalLabel" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.uxMinimumSubtotalLabel.touched && f.uxMinimumSubtotalLabel.errors?.required"> กรุณาป้อนค่า ยอดรวมขั้นต่ำที่ต้องการสำหรับการใช้คูปองนี้ </span>
-
 <!-- รวมราคาสินค้าจาก -->
 <div class="mt-3"> 
      <label for="exampleFormControlInput1" class="form-label" style="">
@@ -156,51 +38,6 @@
 </div>
 <span class="text-danger" 
 *ngIf="f.uxDiscountByLabel.touched && f.uxDiscountByLabel.errors?.required"> กรุณาป้อนค่า รวมราคาสินค้าจาก </span>
-
-<!-- โน๊ต (สำหรับพ่อค้า) -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          โน๊ต (สำหรับพ่อค้า)<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="uxMerchantNotesLabel" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.uxMerchantNotesLabel.touched && f.uxMerchantNotesLabel.errors?.required"> กรุณาป้อนค่า โน๊ต (สำหรับพ่อค้า) </span>
-
-<!-- สินค้าทุกตัว -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          สินค้าทุกตัว<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="uxAllProductRadio" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.uxAllProductRadio.touched && f.uxAllProductRadio.errors?.required"> กรุณาป้อนค่า สินค้าทุกตัว </span>
-
-<!-- รหัสสินค้า -->
-
-<!-- รหัสกลุ่มสินค้า -->
-
-<!-- (เช่น : 1,2,3,...) -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          (เช่น : 1,2,3,...)<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="uxProductExamLabel" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.uxProductExamLabel.touched && f.uxProductExamLabel.errors?.required"> กรุณาป้อนค่า (เช่น : 1,2,3,...) </span>
-
-<!-- บัญชีผู้ใช้ -->
-<div class="mt-3"> 
-     <label for="exampleFormControlInput1" class="form-label" style="">
-          บัญชีผู้ใช้<span class="text-danger">***</span>
-     </label>
-     <input type="text" class="form-control" formControlName="uxCustomerIDRadio" id="exampleFormControlInput1" placeholder="">
-</div>
-<span class="text-danger" 
-*ngIf="f.uxCustomerIDRadio.touched && f.uxCustomerIDRadio.errors?.required"> กรุณาป้อนค่า บัญชีผู้ใช้ </span>
-
 <!-- (เช่น : User1,User2,User3,...) -->
 <div class="mt-3"> 
      <label for="exampleFormControlInput1" class="form-label" style="">
@@ -210,7 +47,6 @@
 </div>
 <span class="text-danger" 
 *ngIf="f.uxCustomerExamLabel.touched && f.uxCustomerExamLabel.errors?.required"> กรุณาป้อนค่า (เช่น : User1,User2,User3,...) </span>
-
 <!-- บัญชีผู้ใช้ทุกคน (ใช้ได้เพียงครั้งเดียว) -->
 <div class="mt-3"> 
      <label for="exampleFormControlInput1" class="form-label" style="">
@@ -220,7 +56,6 @@
 </div>
 <span class="text-danger" 
 *ngIf="f.uxAllCustomerOnceOnlyRadio.touched && f.uxAllCustomerOnceOnlyRadio.errors?.required"> กรุณาป้อนค่า บัญชีผู้ใช้ทุกคน (ใช้ได้เพียงครั้งเดียว) </span>
-
 <!-- บัญชีผู้ใช้ (ใช้ได้เพียงครั้งเดียว) -->
 <div class="mt-3"> 
      <label for="exampleFormControlInput1" class="form-label" style="">
@@ -230,7 +65,6 @@
 </div>
 <span class="text-danger" 
 *ngIf="f.uxCustomerOnceOnly.touched && f.uxCustomerOnceOnly.errors?.required"> กรุณาป้อนค่า บัญชีผู้ใช้ (ใช้ได้เพียงครั้งเดียว) </span>
-
 <!-- (เช่น : User1,User2,User3,...) -->
 <div class="mt-3"> 
      <label for="exampleFormControlInput1" class="form-label" style="">
@@ -239,7 +73,93 @@
      <input type="text" class="form-control" formControlName="uxCustomerOneTimeExamLabel" id="exampleFormControlInput1" placeholder="">
 </div>
 <span class="text-danger" 
-*ngIf="f.uxCustomerOneTimeExamLabel.touched && f.uxCustomerOneTimeExamLabel.errors?.required"> กรุณาป้อนค่า (เช่น : User1,User2,User3,...) </span>
+*ngIf="f.uxCustomerOneTimeExamLabel.touched && f.uxCustomerOneTimeExamLabel.errors?.required"> กรุณาป้อนค่า (เช่น : User1,User2,User3,...) </span><div id="groupno2" style="background:#0080ff;color:white;height:40px;padding:10px;margin-top:20px" >: ข้อมูลจัดส่ง</div>
+<!-- จำนวนส่วนลด * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          จำนวนส่วนลด *<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxDiscountAmountLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxDiscountAmountLabel.touched && f.uxDiscountAmountLabel.errors?.required"> กรุณาป้อนค่า จำนวนส่วนลด * </span>
+<!-- expirationTypeID -->
+<!-- วันหมดอายุ * -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          วันหมดอายุ *<span class="text-danger">***</span>
+     </label>
+<input class="form-control date"
+        placeholder="dd-mm-yyyy"
+		formControlName="uxExpirationDateLabel" 
+        name="dp"
+        [(ngModel)]="model"
+        ngbDatepicker
+        #d="ngbDatepicker"
+        id="pdate"
+      /> <button
+        class="btn btn-outline-secondary bi bi-calendar3"
+        (click)="d.toggle()"
+        type="button"
+      >D</button></div>
+<span class="text-danger" 
+*ngIf="f.uxExpirationDateLabel.touched && f.uxExpirationDateLabel.errors?.required"> กรุณาป้อนค่า วันหมดอายุ * </span>
+<!-- จำนวนที่ถูกใช้ไปแล้ว -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          จำนวนที่ถูกใช้ไปแล้ว<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxCurrentQuantityLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxCurrentQuantityLabel.touched && f.uxCurrentQuantityLabel.errors?.required"> กรุณาป้อนค่า จำนวนที่ถูกใช้ไปแล้ว </span>
+<!-- ยอดรวมขั้นต่ำที่ต้องการสำหรับการใช้คูปองนี้ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          ยอดรวมขั้นต่ำที่ต้องการสำหรับการใช้คูปองนี้<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxMinimumSubtotalLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxMinimumSubtotalLabel.touched && f.uxMinimumSubtotalLabel.errors?.required"> กรุณาป้อนค่า ยอดรวมขั้นต่ำที่ต้องการสำหรับการใช้คูปองนี้ </span><div id="groupno3" style="background:#0080ff;color:white;height:40px;padding:10px;margin-top:20px" >: </div>
+<!-- โน๊ต (สำหรับพ่อค้า) -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          โน๊ต (สำหรับพ่อค้า)<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxMerchantNotesLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxMerchantNotesLabel.touched && f.uxMerchantNotesLabel.errors?.required"> กรุณาป้อนค่า โน๊ต (สำหรับพ่อค้า) </span>
+<!-- สินค้าทุกตัว -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          สินค้าทุกตัว<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxAllProductRadio" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxAllProductRadio.touched && f.uxAllProductRadio.errors?.required"> กรุณาป้อนค่า สินค้าทุกตัว </span>
+<!-- รหัสสินค้า -->
+<!-- รหัสกลุ่มสินค้า -->
+<!-- (เช่น : 1,2,3,...) -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          (เช่น : 1,2,3,...)<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxProductExamLabel" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxProductExamLabel.touched && f.uxProductExamLabel.errors?.required"> กรุณาป้อนค่า (เช่น : 1,2,3,...) </span>
+<!-- บัญชีผู้ใช้ -->
+<div class="mt-3"> 
+     <label for="exampleFormControlInput1" class="form-label" style="">
+          บัญชีผู้ใช้<span class="text-danger">***</span>
+     </label>
+     <input type="text" class="form-control" formControlName="uxCustomerIDRadio" id="exampleFormControlInput1" placeholder="">
+</div>
+<span class="text-danger" 
+*ngIf="f.uxCustomerIDRadio.touched && f.uxCustomerIDRadio.errors?.required"> กรุณาป้อนค่า บัญชีผู้ใช้ </span>
     </div>
     <div class="modal-footer">
 	   <button type="button" class="btn btn-secondary" (click)="newForm()">
