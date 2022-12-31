@@ -97,7 +97,11 @@ export class AppComponent {
         { name: 'affilList', linkTo: 'affilList', caption: 'รายการ Affiliate' },
         { name: 'dropshipList', linkTo: 'dropshipList', caption: 'dropship' },
         { name: 'couponList', linkTo: 'couponList', caption: 'ระบบคูปอง' },
-        { name: 'universalMasterList', linkTo: 'universalMasterList', caption: 'universalMaster' },
+        {
+          name: 'universalMasterList',
+          linkTo: 'universalMasterList/1',
+          caption: 'universalMaster',
+        },
       ],
     },
     {

@@ -62,7 +62,7 @@ export class Tabledata3Component implements OnInit {
   headerTable = ['ชื่อ', 'นามสกุล', 'อีเมล์', 'เบอร์โทร', ''];
 
   nextPageNo: number = 0;
-  formNameEdit :string = '' ; //this.varModelTable.formNameEdit ;
+  formNameEdit: string = ''; //this.varModelTable.formNameEdit ;
 
   Pagination = [2, 3, 4];
   faEdit = faEdit;
@@ -81,13 +81,12 @@ export class Tabledata3Component implements OnInit {
   ngOnInit(): void {
     //this.apiName = environment.apiHost + apiPath.departmentByPageNo;
     console.log('API URL ', this.varModelTable.apiTable);
-    this.headerTable = this.varModelTable.headerColTable; 
-    this.formNameEdit= this.varModelTable.formNameEdit ;
-
+    this.headerTable = this.varModelTable.headerColTable;
+    this.formNameEdit = this.varModelTable.formNameEdit;
 
     // this.headerTable = this.varModelTable.headerTable;
-    this.tableAPI = this.varModelTable.apiTable;
-    
+    this.tableAPI = this.varModelTable.TableComponentName;
+
     if (this._Activatedroute.snapshot.paramMap.get('pageno')) {
       this.pageno = this._Activatedroute.snapshot.paramMap.get('pageno');
     } else {
@@ -119,7 +118,12 @@ export class Tabledata3Component implements OnInit {
     //   'https://lovetoshopmall.com/apiservice/tshop/?code='+ this.varModelTable.apiTable +'&pagenno=' +
     //   wantpageno;
 
-    this.myurl = environment.apiUrl2 + 'getlist/?code=' + this.varModelTable.apiTable + '&pageno=' + wantpageno;
+    this.myurl =
+      environment.apiUrl2 +
+      'getlist/?code=' +
+      this.varModelTable.apiTable +
+      '&pageno=' +
+      wantpageno;
     //alert(this.myurl) ;
     // this.myurl =
     // environment.apiUrl + this.varModelTable.apiTable +'/ByPageNo/' +pageno;

@@ -6,6 +6,7 @@ import { SearchselectComponent } from '../../shared/components/searchselect/sear
 declare var window: any;
 export interface modelTable {
   formComponentName:string ;
+  TableComponentName:string;
   apiTable: string;
   Caption: string;
   pageno: number;
@@ -25,7 +26,9 @@ export class UniversalMasterListComponent implements OnInit, OnChanges {
 
   varmodelTable: modelTable = {
     formComponentName: 'universalMasterForm',
+    TableComponentName: 'universalMasterList',
     apiTable: 'A011',
+
     Caption: 'universalMaster',
     pageno: 1,
     headerColTable: ['รหัสแผนก', 'ชื่อแผนก', 'รหัส-2', 'รูป'],
