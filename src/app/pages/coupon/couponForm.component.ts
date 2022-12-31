@@ -1,6 +1,5 @@
-
-import { Component, OnInit } from '@angular/core';
 import { ViewportScroller } from "@angular/common";
+import { Component, OnInit, } from '@angular/core';
 import { ActivatedRoute, RouterModule, Routes } from '@angular/router';
 import { Tabledata2Component } from '../../shared/components/tabledata2/tabledata2.component';
 import { SearchselectComponent } from '../../shared/components/searchselect/searchselect.component';
@@ -19,12 +18,15 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faDeleteLeft } from '@fortawesome/free-solid-svg-icons';
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons';
+import { faChevronCircleUp } from '@fortawesome/free-solid-svg-icons';
 
 declare var window: any;
 export interface modelTable {
   formCode:string;
+  TableComponentName: string,
   apiTable: string;
   Caption: string;
+  pageno: number,
   formNameEdit:string;
   headerColTable: string[];
   ParentTableList: string[];
@@ -40,16 +42,21 @@ export interface modelTable {
 
 export class CouponFormComponent implements OnInit {
 
-  formCode : string = 'A012' ;
+  formCode : string = 'A0014' ;
   formModal: any;
   model:string = '';
+  faChevronCircleUp = faChevronCircleUp;
+
+  
 
   // Table Crud
   varmodelTable: modelTable = {
-    formCode: 'A012',
+    formCode: 'A0014',
+	TableComponentName: 'couponList',
     apiTable: 'coupon',
 	formNameEdit : 'couponForm',
     Caption: 'coupon',
+	pageno: 1,
     headerColTable: ['', '', '', ''],
     ParentTableList: [],
   };
@@ -77,7 +84,10 @@ export class CouponFormComponent implements OnInit {
   stageForm: boolean = true;
   myForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private apiService: APIService,private _Activatedroute: ActivatedRoute,private scroller: ViewportScroller) {}
+  constructor(private fb: FormBuilder, private apiService: APIService,
+  private _Activatedroute: ActivatedRoute,
+  private scroller: ViewportScroller
+   ) {}
 
   ngOnInit() {
 
@@ -89,6 +99,8 @@ id : ['',Validators.required],uxCouponIDLabel : ['',Validators.required],discoun
       //alert(this._Activatedroute.snapshot.paramMap.get('id'));
       let id = this._Activatedroute.snapshot.paramMap.get('id');
       this.myForm.get('id').setValue(id);
+
+
       if (id != 'new') {
         this.formTitle = 'แก้ไขข้อมูล' + this.varmodelTable.Caption;;
         this.getByID(id);
@@ -97,7 +109,7 @@ id : ['',Validators.required],uxCouponIDLabel : ['',Validators.required],discoun
       }
     }
 
-  } 
+  }
 
   goDown(divid) {
     this.scroller.scrollToAnchor(divid);
@@ -249,9 +261,11 @@ this.myForm.get('uxCustomerOneTimeExamLabel').setValue('(เช่น : User1,Us
 	  response = response.DataResult;
       console.log('res', response);
 
+	  
+
       this.myForm.get('id').setValue(response.id);this.myForm.get('uxCouponIDLabel').setValue(response.uxCouponIDLabel);this.myForm.get('discountTypeID').setValue(response.discountTypeID);this.myForm.get('uxDiscountAmountLabel').setValue(response.uxDiscountAmountLabel);this.myForm.get('expirationTypeID').setValue(response.expirationTypeID);this.myForm.get('uxExpirationDateLabel').setValue(response.uxExpirationDateLabel);this.myForm.get('uxCurrentQuantityLabel').setValue(response.uxCurrentQuantityLabel);this.myForm.get('uxMinimumSubtotalLabel').setValue(response.uxMinimumSubtotalLabel);this.myForm.get('uxDiscountByLabel').setValue(response.uxDiscountByLabel);this.myForm.get('uxMerchantNotesLabel').setValue(response.uxMerchantNotesLabel);this.myForm.get('uxAllProductRadio').setValue(response.uxAllProductRadio);this.myForm.get('productID').setValue(response.productID);this.myForm.get('categoryID').setValue(response.categoryID);this.myForm.get('uxProductExamLabel').setValue(response.uxProductExamLabel);this.myForm.get('uxCustomerIDRadio').setValue(response.uxCustomerIDRadio);this.myForm.get('uxCustomerExamLabel').setValue(response.uxCustomerExamLabel);this.myForm.get('uxAllCustomerOnceOnlyRadio').setValue(response.uxAllCustomerOnceOnlyRadio);this.myForm.get('uxCustomerOnceOnly').setValue(response.uxCustomerOnceOnly);this.myForm.get('uxCustomerOneTimeExamLabel').setValue(response.uxCustomerOneTimeExamLabel);
 
-     
+
       //this.myForm.get('Mode').setValue('patch');
     });
   }
